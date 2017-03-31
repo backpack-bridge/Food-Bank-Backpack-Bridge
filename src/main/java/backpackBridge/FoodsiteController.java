@@ -16,19 +16,24 @@ public class FoodsiteController {
 	@Resource
 	private FoodSiteRepository foodSiteRepository;
 
-	@RequestMapping("/showSites")
-	public String allsites(Model model) {
+	@GetMapping("/formForSiteCoordinator")
+	public String siteForm(Model model) {
 		model.addAttribute("sites", foodSiteRepository.findAll());
-		return "all-sites";
+		return "site";
 	}
 
-	@GetMapping("/showOneSite")
+	@PostMapping("/formForSiteCoordinator")
+	public String siteFormSubmit(@ModelAttribute Foodsite foodsite) {
+		return "display-site-information";
+	}
+
+	@RequestMapping("/showOneSite")
 	public String onesite(@RequestParam(value = "id") String id, Model model) {
 		model.addAttribute("site", foodSiteRepository.findOne(id));
 		return "one-site";
 	}
 
-	@PostMapping("/inputSiteInfo")
+	@PostMapping("/showOneSites")
 	public String inputSiteInfo(@ModelAttribute Foodsite foodsite) {
 		return "input-site-info";
 	}

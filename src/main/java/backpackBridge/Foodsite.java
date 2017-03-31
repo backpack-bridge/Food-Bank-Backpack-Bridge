@@ -16,8 +16,8 @@ public class Foodsite {
 	private String site_coordinator_last_name;
 	private String phone_number;
 	private String e_mail;
-	private String exexutive_director_first;
-	private String exexutive_director_last;
+	private String executive_director_first;
+	private String executive_director_last;
 	private String county_of_program;
 	private String school_district;
 	private String mid_ohio_primary_contact_first;
@@ -36,8 +36,8 @@ public class Foodsite {
 	}
 
 	public Foodsite(String id, String program_name, String site_coordinator_first_name,
-			String site_coordinator_last_name, String phone_number, String e_mail, String exexutive_director_first,
-			String exexutive_director_last, String county_of_program, String school_district,
+			String site_coordinator_last_name, String phone_number, String e_mail, String executive_director_first,
+			String executive_director_last, String county_of_program, String school_district,
 			String mid_ohio_primary_contact_first, String mid_ohio_primary_contact_last, String address, String active,
 			String start_date, String calender_ID, String number_of_kids_served, String number_of_volunteers_enlisted,
 			String site_with_allergies, String drop_off_area_description, String distribution_area_description) {
@@ -48,8 +48,8 @@ public class Foodsite {
 		this.site_coordinator_last_name = site_coordinator_last_name;
 		this.phone_number = phone_number;
 		this.e_mail = e_mail;
-		this.exexutive_director_first = exexutive_director_first;
-		this.exexutive_director_last = exexutive_director_last;
+		this.executive_director_first = executive_director_first;
+		this.executive_director_last = executive_director_last;
 		this.county_of_program = county_of_program;
 		this.school_district = school_district;
 		this.mid_ohio_primary_contact_first = mid_ohio_primary_contact_first;
@@ -159,23 +159,23 @@ public class Foodsite {
 	/**
 	 * @return the exexutive_director_first
 	 */
-	public String getExexutive_director_first() {
-		return exexutive_director_first;
+	public String getExecutive_director_first() {
+		return executive_director_first;
 	}
 
 	/**
 	 * @param exexutive_director_first
 	 *            the exexutive_director_first to set
 	 */
-	public void setExexutive_director_first(String exexutive_director_first) {
-		this.exexutive_director_first = exexutive_director_first;
+	public void setExecutive_director_first(String exexutive_director_first) {
+		this.executive_director_first = exexutive_director_first;
 	}
 
 	/**
 	 * @return the exexutive_director_last
 	 */
-	public String getExexutive_director_last() {
-		return exexutive_director_last;
+	public String getExecutive_director_last() {
+		return executive_director_last;
 	}
 
 	/**
@@ -183,7 +183,7 @@ public class Foodsite {
 	 *            the exexutive_director_last to set
 	 */
 	public void setExexutive_director_last(String exexutive_director_last) {
-		this.exexutive_director_last = exexutive_director_last;
+		this.executive_director_last = exexutive_director_last;
 	}
 
 	/**

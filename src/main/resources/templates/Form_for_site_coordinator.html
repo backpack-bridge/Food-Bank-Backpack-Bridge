@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+  <html xmlns:th="http://www.thymeleaf.org">
+
   <head>
     <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -28,6 +30,16 @@
 <!-- Form Name -->
 <legend>Welcome Site Coordinator</legend>
 
+
+<!-- comment this away 
+  <h1>Form</h1>
+    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+      <p>Id: <input type="text" th:field="*{id}" /></p>
+        <p>Message: <input type="text" th:field="*{content}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form> -->
+
+
 <!-- Text input-->
 
 <div class="form-group">
@@ -35,7 +47,10 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input  name="program_name" placeholder="Name of your Program" class="form-control"  type="text">
+  
+<form action="#" th:action="@{/site}" th:object="${site}" method="post">
+      <p><input name="program_name"  class="form-control" type="text" th:field="*{PROGRAM_NAME}"  placeholder="Enter Program Name Here" /></p>
+</form>
     </div>
   </div>
 </div>
@@ -331,7 +346,9 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button>
+    
+    <p> <button type="submit" value="Submit" class="btn btn-warning"> Submit <span class="glyphicon glyphicon-send"></span></button><input class="btn btn-warning" type="reset" value="Reset" /></p>
+
   </div>
 </div>
 

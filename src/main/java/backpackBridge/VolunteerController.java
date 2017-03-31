@@ -20,7 +20,7 @@ package backpackBridge;
 			return "students";
 		}
 
-		@RequestMapping("/showStudents")
+		@RequestMapping("/showVolunteer")
 		public String review(@RequestParam("id") Long id, Model model) {
 			model.addAttribute("volunteer", allVolunteers.findOne(id));
 			return "volunteer";

@@ -19,18 +19,18 @@ public class AdminController {
     @RequestMapping("/showAdmins")
     public String admins(Model model) {
     	model.addAttribute("admins", repository.findAll());
-        return "admins";
+        return "adminList";
     }
    
     @GetMapping("/showAdmin")
     public String adminForm(@RequestParam(value="id") String id, Model model) {
         model.addAttribute("admin", repository.findOne(id));
-        return "admin";
+        return "Administration";
     }
     
     @PostMapping("/showAdmin")
     public String adminSubmit(@ModelAttribute Admin admin) {
-        return "admin";
+        return "Administration";
     }
     
 }
