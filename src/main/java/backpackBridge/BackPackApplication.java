@@ -23,4 +23,10 @@ public class BackPackApplication {
 	@Resource
 	private FoodSiteRepository foodSiteRepository;
 
+	@Resource
+	private VolunteerRepository volunteerRepository;
+
+	@Resource
+	private StudentRepository studentRepository;
+
 }

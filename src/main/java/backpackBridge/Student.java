@@ -1,15 +1,13 @@
 package backpackBridge;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
 @Entity
 public class Student {
-
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,16 +25,14 @@ public class Student {
 	private int ageEighteenToFiftyNine;
 	private int ageSixtyPLus;
 	private String addlNotes;
-   
-    
+
 	@ManyToOne
-	private FoodSite foodSite;
+	private Foodsite foodSite;
 
 	protected Student() {
 
-	
 	}
-	
+
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -97,9 +93,7 @@ public class Student {
 		this.ageSixtyPLus = ageSixtyPLus;
 	}
 
-	public void setFoodSite(FoodSite foodSite) {
+	public void setFoodSite(Foodsite foodSite) {
 		this.foodSite = foodSite;
 	}
 }
-
-	
