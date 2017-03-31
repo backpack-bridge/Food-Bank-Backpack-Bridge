@@ -36,6 +36,8 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+   <input  name="Id" placeholder="Sign On Id" class="form-control"  type="text"
+   th:field="${admin.id}"/>
    <input  name="Id" placeholder="Sign On Id" class="form-control"  type="text"/>
     </div>
   </div>
@@ -47,7 +49,8 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-   <input  name="Password" placeholder="Password" class="form-control"  type="text"/>
+   <input  name="Password" placeholder="Password" class="form-control"  type="text"
+   th:field="${admin.password}"/>
     </div>
   </div>
 </div>
@@ -58,7 +61,8 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-   <input  name="Password_Date" placeholder="Password Change Date" class="form-control"  type="text"/>
+   <input  name="Password_Date" placeholder="Password Change Date" class="form-control"  type="text"
+   th:field="${admin.passwordDate}"/>
     </div>
   </div>
 </div>
@@ -69,7 +73,8 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-     <input name="Student_Access" placeholder="Student Access" class="form-control"  type="text"/>
+     <input name="Student_Access" placeholder="Student Access" class="form-control"  type="text"
+     th:field="${admin.studentAccess}"/>
     </div>
   </div>
 </div>
@@ -80,7 +85,8 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-     <input name="Site_Access" placeholder="Site Access" class="form-control"  type="text"/>
+     <input name="Site_Access" placeholder="Site Access" class="form-control"  type="text"
+     th:field="${admin.siteAccess}"/>
     </div>
   </div>
 </div>
@@ -92,7 +98,8 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-     <input name="Volunteer_Access" placeholder="Volunteer Access" class="form-control" type="text"/>
+     <input name="Volunteer_Access" placeholder="Volunteer Access" class="form-control" type="text"
+     th:field="${admin.volunteerAccess}"/>
     </div>
   </div>
 </div>
@@ -103,7 +110,8 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="Admin_Access" placeholder="Administration Access" class="form-control"  type="text"/>
+  <input  name="Admin_Access" placeholder="Administration Access" class="form-control"  type="text"
+  th:field="${admin.adminAccess}"/>
     </div>
   </div>
 </div>
@@ -114,7 +122,8 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input name="Change_Date" placeholder="Administration Change Date" class="form-control"  type="text"/>
+  <input name="Change_Date" placeholder="Administration Change Date" class="form-control"  type="text"
+  th:field="${admin.changeDate}"/>
     </div>
   </div>
 </div>
@@ -125,7 +134,8 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="Change_Id" placeholder="Administration Change Id" class="form-control"  type="text"/>
+  <input name="Change_Id" placeholder="Administration Change Id" class="form-control"  type="text"
+  th:field="${admin.changeId}"/>
     </div>
   </div>
 </div>
@@ -146,8 +156,6 @@
 </form>
 
     </div><!-- /.container -->
-
-
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
