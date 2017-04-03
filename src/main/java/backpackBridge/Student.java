@@ -26,12 +26,15 @@ public class Student {
 	private int ageSixtyPLus;
 	private String addlNotes;
 	private String allergies;
+	private String frl;
+	private String status;
+	private String parentPermission;
 
 	@ManyToOne
 	private Foodsite foodSite;
 
 	protected Student() {
-
+		
 	}
 
 	public void setId(long id) {
@@ -66,14 +69,6 @@ public class Student {
 		this.pplInHouse = pplInHouse;
 	}
 
-	public String getAddlNotes() {
-		return addlNotes;
-	}
-
-	public void setAddlNotes(String addlNotes) {
-		this.addlNotes = addlNotes;
-	}
-
 	public void setAgeZeroToFive(int ageZeroToFive) {
 		this.ageZeroToFive = ageZeroToFive;
 	}
@@ -94,15 +89,33 @@ public class Student {
 		this.ageSixtyPLus = ageSixtyPLus;
 	}
 
-	public void setFoodSite(Foodsite foodSite) {
-		this.foodSite = foodSite;
-	}
-
-	public String getAllergies() {
-		return allergies;
+	public void setAddlNotes(String addlNotes) {
+		this.addlNotes = addlNotes;
 	}
 
 	public void setAllergies(String allergies) {
 		this.allergies = allergies;
 	}
-}
+
+	public void setFrl(String frl) {
+		this.frl = frl;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setFoodSite(Foodsite foodSite) {
+		this.foodSite = foodSite;
+	}
+
+	public String getParentPermission() {
+		return parentPermission;
+	}
+
+	public void setParentPermission(String parentPermission) {
+		this.parentPermission = parentPermission;
+	}
+	}
+
+	
