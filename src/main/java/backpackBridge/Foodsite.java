@@ -159,7 +159,7 @@ public class Foodsite {
 	/**
 	 * @return the exexutive_director_first
 	 */
-	public String getExexutive_director_first() {
+	public String getExecutive_director_first() {
 		return executive_director_first;
 	}
 
@@ -167,14 +167,14 @@ public class Foodsite {
 	 * @param exexutive_director_first
 	 *            the exexutive_director_first to set
 	 */
-	public void setExexutive_director_first(String exexutive_director_first) {
+	public void setExecutive_director_first(String exexutive_director_first) {
 		this.executive_director_first = exexutive_director_first;
 	}
 
 	/**
 	 * @return the exexutive_director_last
 	 */
-	public String getExexutive_director_last() {
+	public String getExecutive_director_last() {
 		return executive_director_last;
 	}
 
