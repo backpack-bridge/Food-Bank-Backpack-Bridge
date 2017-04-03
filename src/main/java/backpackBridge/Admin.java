@@ -2,33 +2,42 @@ package backpackBridge;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 @Entity
 public class Admin {
-	
+
 	@Id
 	private String id;
+	@NotNull
 	private String password;
+	@NotNull
+	@Past
 	private String passwordDate;
+	@NotNull
 	private String studentAccess;
+	@NotNull
 	private String siteAccess;
+	@NotNull
 	private String volunteerAccess;
+	@NotNull
 	private String adminAccess;
+	@NotNull
 	private String changeDate;
+	@NotNull
 	private String changeId;
-	
-	
+
 	protected Admin() {
 	}
-	
+
 	public Admin(String id, String password) {
 		this.id = id;
 		this.password = password;
 	}
-	
-	public Admin(String id, String password, String passwordDate,
-			String studentAccess, String siteAccess, String volunteerAccess,
-			String adminAccess, String changeDate, String changeId) {
+
+	public Admin(String id, String password, String passwordDate, String studentAccess, String siteAccess,
+			String volunteerAccess, String adminAccess, String changeDate, String changeId) {
 		this.id = id;
 		this.password = password;
 		this.passwordDate = passwordDate;
@@ -71,12 +80,11 @@ public class Admin {
 	public void setStudentAccess(String studentAccess) {
 		this.studentAccess = studentAccess;
 	}
-	
+
 	public boolean isStudentReadOnly() {
 		if (studentAccess.equals("C")) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
@@ -88,12 +96,11 @@ public class Admin {
 	public void setSiteAccess(String siteAccess) {
 		this.siteAccess = siteAccess;
 	}
-	
+
 	public boolean isSiteReadOnly() {
 		if (siteAccess.equals("C")) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
@@ -105,12 +112,11 @@ public class Admin {
 	public void setVolunteerAccess(String volunteerAccess) {
 		this.volunteerAccess = volunteerAccess;
 	}
-	
+
 	public boolean isVolunteerReadOnly() {
 		if (volunteerAccess.equals("C")) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
@@ -122,12 +128,11 @@ public class Admin {
 	public void setAdminAccess(String adminAccess) {
 		this.adminAccess = adminAccess;
 	}
-	
+
 	public boolean isAdminReadOnly() {
 		if (adminAccess.equals("C")) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
@@ -147,7 +152,5 @@ public class Admin {
 	public void setChangeId(String changeId) {
 		this.changeId = changeId;
 	}
-
-	
 
 }

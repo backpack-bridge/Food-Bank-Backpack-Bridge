@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Student {
@@ -12,19 +16,41 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	@NotNull
 	private long studentId;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@NotNull
+	@Min(0)
 	private int age;
+	@NotNull
+	@Size(min = 2, max = 12)
 	private int grade;
+	@NotNull
 	private String teacherName;
+	@NotNull
+	@Min(0)
 	private int pplInHouse;
+	@NotNull
+	@Size(min = 0, max = 5)
 	private int ageZeroToFive;
+	@NotNull
+	@Size(min = 6, max = 11)
 	private int ageSixToEleven;
+	@NotNull
+	@Size(min = 12, max = 17)
 	private int ageTwelveToSeventeen;
+	@NotNull
+	@Size(min = 18, max = 59)
 	private int ageEighteenToFiftyNine;
+	@NotNull
+	@Size(min = 60)
 	private int ageSixtyPLus;
+	@NotNull
 	private String addlNotes;
+	@NotNull
 	private String allergies;
 
 	@ManyToOne
