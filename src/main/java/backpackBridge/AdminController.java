@@ -19,6 +19,7 @@ public class AdminController {
     @RequestMapping("/showAdmins")
     public String admins(Model model) {
     	model.addAttribute("admins", repository.findAll());
+    	model.addAttribute("admin", repository.findOne("ToddisGod"));
         return "adminList";
     }
    
