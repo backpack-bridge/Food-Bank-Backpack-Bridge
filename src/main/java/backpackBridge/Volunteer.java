@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Volunteer {
@@ -12,15 +13,25 @@ public class Volunteer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@NotNull
 	private int age;
+	@NotNull
 	private String gender;
+	@NotNull
 	private String streetAddress;
+	@NotNull
 	private String city;
+	@NotNull
 	private String state;
+	@NotNull
 	private String zip;
+	@NotNull
 	private String phoneNum;
+	@NotNull
 	private String email;
 
 	@ManyToOne
