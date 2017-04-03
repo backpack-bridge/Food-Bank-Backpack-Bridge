@@ -124,7 +124,25 @@ public class Admin {
 	}
 	
 	public boolean isAdminReadOnly() {
-		if (adminAccess.equals("C")) {
+		if (adminAccess.equals("C") | adminAccess.equals("A")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
+	public boolean isAdminAdd() {
+		if (adminAccess.equals("A") | adminAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
+	public boolean isAdminDelete() {
+		if (adminAccess.equals("D") | adminAccess.equals("C")) {
 			return false;
 		}
 		else {
