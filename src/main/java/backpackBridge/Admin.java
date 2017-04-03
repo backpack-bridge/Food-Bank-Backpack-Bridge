@@ -124,20 +124,28 @@ public class Admin {
 	}
 	
 	public boolean isAdminReadOnly() {
-		if (adminAccess.equals("C") | adminAccess.equals("A")) {
+		if (adminAccess.equals(null)|adminAccess.equals("")) {
 			return false;
-		}
-		else {
-			return true;
+		} else {
+			if (adminAccess.equals("C") | adminAccess.equals("A")) {
+				return false;
+			}
+			else {
+				return true;
+			}
 		}
 	}
 	
 	public boolean isAdminAdd() {
-		if (adminAccess.equals("A") | adminAccess.equals("C")) {
+		if (adminAccess.equals(null)|adminAccess.equals("")) {
 			return false;
-		}
-		else {
-			return true;
+		} else {
+			if (adminAccess.equals("C") | adminAccess.equals("A")) {
+				return false;
+			}
+			else {
+				return true;
+			}
 		}
 	}
 	
