@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Foodsite {
@@ -11,25 +13,47 @@ public class Foodsite {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
+	@NotNull
 	private String program_name;
+	@NotNull
 	private String site_coordinator_first_name;
+	@NotNull
 	private String site_coordinator_last_name;
+	@NotNull
 	private String phone_number;
+	@NotNull
 	private String e_mail;
+	@NotNull
 	private String executive_director_first;
+	@NotNull
 	private String executive_director_last;
+	@NotNull
 	private String county_of_program;
+	@NotNull
 	private String school_district;
+	@NotNull
 	private String mid_ohio_primary_contact_first;
+	@NotNull
 	private String mid_ohio_primary_contact_last;
+	@NotNull
 	private String address;
+	@NotNull
 	private String active;
+	@NotNull
 	private String start_date;
+	@NotNull
 	private String calender_ID;
+	@NotNull
+	@Min(0)
 	private String number_of_kids_served;
+	@NotNull
+	@Min(0)
 	private String number_of_volunteers_enlisted;
+	@NotNull
 	private String site_with_allergies;
+	@NotNull
 	private String drop_off_area_description;
+	@NotNull
 	private String distribution_area_description;
 
 	protected Foodsite() {

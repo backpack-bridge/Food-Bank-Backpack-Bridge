@@ -5,7 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Volunteer {
@@ -18,6 +22,7 @@ public class Volunteer {
 	@NotNull
 	private String lastName;
 	@NotNull
+	@Min(0)
 	private int age;
 	@NotNull
 	private String gender;
@@ -31,7 +36,8 @@ public class Volunteer {
 	private String zip;
 	@NotNull
 	private String phoneNum;
-	@NotNull
+	@NotEmpty
+	@Email
 	private String email;
 
 	@ManyToOne
