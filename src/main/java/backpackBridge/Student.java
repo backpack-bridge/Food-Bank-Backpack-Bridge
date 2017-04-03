@@ -25,6 +25,7 @@ public class Student {
 	private int ageEighteenToFiftyNine;
 	private int ageSixtyPLus;
 	private String addlNotes;
+	private String allergies;
 
 	@ManyToOne
 	private Foodsite foodSite;
@@ -95,5 +96,13 @@ public class Student {
 
 	public void setFoodSite(Foodsite foodSite) {
 		this.foodSite = foodSite;
+	}
+
+	public String getAllergies() {
+		return allergies;
+	}
+
+	public void setAllergies(String allergies) {
+		this.allergies = allergies;
 	}
 }

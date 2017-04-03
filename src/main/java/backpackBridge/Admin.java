@@ -17,6 +17,7 @@ public class Admin {
 	private String changeDate;
 	private String changeId;
 	
+	
 	protected Admin() {
 	}
 	
@@ -70,6 +71,15 @@ public class Admin {
 	public void setStudentAccess(String studentAccess) {
 		this.studentAccess = studentAccess;
 	}
+	
+	public boolean isStudentReadOnly() {
+		if (studentAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 
 	public String getSiteAccess() {
 		return siteAccess;
@@ -77,6 +87,15 @@ public class Admin {
 
 	public void setSiteAccess(String siteAccess) {
 		this.siteAccess = siteAccess;
+	}
+	
+	public boolean isSiteReadOnly() {
+		if (siteAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 
 	public String getVolunteerAccess() {
@@ -86,6 +105,15 @@ public class Admin {
 	public void setVolunteerAccess(String volunteerAccess) {
 		this.volunteerAccess = volunteerAccess;
 	}
+	
+	public boolean isVolunteerReadOnly() {
+		if (volunteerAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 
 	public String getAdminAccess() {
 		return adminAccess;
@@ -93,6 +121,15 @@ public class Admin {
 
 	public void setAdminAccess(String adminAccess) {
 		this.adminAccess = adminAccess;
+	}
+	
+	public boolean isAdminReadOnly() {
+		if (adminAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 
 	public String getChangeDate() {
@@ -110,5 +147,7 @@ public class Admin {
 	public void setChangeId(String changeId) {
 		this.changeId = changeId;
 	}
+
+	
 
 }
