@@ -5,7 +5,9 @@ package backpackBridge;
 
 	import org.springframework.stereotype.Controller;
 	import org.springframework.ui.Model;
-	import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RequestParam;
 
 	@Controller
@@ -25,6 +27,9 @@ package backpackBridge;
 			model.addAttribute("volunteer", allVolunteers.findOne(id));
 			return "volunteer";
 		}
-
+		@PostMapping("/showVolunteerForm")
+		public String volunteerSubmit(@ModelAttribute Volunteer VolunteerForm) {
+			return "VolunteerForm";
+	}
 	}
 
