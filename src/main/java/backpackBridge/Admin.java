@@ -80,6 +80,41 @@ public class Admin {
 			return true;
 		}
 	}
+	
+	public boolean isStudentHide() {
+		if (studentAccess.equals(null)|studentAccess.equals("")) {
+			return true;
+		} else {
+			if (studentAccess.equals(" ")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	
+	public boolean isStudentAdd() {
+		if (studentAccess.equals(null)|studentAccess.equals("")) {
+			return false;
+		} else {
+			if (studentAccess.equals("C") | studentAccess.equals("A")) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	}
+	
+	public boolean isStudentDelete() {
+		if (studentAccess.equals("D") | studentAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 
 	public String getSiteAccess() {
 		return siteAccess;
@@ -97,17 +132,87 @@ public class Admin {
 			return true;
 		}
 	}
+	
+	public boolean isSiteHide() {
+		if (siteAccess.equals(null)|siteAccess.equals("")) {
+			return true;
+		} else {
+			if (siteAccess.equals(" ")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	
+	public boolean isSiteAdd() {
+		if (siteAccess.equals(null)|siteAccess.equals("")) {
+			return false;
+		} else {
+			if (siteAccess.equals("C") | siteAccess.equals("A")) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	}
+	
+	public boolean isSiteDelete() {
+		if (siteAccess.equals("D") | siteAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 
 	public String getVolunteerAccess() {
 		return volunteerAccess;
 	}
-
+	
 	public void setVolunteerAccess(String volunteerAccess) {
 		this.volunteerAccess = volunteerAccess;
 	}
 	
+	public boolean isVolunteerHide() {
+		if (volunteerAccess.equals(null)|volunteerAccess.equals("")) {
+			return true;
+		} else {
+			if (volunteerAccess.equals(" ")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+
 	public boolean isVolunteerReadOnly() {
 		if (volunteerAccess.equals("C")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
+	public boolean isVolunteerAdd() {
+		if (volunteerAccess.equals(null)|volunteerAccess.equals("")) {
+			return false;
+		} else {
+			if (volunteerAccess.equals("C") | volunteerAccess.equals("A")) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	}
+	
+	public boolean isVolunteerDelete() {
+		if (volunteerAccess.equals("D") | volunteerAccess.equals("C")) {
 			return false;
 		}
 		else {
@@ -121,6 +226,19 @@ public class Admin {
 
 	public void setAdminAccess(String adminAccess) {
 		this.adminAccess = adminAccess;
+	}
+	
+	public boolean isAdminHide() {
+		if (adminAccess.equals(null)|adminAccess.equals("")) {
+			return true;
+		} else {
+			if (adminAccess.equals(" ")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 	}
 	
 	public boolean isAdminReadOnly() {
