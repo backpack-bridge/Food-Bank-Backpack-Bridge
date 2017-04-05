@@ -55,6 +55,8 @@ public class Student {
 	private String frl;
 	private String status;
 	private String parentPermission;
+	private String parentFirstName;
+	private String parentLastName;
 
 	@ManyToOne
 	private Foodsite foodSite;
@@ -141,6 +143,22 @@ public class Student {
 
 	public void setParentPermission(String parentPermission) {
 		this.parentPermission = parentPermission;
+	}
+
+	public String getParentFirstName() {
+		return parentFirstName;
+	}
+
+	public void setParentFirstName(String parentFirstName) {
+		this.parentFirstName = parentFirstName;
+	}
+
+	public String getParentLastName() {
+		return parentLastName;
+	}
+
+	public void setParentLastName(String parentLastName) {
+		this.parentLastName = parentLastName;
 	}
 	}
 

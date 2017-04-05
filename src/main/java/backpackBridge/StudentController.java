@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +27,15 @@ public class StudentController {
 		model.addAttribute("student", allStudents.findOne(id));
 		return "student";
 	}
-	 @PostMapping("/showStudent")
+		@GetMapping("/showStudentEntry")
+	    public String referralForm(Model model) {
+	        model.addAttribute("studentEntry",new Student());
+	        return "studentEntry";
+		
+		}
+	
+	 @PostMapping("/showStudentEntry")
 	    public String studentSubmit(@ModelAttribute Student student) {
-	        return "student";
+	        return "studentEntry";
 }
 }

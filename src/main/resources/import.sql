@@ -14,7 +14,7 @@ INSERT INTO FOODSITE(ID, PROGRAM_NAME, SITE_COORDINATOR_FIRST_NAME, SITE_COORDIN
 
 //Student SQL
 
-INSERT INTO STUDENT(student_id, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status) VALUES(123456,'John', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled' )
+INSERT INTO STUDENT(student_id, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status, parent_first_name, parent_last_name) VALUES(123456,'John', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled', 'john', 'doe')
 
 //Volunteer SQL
 
