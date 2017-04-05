@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 	public class VolunteerController {
 		
 		@Resource
-		public StudentRepository allVolunteers;
+		public VolunteerRepository allVolunteers;
 
 		@RequestMapping("/showVolunteers")
 		public String reviews(Model model) {
