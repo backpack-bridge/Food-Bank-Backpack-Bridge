@@ -25,7 +25,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="#" th:action="@{/showAdmin}" th:object="${admin}" method="post"  id="admin_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -49,7 +49,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-   <input name="Password" placeholder="Password" class="form-control" type="password"
+   <input name="Password" placeholder="Password" class="form-control" type="text"
    th:field="${admin.password}" th:readonly="${admin.adminReadOnly}"/>
     </div>
   </div>
@@ -150,8 +150,12 @@
   <div class="col-md-4">
     <span th:hidden="${admin.adminAdd}"><button type="submit" class="btn btn-warning">
     Send <span class="glyphicon glyphicon-send"></span></button></span>
-    <span th:hidden="${admin.adminDelete}"><button type="submit" class="btn btn-warning" >
-    Delete <span class="glyphicon glyphicon-send"></span></button></span>
+    
+    <span th:hidden="${admin.adminDelete}">
+    	<a th:href="@{/deleteAdmin(id=${admin.id})}"><button type="button" class="btn btn-warning"> 
+    	Delete <span class="glyphicon glyphicon-send"></span></button></a> 
+    </span>
+
   </div>
 </div>
 

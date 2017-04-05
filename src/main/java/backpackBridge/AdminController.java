@@ -24,7 +24,8 @@ public class AdminController {
 	}
 
 	@GetMapping("/showAdmin")
-	public String adminForm(@RequestParam(value = "id", required = false) String id, Model model) {
+	public String adminForm(@RequestParam(value = "id", required = false) 
+		String id, Model model) {
 		if (id == null) {
 			// create an empty Admin object
 			model.addAttribute("admin", new Admin("","","","","","","","",""));
@@ -36,7 +37,17 @@ public class AdminController {
 
 	@PostMapping("/showAdmin")
 	public String adminSubmit(@ModelAttribute Admin admin) {
+		repository.save(admin);
 		return "Administration";
+	}
+
+	@GetMapping("/deleteAdmin")
+	public String adminDelete(@RequestParam(value = "id", required = true) 
+		String id, Model model) {
+		repository.delete(id);
+		model.addAttribute("admins", repository.findAll());
+		model.addAttribute("admin", repository.findOne("ToddisGod"));
+		return "adminList";
 	}
 
 }
