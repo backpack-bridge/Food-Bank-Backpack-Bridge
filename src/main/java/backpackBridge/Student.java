@@ -5,6 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Student {
@@ -12,26 +18,53 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	@NotEmpty
 	private long studentId;
+	@NotEmpty
 	private String firstName;
+	@NotEmpty
 	private String lastName;
+	@NotEmpty
+	@Min(0)
 	private int age;
+	@NotEmpty
+	@Size(min = 2, max = 12)
 	private int grade;
+	@NotEmpty
 	private String teacherName;
+	@NotEmpty
+	@Min(0)
 	private int pplInHouse;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageZeroToFive;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageSixToEleven;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageTwelveToSeventeen;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageEighteenToFiftyNine;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageSixtyPLus;
+	@NotEmpty
 	private String addlNotes;
+	@NotEmpty
 	private String allergies;
+	private String frl;
+	private String status;
+	private String parentPermission;
+	private String parentFirstName;
+	private String parentLastName;
 
 	@ManyToOne
 	private Foodsite foodSite;
 
 	protected Student() {
-
+		
 	}
 
 	public void setId(long id) {
@@ -66,14 +99,6 @@ public class Student {
 		this.pplInHouse = pplInHouse;
 	}
 
-	public String getAddlNotes() {
-		return addlNotes;
-	}
-
-	public void setAddlNotes(String addlNotes) {
-		this.addlNotes = addlNotes;
-	}
-
 	public void setAgeZeroToFive(int ageZeroToFive) {
 		this.ageZeroToFive = ageZeroToFive;
 	}
@@ -94,15 +119,49 @@ public class Student {
 		this.ageSixtyPLus = ageSixtyPLus;
 	}
 
-	public void setFoodSite(Foodsite foodSite) {
-		this.foodSite = foodSite;
-	}
-
-	public String getAllergies() {
-		return allergies;
+	public void setAddlNotes(String addlNotes) {
+		this.addlNotes = addlNotes;
 	}
 
 	public void setAllergies(String allergies) {
 		this.allergies = allergies;
 	}
-}
+
+	public void setFrl(String frl) {
+		this.frl = frl;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setFoodSite(Foodsite foodSite) {
+		this.foodSite = foodSite;
+	}
+
+	public String getParentPermission() {
+		return parentPermission;
+	}
+
+	public void setParentPermission(String parentPermission) {
+		this.parentPermission = parentPermission;
+	}
+
+	public String getParentFirstName() {
+		return parentFirstName;
+	}
+
+	public void setParentFirstName(String parentFirstName) {
+		this.parentFirstName = parentFirstName;
+	}
+
+	public String getParentLastName() {
+		return parentLastName;
+	}
+
+	public void setParentLastName(String parentLastName) {
+		this.parentLastName = parentLastName;
+	}
+	}
+
+	

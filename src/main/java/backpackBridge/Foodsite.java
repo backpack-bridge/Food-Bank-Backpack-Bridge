@@ -4,6 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Foodsite {
@@ -11,25 +17,48 @@ public class Foodsite {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
+	@NotEmpty
 	private String program_name;
+	@NotEmpty
 	private String site_coordinator_first_name;
+	@NotEmpty
 	private String site_coordinator_last_name;
+	@NotEmpty
 	private String phone_number;
+	@NotEmpty
+	@Email
 	private String e_mail;
+	@NotEmpty
 	private String executive_director_first;
+	@NotEmpty
 	private String executive_director_last;
+	@NotEmpty
 	private String county_of_program;
+	@NotEmpty
 	private String school_district;
+	@NotEmpty
 	private String mid_ohio_primary_contact_first;
+	@NotEmpty
 	private String mid_ohio_primary_contact_last;
+	@NotEmpty
 	private String address;
+	@NotEmpty
 	private String active;
+	@NotEmpty
 	private String start_date;
+	@NotEmpty
 	private String calender_ID;
+	@NotEmpty
+	@Min(0)
 	private String number_of_kids_served;
+	@NotEmpty
+	@Min(0)
 	private String number_of_volunteers_enlisted;
+	@NotEmpty
 	private String site_with_allergies;
+	@NotEmpty
 	private String drop_off_area_description;
+	@NotEmpty
 	private String distribution_area_description;
 
 	protected Foodsite() {
@@ -159,7 +188,7 @@ public class Foodsite {
 	/**
 	 * @return the exexutive_director_first
 	 */
-	public String getExexutive_director_first() {
+	public String getExecutive_director_first() {
 		return executive_director_first;
 	}
 
@@ -167,14 +196,14 @@ public class Foodsite {
 	 * @param exexutive_director_first
 	 *            the exexutive_director_first to set
 	 */
-	public void setExexutive_director_first(String exexutive_director_first) {
+	public void setExecutive_director_first(String exexutive_director_first) {
 		this.executive_director_first = exexutive_director_first;
 	}
 
 	/**
 	 * @return the exexutive_director_last
 	 */
-	public String getExexutive_director_last() {
+	public String getExecutive_director_last() {
 		return executive_director_last;
 	}
 

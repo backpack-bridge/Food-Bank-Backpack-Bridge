@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Volunteer {
@@ -12,15 +17,27 @@ public class Volunteer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	@NotEmpty
 	private String firstName;
+	@NotEmpty
 	private String lastName;
+	@NotEmpty
+	@Min(0)
 	private int age;
+	@NotEmpty
 	private String gender;
+	@NotEmpty
 	private String streetAddress;
+	@NotEmpty
 	private String city;
+	@NotEmpty
 	private String state;
+	@NotEmpty
 	private String zip;
+	@NotEmpty
 	private String phoneNum;
+	@NotEmpty
+	@Email
 	private String email;
 
 	@ManyToOne

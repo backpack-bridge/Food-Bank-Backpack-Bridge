@@ -4,6 +4,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,7 @@ public class AdminController {
 	}
 
 	@GetMapping("/showAdmin")
+
 	public String adminForm(@RequestParam(value = "id", required = false) 
 		String id, Model model) {
 		if (id == null) {
@@ -61,5 +63,4 @@ public class AdminController {
 		model.addAttribute("admin", repository.findOne("ToddisGod"));
 		return "adminList";
 	}
-
 }
