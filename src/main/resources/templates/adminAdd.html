@@ -29,7 +29,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Welcome Sign On Administrator</legend>
+<legend>Sign On Add Screen</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -37,8 +37,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-   <input name="Id" placeholder="Sign On Id" class="form-control" type="text"
-   th:field="${admin.id}" th:readonly="${admin.adminReadOnly}"/>
+   <input name="Id" placeholder="Sign On Id" class="form-control" type="text"/>
     </div>
   </div>
 </div>
@@ -49,20 +48,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-   <input name="Password" placeholder="Password" class="form-control" type="text"
-   th:field="${admin.password}" th:readonly="${admin.adminReadOnly}"/>
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Password Change Date</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-   <input name="Password_Date" placeholder="Password Change Date" class="form-control" type="text"
-   th:field="${admin.passwordDate}" readonly="readonly"/>
+   <input name="Password" placeholder="Password" class="form-control" type="text"/>
     </div>
   </div>
 </div>
@@ -73,8 +59,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-     <input name="Student_Access" placeholder="Student Access" class="form-control" type="text"
-     th:field="${admin.studentAccess}" th:readonly="${admin.adminReadOnly}"/>
+     <input name="studentAccess" placeholder="Student Access" class="form-control" type="text"/>
     </div>
   </div>
 </div>
@@ -85,12 +70,10 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-     <input name="Site_Access" placeholder="Site Access" class="form-control" type="text"
-     th:field="${admin.siteAccess}" th:readonly="${admin.adminReadOnly}"/>
+     <input name="siteAccess" placeholder="Site Access" class="form-control" type="text"/>
     </div>
   </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group">
@@ -98,8 +81,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-     <input name="Volunteer_Access" placeholder="Volunteer Access" class="form-control" type="text"
-     th:field="${admin.volunteerAccess}" th:readonly="${admin.adminReadOnly}"/>
+     <input name="volunteerAccess" placeholder="Volunteer Access" class="form-control" type="text"/>
     </div>
   </div>
 </div>
@@ -109,8 +91,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="Admin_Access" placeholder="Administration Access" class="form-control" type="text"
-  th:field="${admin.adminAccess}" th:readonly="${admin.adminReadOnly}"/>
+  <input name="adminAccess" placeholder="Administration Access" class="form-control" type="text"/>
     </div>
   </div>
 </div>
@@ -120,36 +101,10 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="referal_Access" placeholder="Referal Access" class="form-control" type="text"
-  th:field="${admin.referalAccess}" th:readonly="${admin.referalReadOnly}"/>
+  <input name="referalAccess" placeholder="Referal Access" class="form-control" type="text"/>
     </div>
   </div>
 </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" >Administration Change Date</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input name="Change_Date" placeholder="Administration Change Date" class="form-control" type="text"
-  th:field="${admin.changeDate}" readonly="readonly"/>
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-       <div class="form-group">
-  <label class="col-md-4 control-label">Administration Change Id</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="Change_Id" placeholder="Administration Change Id" class="form-control" type="text"
-  th:field="${admin.changeId}" readonly="readonly"/>
-    </div>
-  </div>
-</div>
-
 
 <!-- Success message -->
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thank you, your form has been sent to the database.</div>
@@ -158,14 +113,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <span th:hidden="${admin.adminAdd}"><button type="submit" class="btn btn-warning">
-    Send <span class="glyphicon glyphicon-send"></span></button></span>
-    
-    <span th:hidden="${admin.adminDelete}">
-    	<a th:href="@{/deleteAdmin(id=${admin.id})}"><button type="button" class="btn btn-warning"> 
-    	Delete <span class="glyphicon glyphicon-send"></span></button></a> 
-    </span>
-
+    <button type="submit" class="btn btn-warning">
+    Send <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
 

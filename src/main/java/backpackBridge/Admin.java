@@ -25,6 +25,8 @@ public class Admin {
 	private String volunteerAccess;
 
 	private String adminAccess;
+	
+	private String referalAccess;
 
 	private String changeDate;
 
@@ -39,7 +41,7 @@ public class Admin {
 	}
 
 	public Admin(String id, String password, String passwordDate, String studentAccess, String siteAccess,
-			String volunteerAccess, String adminAccess, String changeDate, String changeId) {
+			String volunteerAccess, String adminAccess, String referalAccess, String changeDate, String changeId) {
 		this.id = id;
 		this.password = password;
 		this.passwordDate = passwordDate;
@@ -47,10 +49,11 @@ public class Admin {
 		this.siteAccess = siteAccess;
 		this.volunteerAccess = volunteerAccess;
 		this.adminAccess = adminAccess;
+		this.referalAccess = referalAccess;
 		this.changeDate = changeDate;
 		this.changeId = changeId;
 	}
-
+	
 	public String getId() {
 		return id;
 	}
@@ -265,6 +268,61 @@ public class Admin {
 
 	public boolean isAdminDelete() {
 		if (adminAccess.equals("D") | adminAccess.equals("C")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public String getReferalAccess() {
+		return referalAccess;
+	}
+
+	public void setReferalAccess(String referalAccess) {
+		this.referalAccess = referalAccess;
+	}
+  
+	public boolean isReferalHide() {
+		if (referalAccess.equals(null)|referalAccess.equals("")) {
+			return true;
+		} else {
+			if (referalAccess.equals(" ")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	
+	public boolean isReferalReadOnly() {
+		if (referalAccess.equals(null)|referalAccess.equals("")) {
+			return false;
+		} else {
+			if (referalAccess.equals("C") | referalAccess.equals("A")) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	}
+	
+	public boolean isReferalAdd() {
+		if (referalAccess.equals(null)|referalAccess.equals("")) {
+			return false;
+		} else {
+			if (referalAccess.equals("C") | referalAccess.equals("A")) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	}
+	
+	public boolean isReferalDelete() {
+		if (referalAccess.equals("D") | referalAccess.equals("C")) {
 			return false;
 		} else {
 			return true;
