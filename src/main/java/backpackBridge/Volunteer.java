@@ -17,24 +17,24 @@ public class Volunteer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	@NotNull
+	@NotEmpty
 	private String firstName;
-	@NotNull
+	@NotEmpty
 	private String lastName;
-	@NotNull
+	@NotEmpty
 	@Min(0)
 	private int age;
-	@NotNull
+	@NotEmpty
 	private String gender;
-	@NotNull
+	@NotEmpty
 	private String streetAddress;
-	@NotNull
+	@NotEmpty
 	private String city;
-	@NotNull
+	@NotEmpty
 	private String state;
-	@NotNull
+	@NotEmpty
 	private String zip;
-	@NotNull
+	@NotEmpty
 	private String phoneNum;
 	@NotEmpty
 	@Email

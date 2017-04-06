@@ -1,6 +1,7 @@
 package backpackBridge;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +20,13 @@ public class AdminController {
 	@RequestMapping("/showAdmins")
 	public String admins(Model model) {
 		model.addAttribute("admins", repository.findAll());
+
 		model.addAttribute("admin", repository.findOne("ToddisGod"));
 		return "adminList";
 	}
 
 	@GetMapping("/showAdmin")
+
 	public String adminForm(@RequestParam(value = "id", required = false) 
 		String id, Model model) {
 		if (id == null) {
@@ -37,6 +40,7 @@ public class AdminController {
 
 	@PostMapping("/showAdmin")
 	public String adminSubmit(@ModelAttribute Admin admin) {
+
 		repository.save(admin);
 		return "Administration";
 	}
@@ -49,5 +53,4 @@ public class AdminController {
 		model.addAttribute("admin", repository.findOne("ToddisGod"));
 		return "adminList";
 	}
-
 }

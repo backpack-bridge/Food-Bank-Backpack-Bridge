@@ -3,10 +3,10 @@ jQuery(document).ready(function() {
 	
 
 	$.backstretch([
-                   "assets/img/backgrounds/1.jpg"
-                 , "assets/img/backgrounds/2.jpg"
-                 , "assets/img/backgrounds/3.jpg"
-                 , "assets/img/backgrounds/4.jpg"
+                   "img/backgrounds/1.jpg"
+                 , "img/backgrounds/2.jpg"
+                 , "img/backgrounds/3.jpg"
+                 , "img/backgrounds/4.jpg"
                 ], {duration: 4000, fade: 1250});
     
     $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
