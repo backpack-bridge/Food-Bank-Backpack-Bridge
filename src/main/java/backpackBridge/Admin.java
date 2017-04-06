@@ -5,27 +5,29 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Admin {
 
 	@Id
+	@NotEmpty
 	private String id;
-	@NotNull
+	@NotEmpty
 	private String password;
-	@NotNull
-	@Past
+
 	private String passwordDate;
-	@NotNull
+
 	private String studentAccess;
-	@NotNull
+
 	private String siteAccess;
-	@NotNull
+
 	private String volunteerAccess;
-	@NotNull
+
 	private String adminAccess;
-	@NotNull
+
 	private String changeDate;
-	@NotNull
+
 	private String changeId;
 
 	protected Admin() {

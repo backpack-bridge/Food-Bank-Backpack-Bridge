@@ -6,6 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Foodsite {
@@ -13,47 +17,48 @@ public class Foodsite {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
-	@NotNull
+	@NotEmpty
 	private String program_name;
-	@NotNull
+	@NotEmpty
 	private String site_coordinator_first_name;
-	@NotNull
+	@NotEmpty
 	private String site_coordinator_last_name;
-	@NotNull
+	@NotEmpty
 	private String phone_number;
-	@NotNull
+	@NotEmpty
+	@Email
 	private String e_mail;
-	@NotNull
+	@NotEmpty
 	private String executive_director_first;
-	@NotNull
+	@NotEmpty
 	private String executive_director_last;
-	@NotNull
+	@NotEmpty
 	private String county_of_program;
-	@NotNull
+	@NotEmpty
 	private String school_district;
-	@NotNull
+	@NotEmpty
 	private String mid_ohio_primary_contact_first;
-	@NotNull
+	@NotEmpty
 	private String mid_ohio_primary_contact_last;
-	@NotNull
+	@NotEmpty
 	private String address;
-	@NotNull
+	@NotEmpty
 	private String active;
-	@NotNull
+	@NotEmpty
 	private String start_date;
-	@NotNull
+	@NotEmpty
 	private String calender_ID;
-	@NotNull
+	@NotEmpty
 	@Min(0)
 	private String number_of_kids_served;
-	@NotNull
+	@NotEmpty
 	@Min(0)
 	private String number_of_volunteers_enlisted;
-	@NotNull
+	@NotEmpty
 	private String site_with_allergies;
-	@NotNull
+	@NotEmpty
 	private String drop_off_area_description;
-	@NotNull
+	@NotEmpty
 	private String distribution_area_description;
 
 	protected Foodsite() {
