@@ -47,6 +47,78 @@ public class Student {
 		this.studentId = studentId;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public long getStudentId() {
+		return studentId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public String getTeacherName() {
+		return teacherName;
+	}
+
+	public int getPplInHouse() {
+		return pplInHouse;
+	}
+
+	public int getAgeZeroToFive() {
+		return ageZeroToFive;
+	}
+
+	public int getAgeSixToEleven() {
+		return ageSixToEleven;
+	}
+
+	public int getAgeTwelveToSeventeen() {
+		return ageTwelveToSeventeen;
+	}
+
+	public int getAgeEighteenToFiftyNine() {
+		return ageEighteenToFiftyNine;
+	}
+
+	public int getAgeSixtyPLus() {
+		return ageSixtyPLus;
+	}
+
+	public String getAddlNotes() {
+		return addlNotes;
+	}
+
+	public String getAllergies() {
+		return allergies;
+	}
+
+	public String getFrl() {
+		return frl;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public Foodsite getFoodSite() {
+		return foodSite;
+	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

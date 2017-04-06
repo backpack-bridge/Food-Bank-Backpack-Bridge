@@ -36,6 +36,7 @@ public class StudentController {
 	
 	 @PostMapping("/showStudentEntry")
 	    public String studentSubmit(@ModelAttribute Student student) {
-	        return "studentEntry";
+	     allStudents.save(student); 
+		 return "studentEntry";
 }
 }
