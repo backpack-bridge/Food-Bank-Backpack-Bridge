@@ -39,6 +39,16 @@ public class Admin {
 		this.changeDate = changeDate;
 		this.changeId = changeId;
 	}
+	
+//	public Admin(String id, String password, String studentAccess, 
+//			String siteAccess, String volunteerAccess, String adminAccess) {
+//		this.id = id;
+//		this.password = password;
+//		this.studentAccess = studentAccess;
+//		this.siteAccess = siteAccess;
+//		this.volunteerAccess = volunteerAccess;
+//		this.adminAccess = adminAccess;
+//	}
 
 	public String getId() {
 		return id;
