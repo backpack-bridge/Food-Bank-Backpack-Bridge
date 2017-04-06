@@ -44,7 +44,7 @@ public class LoginController {
 
 		if (password != null) {
 			if (password == adminvalue.getPassword()) {
-				return "welcome_login_screen";
+				return "welcome_screen";
 			} else {
 				return "error-login";
 			}
