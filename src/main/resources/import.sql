@@ -1,11 +1,13 @@
 // initializing administration records
 
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisGod', 'godaccess', '03/30/2017', 'C', 'C', 'C', 'C', 'C', '03/30/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisNotGod', 'toddaccess', '03/31/2017', 'V', 'V', 'V', 'V', 'V', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisSite', 'siteaccess', '03/31/2017', 'V', 'C', 'C', 'V', 'V', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisStudent', 'studentaccess', '03/31/2017', 'C', 'V', 'V', 'V', 'V', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisVolunteer', 'volunteeraccess', '03/31/2017', 'V', 'V', 'C', 'V', 'V', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisAdmin', 'adminaccess', '03/31/2017', 'V', 'V', 'V', 'C', 'V', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisGod', 'godaccess', '03/30/2017', 'C', 'C', 'C', 'C', '03/30/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisNotGod', 'toddaccess', '03/31/2017', '', '', '', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisSite', 'siteaccess', '03/31/2017', '', 'C', 'C', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisStudent', 'studentaccess', '03/31/2017', 'C', '', '', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisVolunteer', 'volunteeraccess', '03/31/2017', '', '', 'C', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisAdmin', 'adminaccess', '03/31/2017', '', '', '', 'C', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('EricisDemiGod', 'DemiGod', '04/17/1989', 'C', '', '', 'C', '03/31/2017', 'ToddisGod')
+
 
 // Foodsite SQL
 
