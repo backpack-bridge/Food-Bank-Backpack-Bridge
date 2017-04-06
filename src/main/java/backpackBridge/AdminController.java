@@ -35,7 +35,7 @@ public class AdminController {
 		String id, Model model) {
 		if (id == null) {
 			// create an empty Admin object
-			model.addAttribute("admin", new Admin("","","","","","","","",""));
+			model.addAttribute("admin", new Admin("","","","","","","","","",""));
 			return "adminAdd";
 		} else {
 			model.addAttribute("admin", repository.findOne(id));
