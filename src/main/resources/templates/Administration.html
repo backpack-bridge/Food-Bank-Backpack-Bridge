@@ -104,7 +104,6 @@
   </div>
 </div>
 
-
 <div class="form-group">
   <label class="col-md-4 control-label">Administration Access</label>  
   <div class="col-md-4 inputGroupContainer">
@@ -112,6 +111,17 @@
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="Admin_Access" placeholder="Administration Access" class="form-control" type="text"
   th:field="${admin.adminAccess}" th:readonly="${admin.adminReadOnly}"/>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Referal Access</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="referal_Access" placeholder="Referal Access" class="form-control" type="text"
+  th:field="${admin.referalAccess}" th:readonly="${admin.referalReadOnly}"/>
     </div>
   </div>
 </div>
