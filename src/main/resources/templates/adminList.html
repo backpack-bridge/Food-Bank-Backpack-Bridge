@@ -24,7 +24,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action="http://localhost:8080/showAdmin" method="post"  id="contact_form">
+    <form class="well form-horizontal" action="/showAdmin" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -47,7 +47,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <span th:hidden="${admin.adminAdd}">
+    <span th:hidden="${signon.adminAdd}">
     	<a th:href="@{/showAdmin}"><button type="button" class="btn btn-warning">
     	Add <span class="glyphicon glyphicon-send"></span></button></a>
      </span>
