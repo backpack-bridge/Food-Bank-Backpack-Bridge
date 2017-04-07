@@ -17,13 +17,13 @@ public class StudentController {
 	public StudentRepository allStudents;
 
 	@RequestMapping("/showStudents")
-	public String reviews(Model model) {
+	public String students(Model model) {
 		model.addAttribute("students", allStudents.findAll());
 		return "students";
 	}
 
 	@RequestMapping("/showStudent")
-	public String review(@RequestParam("id") Long id, Model model) {
+	public String student(@RequestParam("id") Long id, Model model) {
 		model.addAttribute("student", allStudents.findOne(id));
 		return "student";
 	}

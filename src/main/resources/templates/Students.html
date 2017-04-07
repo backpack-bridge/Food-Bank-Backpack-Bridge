@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Site Coordinator Form</title>
+    <title>Student List</title>
   <meta name="author" content="name"/>
   <meta name="description" content="Web Form for the site Coordinator to fill out and add data to the database."/>
   <meta name="keywords" content="Mid Ohio, Foodbank, Site, Coordinator"/>
@@ -33,7 +33,7 @@
 <p th:each="student: ${students}">
 <div class="col-md-6 form-group">
   <label class=" control-label">Student's Name</label>
-  <a th:href="@{http>://localhost:8080/showstudent(id=${student.id})}">  
+  <a th:href="@{http>://localhost:8080/showStudent(id=${student.id})}">  
   <button type="button" th:text ="${student.firstName} + ' ' + ${student.lastName}"></button></a>
   </div>
   </p>

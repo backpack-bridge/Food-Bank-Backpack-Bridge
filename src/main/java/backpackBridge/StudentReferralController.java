@@ -13,24 +13,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class StudentReferralController {
 
 	@Resource
-	public StudentRepository allStudents;
+	public StudentReferralRepository newStudents;
 
-	
-		
-	// @RequestMapping("/studentStudents")
-	   // public String student(@RequestParam("id") Long id, Model model) {
-	    	//model.addAttribute("students", allStudents.findAll());
-	    	//model.addAttribute("students", allStudents.findOne(id));
-	        //return "studentList";
-	// }
-	        
-	@GetMapping("/showStudentReferral")
-    public String referralForm(Model model) {
-        model.addAttribute("studentReferral", new StudentReferral());
-        return "studentReferral";
+	@RequestMapping("/showNewStudents")
+	public String student(@RequestParam("id") Long id, Model model) {
+		model.addAttribute("newStudents", newStudents.findAll());
+		model.addAttribute("newStudent", newStudents.findOne(id));
+		return "newStudent";
 	}
+
+	@GetMapping("/showStudentReferral")
+	public String referralForm(Model model) {
+		model.addAttribute("studentReferral", new StudentReferral());
+		return "studentReferral";
+	}
+
 	@PostMapping("/showStudentReferral")
-	public String studentSubmit(@ModelAttribute Student StudentReferral) {
+	public String studentSubmit(@ModelAttribute StudentReferral StudentReferral) {
 		return "studentReferral";
 	}
 }
