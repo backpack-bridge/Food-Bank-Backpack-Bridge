@@ -20,17 +20,21 @@ public class AdminController {
 	@Resource
 	private AdminRepository repository;
 	
-	private String signonId = "ToddisGod";
+	@Resource
+	private SignOn signon;
 
 	@RequestMapping("/showAdmins")
 	public String admins(Model model) {
 		model.addAttribute("admins", repository.findAll());
-		model.addAttribute("admin", repository.findOne(signonId));
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		return "adminList";
 	}
 
 	@GetMapping("/showAdmin")
 	public String adminForm(@RequestParam(value = "id", required = false) String id, Model model) {
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		if (id == null) {
 			// create an empty Admin object
 
@@ -44,7 +48,8 @@ public class AdminController {
 
 	@PostMapping("/showAdmin")
 	public String adminSubmit(@ModelAttribute Admin admin) {
-		admin.setChangeId(signonId);
+		Admin currentSignon = signon.getCurrentUser();
+		admin.setChangeId(currentSignon.getId());
 		Date dNow = new Date();
 	      SimpleDateFormat ft = 
 	      new SimpleDateFormat ("MM/dd/yyyy");
@@ -58,7 +63,8 @@ public class AdminController {
 	public String adminDelete(@RequestParam(value = "id", required = true) String id, Model model) {
 		repository.delete(id);
 		model.addAttribute("admins", repository.findAll());
-		model.addAttribute("admin", repository.findOne("ToddisGod"));
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		return "adminList";
 	}
 }

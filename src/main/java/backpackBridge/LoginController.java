@@ -9,20 +9,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Controller
 public class LoginController {
-	// extends WebMvcConfigurerAdapter {
-
+	
 	@Resource
 	private AdminRepository adminRepository;
 
-	// @Override
-	// public void addViewControllers(ViewControllerRegistry loginregistry) {
-	// loginregistry.addViewController("/welcome_login_screen").setViewName("welcome_login_screen");
-	// }
+	@Resource
+	private SignOn signOn;
 
 	@GetMapping("/login-form")
 	public String showLogin(Admin adminvalue) {
@@ -31,25 +26,23 @@ public class LoginController {
 
 	@PostMapping("/login-form")
 	public String checkPersonInfo(@RequestParam(value = "id") String id,
-			@RequestParam(value = "password") String password, @Valid Admin adminvalue, BindingResult bindingResult,
-			Model model) {
+			@RequestParam(value = "password") String password,  Model model) {
 
-		if (id != null) {
-			model.addAttribute("admin", adminRepository.findOne(id));
-		}
-
-		if (bindingResult.hasErrors()) {
+		if (id == null || password == null) {
 			return "error-login";
 		}
-
-		if (password != null) {
-			if (password == adminvalue.getPassword()) {
-				return "welcome_screen";
-			} else {
-				return "error-login";
-			}
+		
+		Admin adminValue = adminRepository.findOne(id);
+		if (adminValue == null) {
+			return "error-login";
 		}
+		model.addAttribute("admin", adminValue);
+		
+		if (password.equals(adminValue.getPassword())) {
+			signOn.setCurrentUser(adminValue);
+			return "welcome_screen";
+		} 
+		
 		return "error-login";
-
 	}
 }
