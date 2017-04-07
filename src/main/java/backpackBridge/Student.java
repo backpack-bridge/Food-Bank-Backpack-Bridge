@@ -11,7 +11,7 @@ public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	private long studentId;
 	private String firstName;
 	private String lastName;
@@ -47,11 +47,11 @@ public class Student {
 		this.studentId = studentId;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public long getStudentId() {
+	public Long getStudentId() {
 		return studentId;
 	}
 
