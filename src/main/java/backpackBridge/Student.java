@@ -17,6 +17,7 @@ public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private long id;
 	@NotEmpty
 	private long studentId;
@@ -79,7 +80,7 @@ public class Student {
 		return id;
 	}
 
-	public long getStudentId() {
+	public Long getStudentId() {
 		return studentId;
 	}
 
