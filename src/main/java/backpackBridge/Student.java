@@ -5,26 +5,55 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+
+	private long id;
+	@NotEmpty
 	private long studentId;
+	@NotEmpty
 	private String firstName;
+	@NotEmpty
 	private String lastName;
+	@NotEmpty
+	@Min(0)
 	private int age;
+	@NotEmpty
+	@Size(min = 2, max = 12)
 	private int grade;
+	@NotEmpty
 	private String teacherName;
+	@NotEmpty
+	@Min(0)
 	private int pplInHouse;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageZeroToFive;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageSixToEleven;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageTwelveToSeventeen;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageEighteenToFiftyNine;
+	@NotEmpty
+	@Size(min = 0)
 	private int ageSixtyPLus;
+	@NotEmpty
 	private String addlNotes;
+	@NotEmpty
 	private String allergies;
 	private String frl;
 	private String status;
@@ -47,7 +76,7 @@ public class Student {
 		this.studentId = studentId;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 

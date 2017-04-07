@@ -3,32 +3,43 @@ package backpackBridge;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Admin {
-	
+
 	@Id
+	@NotEmpty
 	private String id;
+	@NotEmpty
 	private String password;
+
 	private String passwordDate;
+
 	private String studentAccess;
+
 	private String siteAccess;
+
 	private String volunteerAccess;
+
 	private String adminAccess;
+
+	private String referalAccess;
+
 	private String changeDate;
+
 	private String changeId;
-	
-	
+
 	protected Admin() {
 	}
-	
+
 	public Admin(String id, String password) {
 		this.id = id;
 		this.password = password;
 	}
-	
-	public Admin(String id, String password, String passwordDate,
-			String studentAccess, String siteAccess, String volunteerAccess,
-			String adminAccess, String changeDate, String changeId) {
+
+	public Admin(String id, String password, String passwordDate, String studentAccess, String siteAccess,
+			String volunteerAccess, String adminAccess, String referalAccess, String changeDate, String changeId) {
 		this.id = id;
 		this.password = password;
 		this.passwordDate = passwordDate;
@@ -36,6 +47,7 @@ public class Admin {
 		this.siteAccess = siteAccess;
 		this.volunteerAccess = volunteerAccess;
 		this.adminAccess = adminAccess;
+		this.referalAccess = referalAccess;
 		this.changeDate = changeDate;
 		this.changeId = changeId;
 	}
@@ -71,12 +83,43 @@ public class Admin {
 	public void setStudentAccess(String studentAccess) {
 		this.studentAccess = studentAccess;
 	}
-	
+
 	public boolean isStudentReadOnly() {
 		if (studentAccess.equals("C")) {
 			return false;
+		} else {
+			return true;
 		}
-		else {
+	}
+
+	public boolean isStudentHide() {
+		if (studentAccess.equals(null) | studentAccess.equals("")) {
+			return true;
+		} else {
+			if (studentAccess.equals(" ")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+	public boolean isStudentAdd() {
+		if (studentAccess.equals(null) | studentAccess.equals("")) {
+			return false;
+		} else {
+			if (studentAccess.equals("C") | studentAccess.equals("A")) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	}
+
+	public boolean isStudentDelete() {
+		if (studentAccess.equals("D") | studentAccess.equals("C")) {
+			return false;
+		} else {
 			return true;
 		}
 	}
@@ -88,12 +131,43 @@ public class Admin {
 	public void setSiteAccess(String siteAccess) {
 		this.siteAccess = siteAccess;
 	}
-	
+
 	public boolean isSiteReadOnly() {
 		if (siteAccess.equals("C")) {
 			return false;
+		} else {
+			return true;
 		}
-		else {
+	}
+
+	public boolean isSiteHide() {
+		if (siteAccess.equals(null) | siteAccess.equals("")) {
+			return true;
+		} else {
+			if (siteAccess.equals(" ")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+	public boolean isSiteAdd() {
+		if (siteAccess.equals(null) | siteAccess.equals("")) {
+			return false;
+		} else {
+			if (siteAccess.equals("C") | siteAccess.equals("A")) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	}
+
+	public boolean isSiteDelete() {
+		if (siteAccess.equals("D") | siteAccess.equals("C")) {
+			return false;
+		} else {
 			return true;
 		}
 	}
@@ -105,12 +179,43 @@ public class Admin {
 	public void setVolunteerAccess(String volunteerAccess) {
 		this.volunteerAccess = volunteerAccess;
 	}
-	
+
+	public boolean isVolunteerHide() {
+		if (volunteerAccess.equals(null) | volunteerAccess.equals("")) {
+			return true;
+		} else {
+			if (volunteerAccess.equals(" ")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
 	public boolean isVolunteerReadOnly() {
 		if (volunteerAccess.equals("C")) {
 			return false;
+		} else {
+			return true;
 		}
-		else {
+	}
+
+	public boolean isVolunteerAdd() {
+		if (volunteerAccess.equals(null) | volunteerAccess.equals("")) {
+			return false;
+		} else {
+			if (volunteerAccess.equals("C") | volunteerAccess.equals("A")) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	}
+
+	public boolean isVolunteerDelete() {
+		if (volunteerAccess.equals("D") | volunteerAccess.equals("C")) {
+			return false;
+		} else {
 			return true;
 		}
 	}
@@ -122,30 +227,99 @@ public class Admin {
 	public void setAdminAccess(String adminAccess) {
 		this.adminAccess = adminAccess;
 	}
-	
+
+	public boolean isAdminHide() {
+		if (adminAccess.equals(null) | adminAccess.equals("")) {
+			return true;
+		} else {
+			if (adminAccess.equals(" ")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
 	public boolean isAdminReadOnly() {
-		if (adminAccess.equals("C") | adminAccess.equals("A")) {
+		if (adminAccess.equals(null) | adminAccess.equals("")) {
 			return false;
-		}
-		else {
-			return true;
+		} else {
+			if (adminAccess.equals("C") | adminAccess.equals("A")) {
+				return false;
+			} else {
+				return true;
+			}
 		}
 	}
-	
+
 	public boolean isAdminAdd() {
-		if (adminAccess.equals("A") | adminAccess.equals("C")) {
+		if (adminAccess.equals(null) | adminAccess.equals("")) {
 			return false;
-		}
-		else {
-			return true;
+		} else {
+			if (adminAccess.equals("C") | adminAccess.equals("A")) {
+				return false;
+			} else {
+				return true;
+			}
 		}
 	}
-	
+
 	public boolean isAdminDelete() {
 		if (adminAccess.equals("D") | adminAccess.equals("C")) {
 			return false;
+		} else {
+			return true;
 		}
-		else {
+	}
+
+	public String getReferalAccess() {
+		return referalAccess;
+	}
+
+	public void setReferalAccess(String referalAccess) {
+		this.referalAccess = referalAccess;
+	}
+
+	public boolean isReferalHide() {
+		if (referalAccess.equals(null) | referalAccess.equals("")) {
+			return true;
+		} else {
+			if (referalAccess.equals(" ")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+	public boolean isReferalReadOnly() {
+		if (referalAccess.equals(null) | referalAccess.equals("")) {
+			return false;
+		} else {
+			if (referalAccess.equals("C") | referalAccess.equals("A")) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	}
+
+	public boolean isReferalAdd() {
+		if (referalAccess.equals(null) | referalAccess.equals("")) {
+			return false;
+		} else {
+			if (referalAccess.equals("C") | referalAccess.equals("A")) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	}
+
+	public boolean isReferalDelete() {
+		if (referalAccess.equals("D") | referalAccess.equals("C")) {
+			return false;
+		} else {
 			return true;
 		}
 	}
@@ -165,7 +339,5 @@ public class Admin {
 	public void setChangeId(String changeId) {
 		this.changeId = changeId;
 	}
-
-	
 
 }

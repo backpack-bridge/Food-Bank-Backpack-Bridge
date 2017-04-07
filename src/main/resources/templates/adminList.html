@@ -24,7 +24,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="http://localhost:8080/showAdmin" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -38,7 +38,7 @@
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
    <input  name="Id" placeholder="Sign On Id" class="form-control"  type="text">  -->
    <p th:each="admin: ${admins}"><a th:text="${admin.id} + ' ' + ${admin.changeDate}"
-   th:href="@{http://localhost:8080/showAdmin(id=${admin.id})}" /></p>
+   th:href="@{/showAdmin(id=${admin.id})}" /></p>
     </div>
   </div>
 </div>
@@ -47,8 +47,10 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <span th:hidden="${admin.adminAdd}"><button type="submit" class="btn btn-warning"
-    href="/showAdmin"> Add <span class="glyphicon glyphicon-send"></span></button></span>
+    <span th:hidden="${admin.adminAdd}">
+    	<a th:href="@{/showAdmin}"><button type="button" class="btn btn-warning">
+    	Add <span class="glyphicon glyphicon-send"></span></button></a>
+     </span>
   </div>
 </div>
 
