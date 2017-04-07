@@ -5,9 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -64,14 +61,19 @@ public class Foodsite {
 	protected Foodsite() {
 	}
 
+	public Foodsite(String id, String program_name) {
+		this.id = id;
+		this.program_name = program_name;
+	}
+
 	public Foodsite(String id, String program_name, String site_coordinator_first_name,
 			String site_coordinator_last_name, String phone_number, String e_mail, String executive_director_first,
 			String executive_director_last, String county_of_program, String school_district,
 			String mid_ohio_primary_contact_first, String mid_ohio_primary_contact_last, String address, String active,
 			String start_date, String calender_ID, String number_of_kids_served, String number_of_volunteers_enlisted,
 			String site_with_allergies, String drop_off_area_description, String distribution_area_description) {
+		// 21
 		this.id = id;
-
 		this.program_name = program_name;
 		this.site_coordinator_first_name = site_coordinator_first_name;
 		this.site_coordinator_last_name = site_coordinator_last_name;
