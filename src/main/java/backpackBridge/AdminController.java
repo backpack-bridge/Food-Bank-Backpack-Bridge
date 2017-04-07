@@ -19,7 +19,7 @@ public class AdminController {
 
 	@Resource
 	private AdminRepository repository;
-	
+
 	private String signonId = "ToddisGod";
 
 	@RequestMapping("/showAdmins")
@@ -33,8 +33,7 @@ public class AdminController {
 	public String adminForm(@RequestParam(value = "id", required = false) String id, Model model) {
 		if (id == null) {
 			// create an empty Admin object
-
-			model.addAttribute("admin", new Admin("","","","","","","","","",""));
+			model.addAttribute("admin", new Admin("", "", "", "", "", "", "", "", "", ""));
 			return "adminAdd";
 		} else {
 			model.addAttribute("admin", repository.findOne(id));
@@ -46,10 +45,9 @@ public class AdminController {
 	public String adminSubmit(@ModelAttribute Admin admin) {
 		admin.setChangeId(signonId);
 		Date dNow = new Date();
-	      SimpleDateFormat ft = 
-	      new SimpleDateFormat ("MM/dd/yyyy");
-	      admin.setChangeDate(ft.format(dNow));
-	      admin.setPasswordDate(ft.format(dNow));
+		SimpleDateFormat ft = new SimpleDateFormat("MM/dd/yyyy");
+		admin.setChangeDate(ft.format(dNow));
+		admin.setPasswordDate(ft.format(dNow));
 		repository.save(admin);
 		return "Administration";
 	}

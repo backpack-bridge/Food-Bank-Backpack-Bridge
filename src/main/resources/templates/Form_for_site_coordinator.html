@@ -48,7 +48,7 @@
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
   
 <form action="#" th:action="@{/site}" th:object="${site}" method="post">
-      <p><input name="program_name"  class="form-control" type="text" th:field="${program_name}"  placeholder="Enter Program Name Here" /></p>
+      <p><input name="program_name"  class="form-control" type="text" th:field="${site.program_name}"  placeholder="Enter Program Name Here" /></p>
 </form>
     </div>
   </div>
@@ -61,7 +61,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input  name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text"/>
+  <input name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -74,7 +74,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name_site_coordinator" placeholder="First Name of Site Coordinator" class="form-control"  type="text"/>
+  <input  name="first_name_site_coordinator" placeholder="First Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -86,7 +86,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name_site_coordinator" placeholder="Last Name of Site Coordinator" class="form-control"  type="text"/>
+  <input name="last_name_site_coordinator" placeholder="Last Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -97,7 +97,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email_address_of_site_coordinator" placeholder="E-Mail Address of Site Coordinator" class="form-control"  type="text"/>
+  <input name="email_address_of_site_coordinator" placeholder="E-Mail Address of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -110,7 +110,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone_of_site_coordinator" placeholder="e.g. (845)555-1212" class="form-control" type="text"/>
+  <input name="phone_of_site_coordinator" placeholder="e.g. (845)555-1212" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -121,7 +121,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name_of_executive_director" placeholder="First Name of Executive Director" class="form-control"  type="text"/>
+  <input  name="first_name_of_executive_director" placeholder="First Name of Executive Director" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -133,7 +133,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name_of_exectuive_director" placeholder="Last Name of Executive Director" class="form-control"  type="text"/>
+  <input name="last_name_of_exectuive_director" placeholder="Last Name of Executive Director" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -144,7 +144,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email_of_executive_director" placeholder="E-Mail Address of Executive Director" class="form-control"  type="text"/>
+  <input name="email_of_executive_director" placeholder="E-Mail Address of Executive Director" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -157,7 +157,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone_of_executive_director" placeholder="e.g. (845)555-1212" class="form-control" type="text"/>
+  <input name="phone_of_executive_director" placeholder="e.g. (845)555-1212" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -168,7 +168,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name_of_mid_ohio_primary_contact" placeholder="First Name of Mid Ohio Primay Contact" class="form-control"  type="text"/>
+  <input  name="first_name_of_mid_ohio_primary_contact" placeholder="First Name of Mid Ohio Primay Contact" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -180,7 +180,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name_ofmid_ohio_primary_contact" placeholder="Last Name of Mid Ohio Primary Contact" class="form-control"  type="text"/>
+  <input name="last_name_ofmid_ohio_primary_contact" placeholder="Last Name of Mid Ohio Primary Contact" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -191,7 +191,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email_of_mid_ohio_primary_contact" placeholder="E-Mail Address of Mid Ohio Primary Contact" class="form-control"  type="text"/>
+  <input name="email_of_mid_ohio_primary_contact" placeholder="E-Mail Address of Mid Ohio Primary Contact" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -204,7 +204,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone_of_mid_ohio_primary_contact" placeholder="e.g. (845)555-1212" class="form-control" type="text"/>
+  <input name="phone_of_mid_ohio_primary_contact" placeholder="e.g. (845)555-1212" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -216,7 +216,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="county" placeholder="County" class="form-control" type="text"/>
+  <input name="county" placeholder="County" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -228,7 +228,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="City" class="form-control"  type="text"/>
+  <input name="city" placeholder="City" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -240,7 +240,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="address" placeholder="Address" class="form-control"  type="text"/>
+  <input name="address" placeholder="Address" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -252,7 +252,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="zip" placeholder="Zip Code" class="form-control"  type="text"/>
+  <input name="zip" placeholder="Zip Code" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
 </div>
 </div>
@@ -263,7 +263,7 @@
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="hosting" value="yes1" /> Yes
+                                    <input type="radio" name="hosting" value="yes1"  th:field="${site.id}" th:readonly="${site.siteReadOnly}"/> Yes
                                 </label>
                             </div>
                             <div class="radio">
@@ -280,7 +280,7 @@
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="hosting1" value="yes2" /> Yes
+                                    <input type="radio" name="hosting1" value="yes2" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/> Yes
                                 </label>
                             </div>
                             <div class="radio">
@@ -299,7 +299,7 @@
    <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
-  <input name="number_of_kids" placeholder="# of participants in program" class="form-control" type="text"/>
+  <input name="number_of_kids" placeholder="# of participants in program" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -310,7 +310,7 @@
    <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
-  <input name="number_of_volunteers" placeholder="# of volunteers in program" class="form-control" type="text"/>
+  <input name="number_of_volunteers" placeholder="# of volunteers in program" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -322,7 +322,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea class="form-control" name="comment" placeholder="Drop Off Description"></textarea>
+        	<textarea class="form-control" name="comment" placeholder="Drop Off Description" th:field="${site.id}" th:readonly="${site.siteReadOnly}"></textarea>
   </div>
   </div>
 </div>
@@ -333,7 +333,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-          <textarea class="form-control" name="comment" placeholder="Distribution Description"></textarea>
+          <textarea class="form-control" name="comment" placeholder="Distribution Description" th:field="${site.id}" th:readonly="${site.siteReadOnly}"></textarea>
   </div>
   </div>
 </div>

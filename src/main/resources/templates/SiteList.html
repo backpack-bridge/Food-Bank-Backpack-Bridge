@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
     <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Site Coordinator Info</title>
+    <title>Form</title>
   <meta name="author" content="name"/>
-  <meta name="description" content="Web Display for Site Coordinator"/>
-  <meta name="keywords" content="Mid Ohio, Foodbank, Sign On, Site Coordinator"/>
+  <meta name="description" content="Web Form for Sign On Site."/>
+  <meta name="keywords" content="Mid Ohio, Foodbank, Sign On, Site"/>
+    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
     <link rel="stylesheet" th:href="@{css/foodsitestylesheet.css}" type="text/css"/>
 
-      <script type="text/javascript" src="js/npm.js"></script>
+    <!-- Jquery and Javascript link for this template -->
+    <script type="text/javascript" src="js/npm.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
@@ -26,30 +28,32 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Welcome Site Coordinator </legend>
+<legend>Welcome Sign On Site Coordinator</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label">List of Sites Partnered </label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-   <p th:each="sites: ${sites}"><a th:text="${sites.id} + ' ' + ${sites.program_name}"
-   th:href="@{/showSites(id=${sites.id})}" /></p>
+
+   <p th:each="site: ${sites}"><a th:text="${site.id} + ' ' + ${site.program_name}"
+   th:href="@{/showSites(id=${site.id})}" /></p>
     </div>
   </div>
 </div>
 
 <!-- Button -->
-<div class="form-group">
+<div th:each="site: ${site}" class="form-group">
   <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <span th:hidden="${sites.SiteAdd}">
-    	<a th:href="@{/showSites}">
-      <button type="button" class="btn btn-warning">
-    	Add <span class="glyphicon glyphicon-send"></span>
-      </button></a>
+  <span th:hide="${site.SiteHide}">
+
+  <div class="col-md-4" >
+    <span>
+    	<a th:href="@{/showSites}"><button type="button" class="btn btn-warning">
+    	Add <span class="glyphicon glyphicon-send"></span></button></a>
      </span>
   </div>
+       </span>
+
 </div>
 
 </fieldset>
