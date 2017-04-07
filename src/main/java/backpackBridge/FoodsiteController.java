@@ -19,9 +19,8 @@ public class FoodsiteController {
 	@RequestMapping("/showAllSites")
 	public String Sites(Model model) {
 		model.addAttribute("sites", foodSiteRepository.findAll());
-
 		model.addAttribute("site", foodSiteRepository.findOne("ToddisGod"));
-		return "Site_Coordinators";
+		return "SiteList";
 	}
 
 	@GetMapping("/showSites")
