@@ -40,11 +40,11 @@ public class FoodsiteController {
 		return "Form_for_site_coordinator";
 	}
 
-	@PostMapping("/showSites")
+	@PostMapping("/showSitesAdd")
 	public String ShowSiteForm(@ModelAttribute Foodsite site) {
 
 		foodSiteRepository.save(site);
-		return "Form_for_site_coordinator";
+		return "SiteList";
 	}
 
 	@GetMapping("/showDeletedSite")

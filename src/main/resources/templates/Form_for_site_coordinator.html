@@ -13,6 +13,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
 
+       <!-- Tab Logo Image -->
+    <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
+
     <!-- Jquery and Javascript link for this template -->
     <script type="text/javascript" src="js/npm.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -23,7 +26,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action="/showsites" method="post"  id="contact_form">
+    <form class="well form-horizontal" action="/showAllSites" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -42,12 +45,12 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">School/Program Name</label>  
+  <label class="col-md-4 control-label" th:field="${site.program_name}">School/Program Name</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
   
-<form action="#" th:action="@{/site}" th:object="${site}" method="post">
+<form action="#" th:action="@{/site}" th:object="${site}">
       <p><input name="program_name"  class="form-control" type="text" th:field="${site.program_name}"  placeholder="Enter Program Name Here" /></p>
 </form>
     </div>
@@ -61,7 +64,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/>
+  <input name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text" th:field="${site.start_date}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -74,7 +77,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name_site_coordinator" placeholder="First Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/>
+  <input  name="first_name_site_coordinator" placeholder="First Name of Site Coordinator" class="form-control"  type="text" th:field="${site.site_coordinator_first_name}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -86,7 +89,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name_site_coordinator" placeholder="Last Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/>
+  <input name="last_name_site_coordinator" placeholder="Last Name of Site Coordinator" class="form-control"  type="text" th:field="${site.site_coordinator_last_name}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -97,7 +100,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email_address_of_site_coordinator" placeholder="E-Mail Address of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="email_address_of_site_coordinator" placeholder="E-Mail Address of Site Coordinator" class="form-control"  type="text" th:field="${site.e_mail}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -110,7 +113,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone_of_site_coordinator" placeholder="e.g. (845)555-1212" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="phone_of_site_coordinator" placeholder="e.g. (845)555-1212" class="form-control" type="text" th:field="${site.phone_number}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -121,7 +124,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name_of_executive_director" placeholder="First Name of Executive Director" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input  name="first_name_of_executive_director" placeholder="First Name of Executive Director" class="form-control"  type="text" th:field="${site.executive_director_first}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -133,31 +136,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name_of_exectuive_director" placeholder="Last Name of Executive Director" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-       <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail of Executive Director</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email_of_executive_director" placeholder="E-Mail Address of Executive Director" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
-    </div>
-  </div>
-</div>
-
-
-<!-- Text input-->
-       
-<div class="form-group">
-  <label class="col-md-4 control-label">Phone # of Executive Director</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone_of_executive_director" placeholder="e.g. (845)555-1212" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="last_name_of_exectuive_director" placeholder="Last Name of Executive Director" class="form-control"  type="text" th:field="${site.executive_director_last}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -168,7 +147,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name_of_mid_ohio_primary_contact" placeholder="First Name of Mid Ohio Primay Contact" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input  name="first_name_of_mid_ohio_primary_contact" placeholder="First Name of Mid Ohio Primay Contact" class="form-control"  type="text" th:field="${site.mid_ohio_primary_contact_first}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -180,31 +159,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name_ofmid_ohio_primary_contact" placeholder="Last Name of Mid Ohio Primary Contact" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-       <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail of Mid Ohio Primary Contact</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email_of_mid_ohio_primary_contact" placeholder="E-Mail Address of Mid Ohio Primary Contact" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
-    </div>
-  </div>
-</div>
-
-
-<!-- Text input-->
-       
-<div class="form-group">
-  <label class="col-md-4 control-label">Phone # of Mid Ohio Primary Contact</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone_of_mid_ohio_primary_contact" placeholder="e.g. (845)555-1212" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="last_name_ofmid_ohio_primary_contact" placeholder="Last Name of Mid Ohio Primary Contact" class="form-control"  type="text" th:field="${site.mid_ohio_primary_contact_last}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -216,7 +171,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="county" placeholder="County" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="county" placeholder="County" class="form-control" type="text" th:field="${site.county_of_program}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -224,11 +179,11 @@
 <!-- Text input-->
  
 <div class="form-group">
-  <label class="col-md-4 control-label">City</label>  
+  <label class="col-md-4 control-label">School District</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="City" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="school_district" placeholder="School District" class="form-control"  type="text" th:field="${site.school_district}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -240,7 +195,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="address" placeholder="Address" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="address" placeholder="Address" class="form-control"  type="text" th:field="${site.address}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -252,18 +207,40 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="zip" placeholder="Zip Code" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="zip" placeholder="Zip Code" class="form-control"  type="text" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/>
     </div>
 </div>
 </div>
 
-<!-- radio checks -->
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Active Site Status</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="active" placeholder="Active Site Status" class="form-control"  type="text" th:field="${site.active}" th:readonly="${signon.siteReadOnly}"/>
+    </div>
+</div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Allergies Present</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="active" placeholder="Active Site Status" class="form-control"  type="text" th:field="${site.site_with_allergies}" th:readonly="${signon.siteReadOnly}"/>
+    </div>
+</div>
+</div>
+
+<!-- radio checks
  <div class="form-group">
                         <label class="col-md-4 control-label">Are you an active site?</label>
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="hosting" value="yes1"  th:field="${site.id}" th:readonly="${site.siteReadOnly}"/> Yes
+                                    <input type="radio" name="hosting" value="yes1"  th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/> Yes
                                 </label>
                             </div>
                             <div class="radio">
@@ -274,13 +251,12 @@
                         </div>
                     </div>
 
-<!-- radio checks -->
  <div class="form-group">
                         <label class="col-md-4 control-label">Are allergies present at this site? </label>
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="hosting1" value="yes2" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/> Yes
+                                    <input type="radio" name="hosting1" value="yes2" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/> Yes
                                 </label>
                             </div>
                             <div class="radio">
@@ -290,27 +266,26 @@
                             </div>
                         </div>
                     </div>
+Getting Rid of Radio Because I didn't set them up as Booleans
+-->
 
 
-
-<!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label">Number of Kids in Program</label>  
    <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
-  <input name="number_of_kids" placeholder="# of participants in program" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="number_of_kids" placeholder="# of participants in program" class="form-control" type="text" th:field="${site.number_of_kids_served}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
 
-<!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label">Number of Volunteers in Program</label>  
    <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
-  <input name="number_of_volunteers" placeholder="# of volunteers in program" class="form-control" type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="number_of_volunteers" placeholder="# of volunteers in program" class="form-control" type="text" th:field="${site.number_of_volunteers_enlisted}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -322,7 +297,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea class="form-control" name="comment" placeholder="Drop Off Description" th:field="${site.id}" th:readonly="${site.siteReadOnly}"></textarea>
+        	<textarea class="form-control" name="comment" placeholder="Drop Off Description" th:field="${site.drop_off_area_description}" th:readonly="${signon.siteReadOnly}"></textarea>
   </div>
   </div>
 </div>
@@ -333,7 +308,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-          <textarea class="form-control" name="comment" placeholder="Distribution Description" th:field="${site.id}" th:readonly="${site.siteReadOnly}"></textarea>
+          <textarea class="form-control" name="comment" placeholder="Distribution Description" th:field="${site.distribution_area_description}" th:readonly="${signon.siteReadOnly}"></textarea>
   </div>
   </div>
 </div>
@@ -341,16 +316,29 @@
 <!-- Success message -->
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks you your form has been sent to the database.</div>
 
-<!-- Button -->
+<!-- Button add -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <div th:hide="${signon.siteHide}">
-    <p> <button type="submit" value="Submit" class="btn btn-warning"> Submit <span class="glyphicon glyphicon-send"></span></button><input class="btn btn-warning" type="reset" value="Reset" /></p>
+    <div th:hide="${signon.siteAdd}">
+    <p> <button type="submit" value="Submit" class="btn btn-warning"> Submit <span class="glyphicon glyphicon-send"></span></button></p>
 
   </div>
   </div>
 </div>
+
+<!-- Button Delete-->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <div th:hide="${signon.SiteDelete}">
+    <p> <button type="submit" value="Submit" class="btn btn-warning"> Delete <span class="glyphicon glyphicon-send"></span></button></p>
+
+  </div>
+  </div>
+</div>
+
+
 </fieldset>
 </form>
 </div>

@@ -17,10 +17,9 @@ public class InfoController {
 	@Resource
 	private AdminRepository repo;
 
-	@RequestMapping("/welcome_screen{id}")
-	public String admins(@PathVariable String id, Model model) {
-		model.addAttribute("admin", repo.findOne(id));
-		return "welcome_screen";
+	@GetMapping("/form_directory")
+	public String forms() {
+		return "form_directory";
 	}
 
 }
