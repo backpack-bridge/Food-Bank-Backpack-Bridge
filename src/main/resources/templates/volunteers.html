@@ -27,18 +27,17 @@
     <form class="well form-horizontal" action=" " method="post"  id="contact_form"></form>
 <fieldset>
 
-<legend>Student List</legend>
+<legend>Volunteer List</legend>
 
 
-<p th:each="student: ${students}">
+<p th:each="volunteer: ${volunteers}">
 <div class="col-md-6 form-group">
-  <label class=" control-label">Student's Name</label>
-  <a th:href="@{http>://localhost:8080/showStudent(id=${student.id})}">  
-  <button type="button" th:text ="${student.firstName} + ' ' + ${student.lastName}"></button></a>
+  <label class=" control-label">Volunteer's Name</label>
+  <a th:href="@{http>://localhost:8080/showVolunteer(id=${volunteer.id})}">  
+  <button type="button" th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"></button></a>
   </div>
   </p>
 
-<
 
 
 
