@@ -51,7 +51,7 @@
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
   
 <form action="#" th:action="@{/site}" th:object="${site}">
-      <p><input name="program_name"  class="form-control" type="text" th:field="${site.program_name}"  placeholder="Enter Program Name Here" /></p>
+      <p><input name="program_name"  class="form-control" type="text" th:field="${site.program_name}" /></p>
 </form>
     </div>
   </div>
@@ -332,8 +332,9 @@ Getting Rid of Radio Because I didn't set them up as Booleans
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
     <div th:hide="${signon.SiteDelete}">
+    <a href="@/showAllSites(id=${site.id})">
     <p> <button type="submit" value="Submit" class="btn btn-warning"> Delete <span class="glyphicon glyphicon-send"></span></button></p>
-
+</a>
   </div>
   </div>
 </div>
