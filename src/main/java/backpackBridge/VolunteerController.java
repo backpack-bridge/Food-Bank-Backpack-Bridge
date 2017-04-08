@@ -29,14 +29,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 			return "volunteer";
 		}
 		
+		
 		@GetMapping ("/showVolunteerForm")
 	    public String volunteerSubmit(Model model) {
-	        model.addAttribute("volunteerForm",new Volunteer());
+	        model.addAttribute("volunteer",new Volunteer());
 	        return "volunteerForm";
 		}
 		@PostMapping("/showVolunteerForm")
-		public String volunteerSubmit(@ModelAttribute Volunteer VolunteerForm) {
-			return "VolunteerForm";
+		public String volunteerSubmit(@ModelAttribute("volunteer") Volunteer volunteer1) {
+			return "volunteers";
 	}
 	}
 
