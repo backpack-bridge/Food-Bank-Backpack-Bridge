@@ -23,7 +23,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="/showsites" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -61,7 +61,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -74,7 +74,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name_site_coordinator" placeholder="First Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input  name="first_name_site_coordinator" placeholder="First Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -86,7 +86,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name_site_coordinator" placeholder="Last Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${site.siteReadOnly}"/>
+  <input name="last_name_site_coordinator" placeholder="Last Name of Site Coordinator" class="form-control"  type="text" th:field="${site.id}" th:readonly="${signon.siteReadOnly}"/>
     </div>
   </div>
 </div>
@@ -345,12 +345,12 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    
+    <div th:hide="${signon.siteHide}">
     <p> <button type="submit" value="Submit" class="btn btn-warning"> Submit <span class="glyphicon glyphicon-send"></span></button><input class="btn btn-warning" type="reset" value="Reset" /></p>
 
   </div>
+  </div>
 </div>
-
 </fieldset>
 </form>
 </div>
