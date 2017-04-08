@@ -41,20 +41,21 @@ public class FoodsiteController {
 	}
 
 	@PostMapping("/showSitesAdd")
-	public String ShowSiteForm(@ModelAttribute Foodsite site) {
-
+	public String ShowSiteForm(@ModelAttribute Foodsite site, Model model) {
 		foodSiteRepository.save(site);
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		model.addAttribute("sites", foodSiteRepository.findAll());
 		return "SiteList";
 	}
 
 	@GetMapping("/showDeletedSite")
 	public String SiteDelete(@RequestParam(value = "id", required = true) String id, Model model) {
+		foodSiteRepository.delete(id);
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
-		foodSiteRepository.delete(id);
 		model.addAttribute("sites", foodSiteRepository.findAll());
-		model.addAttribute("site", foodSiteRepository.findOne("ToddisGod"));
-		return "Site_Coordinators";
+		return "siteList";
 	}
 
 }
