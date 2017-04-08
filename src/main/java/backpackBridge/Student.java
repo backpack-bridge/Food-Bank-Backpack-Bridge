@@ -64,6 +64,9 @@ public class Student {
 	@ManyToOne
 	private Foodsite foodSite;
 
+	
+	
+	
 	protected Student() {
 		
 	}
@@ -78,7 +81,9 @@ public class Student {
 
 	public long getId() {
 		return id;
+		
 	}
+	String numberAsString = "" + id;
 
 	public Long getStudentId() {
 		return studentId;
