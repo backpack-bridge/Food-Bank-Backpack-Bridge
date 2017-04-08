@@ -16,15 +16,21 @@ public class FoodsiteController {
 	@Resource
 	private FoodSiteRepository foodSiteRepository;
 
+	@Resource
+	private SignOn signon;
+
 	@RequestMapping("/showAllSites")
 	public String Sites(Model model) {
 		model.addAttribute("sites", foodSiteRepository.findAll());
-		model.addAttribute("site", foodSiteRepository.findOne("ToddisGod"));
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		return "SiteList";
 	}
 
 	@GetMapping("/showSites")
 	public String ShowSiteForm(@RequestParam(value = "id", required = false) String id, Model model) {
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		if (id == null) {
 			model.addAttribute("site",
 					new Foodsite("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
@@ -43,6 +49,8 @@ public class FoodsiteController {
 
 	@GetMapping("/showDeletedSite")
 	public String SiteDelete(@RequestParam(value = "id", required = true) String id, Model model) {
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		foodSiteRepository.delete(id);
 		model.addAttribute("sites", foodSiteRepository.findAll());
 		model.addAttribute("site", foodSiteRepository.findOne("ToddisGod"));

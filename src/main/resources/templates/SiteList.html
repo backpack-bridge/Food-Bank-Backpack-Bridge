@@ -42,15 +42,14 @@
 </div>
 
 <!-- Button -->
-<div th:each="site: ${site}" class="form-group">
+<div class="form-group">
   <label class="col-md-4 control-label"></label>
   <span th:hide="${site.SiteHide}">
 
   <div class="col-md-4" >
-    <span>
     	<a th:href="@{/showSites}"><button type="button" class="btn btn-warning">
-    	Add <span class="glyphicon glyphicon-send"></span></button></a>
-     </span>
+    	Add <span class="glyphicon glyphicon-send"> 
+      </span></button></a>
   </div>
        </span>
 
