@@ -46,8 +46,9 @@ public class AdminController {
 	}
 
 	@PostMapping("/showAdmin")
-	public String adminSubmit(@ModelAttribute Admin admin) {
+	public String adminSubmit(@ModelAttribute Admin admin, Model model) {
 		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		admin.setChangeId(currentSignon.getId());
 		Date dNow = new Date();
 		SimpleDateFormat ft = new SimpleDateFormat("MM/dd/yyyy");
