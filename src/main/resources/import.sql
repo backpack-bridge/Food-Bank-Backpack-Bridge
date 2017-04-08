@@ -1,12 +1,12 @@
 // initializing administration records
 
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisGod', 'godaccess', '03/30/2017', 'C', 'C', 'C', 'C', '03/30/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisNotGod', 'toddaccess', '03/31/2017', '', '', '', '', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisSite', 'siteaccess', '03/31/2017', '', 'C', 'C', '', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisStudent', 'studentaccess', '03/31/2017', 'C', '', '', '', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisVolunteer', 'volunteeraccess', '03/31/2017', '', '', 'C', '', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('ToddisAdmin', 'adminaccess', '03/31/2017', '', '', '', 'C', '03/31/2017', 'ToddisGod')
-INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, change_Date, change_Id)  VALUES('EricisDemiGod', 'DemiGod', '04/17/1989', 'C', '', '', 'C', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisGod', 'godaccess', '03/30/2017', 'C', 'C', 'C', 'C', 'C', '03/30/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisNotGod', 'toddaccess', '03/31/2017', 'V', 'V', 'V', 'V', 'V', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisSite', 'siteaccess', '03/31/2017', '', 'C', 'C', '', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisStudent', 'studentaccess', '03/31/2017', 'C', '', '', '', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisVolunteer', 'volunteeraccess', '03/31/2017', '', '', 'C', '', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('ToddisAdmin', 'adminaccess', '03/31/2017', '', '', '', 'C', '', '03/31/2017', 'ToddisGod')
+INSERT INTO Admin(id, password, password_Date, student_Access, site_Access, volunteer_Access, admin_Access, referal_access, change_Date, change_Id)  VALUES('EricisDemiGod', 'DemiGod', '04/17/1989', 'C', '', '', 'C', '', '03/31/2017', 'ToddisGod')
 
 
 // Foodsite SQL
@@ -18,7 +18,6 @@ INSERT INTO FOODSITE(ID, PROGRAM_NAME, SITE_COORDINATOR_FIRST_NAME, SITE_COORDIN
 
 INSERT INTO STUDENT(student_id, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status, parent_first_name, parent_last_name, addl_notes) VALUES(123456,'John', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled', 'john', 'doe', 'addl notes')
 
-//Volunteer SQL
 
 INSERT INTO VOLUNTEER (ID,FIRST_NAME,LAST_NAME,AGE,GENDER,STREET_ADDRESS,CITY,STATE,ZIP,PHONE_NUM,EMAIL,food_site_id) VALUES ('1','Tom', 'King', '21','Male','12 main st','columbus','OH','43213','614-537-0000','Tom@yahoo.com','1');
 INSERT INTO VOLUNTEER (ID,FIRST_NAME,LAST_NAME,AGE,GENDER,STREET_ADDRESS,CITY,STATE,ZIP,PHONE_NUM,EMAIL,food_site_id) VALUES ('2','Mary', 'love', '61','Male','199 main st','columbus','OH','43213','614-337-0000','Tom@yahoo.com','2');

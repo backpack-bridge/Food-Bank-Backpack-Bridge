@@ -18,6 +18,8 @@
 
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet"/>
+           <!-- Tab Logo Image -->
+    <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -99,8 +101,8 @@
                     </li>
                         <!-- Admin Info -->
                         <span th:hidden="${admin.AdminHide}">
-
-                                 <br></br>
+							<a href="/showAdmins" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Admin <i class="fa fa-fw fa-caret-down"></i></a>
+                        <!--     <br></br>
                                     <li>
                                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Admin <i class="fa fa-fw fa-caret-down"></i></a>
                                         <ul id="demo" class="collapse">
@@ -111,24 +113,17 @@
                                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                                     </li>
                                     </ul>
-                                    </li>
+                                    </li> -->
 </span>
 
                         <!-- Foodsite Info -->
                         <span th:hidden="${admin.SiteHide}">
                                                 <br></br>
-
-                                     <li>
-                                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-database"></i> Foodsite <i class="fa fa-fw fa-caret-down"></i></a>
-                                        <ul id="demo1" class="collapse">
-                                    <li>
-                                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                                    </li>
-                                    </ul>
-                                    </li>
+                            <a href="/showAllSites">
+                                        <li>
+                                <i class="fa fa-fw"> Foodsite </i>
+                                        </li>
+                            </a>
 </span>
 
                         <!-- Student Info -->

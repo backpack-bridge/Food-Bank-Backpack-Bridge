@@ -13,6 +13,8 @@
     <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
     <link rel="stylesheet" th:href="@{css/foodsitestylesheet.css}" type="text/css"/>
+           <!-- Tab Logo Image -->
+    <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
 
     <!-- Jquery and Javascript link for this template -->
     <!--<script type="text/javascript" src="js/admin.js"></script>-->
@@ -29,7 +31,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Welcome Sign On Administrator</legend>
+<legend>Welcome Signon Administrator</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -38,7 +40,7 @@
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
    <input name="Id" placeholder="Sign On Id" class="form-control" type="text"
-   th:field="${admin.id}" th:readonly="${admin.adminReadOnly}"/>
+   th:field="${admin.id}" th:readonly="${signon.adminReadOnly}"/>
     </div>
   </div>
 </div>
@@ -50,7 +52,7 @@
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
    <input name="Password" placeholder="Password" class="form-control" type="text"
-   th:field="${admin.password}" th:readonly="${admin.adminReadOnly}"/>
+   th:field="${admin.password}" th:readonly="${signon.adminReadOnly}"/>
     </div>
   </div>
 </div>
@@ -74,7 +76,7 @@
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
      <input name="Student_Access" placeholder="Student Access" class="form-control" type="text"
-     th:field="${admin.studentAccess}" th:readonly="${admin.adminReadOnly}"/>
+     th:field="${admin.studentAccess}" th:readonly="${signon.adminReadOnly}"/>
     </div>
   </div>
 </div>
@@ -86,7 +88,7 @@
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
      <input name="Site_Access" placeholder="Site Access" class="form-control" type="text"
-     th:field="${admin.siteAccess}" th:readonly="${admin.adminReadOnly}"/>
+     th:field="${admin.siteAccess}" th:readonly="${signon.adminReadOnly}"/>
     </div>
   </div>
 </div>
@@ -99,7 +101,7 @@
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
      <input name="Volunteer_Access" placeholder="Volunteer Access" class="form-control" type="text"
-     th:field="${admin.volunteerAccess}" th:readonly="${admin.adminReadOnly}"/>
+     th:field="${admin.volunteerAccess}" th:readonly="${signon.adminReadOnly}"/>
     </div>
   </div>
 </div>
@@ -110,7 +112,7 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="Admin_Access" placeholder="Administration Access" class="form-control" type="text"
-  th:field="${admin.adminAccess}" th:readonly="${admin.adminReadOnly}"/>
+  th:field="${admin.adminAccess}" th:readonly="${signon.adminReadOnly}"/>
     </div>
   </div>
 </div>
@@ -121,7 +123,7 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="referal_Access" placeholder="Referal Access" class="form-control" type="text"
-  th:field="${admin.referalAccess}" th:readonly="${admin.referalReadOnly}"/>
+  th:field="${admin.referalAccess}" th:readonly="${signon.adminReadOnly}"/>
     </div>
   </div>
 </div>
@@ -158,10 +160,10 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <span th:hidden="${admin.adminAdd}"><button type="submit" class="btn btn-warning">
+    <span th:hidden="${signon.adminAdd}"><button type="submit" class="btn btn-warning">
     Send <span class="glyphicon glyphicon-send"></span></button></span>
     
-    <span th:hidden="${admin.adminDelete}">
+    <span th:hidden="${signon.adminDelete}">
     	<a th:href="@{/deleteAdmin(id=${admin.id})}"><button type="button" class="btn btn-warning"> 
     	Delete <span class="glyphicon glyphicon-send"></span></button></a> 
     </span>

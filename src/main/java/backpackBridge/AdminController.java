@@ -20,21 +20,24 @@ public class AdminController {
 	@Resource
 	private AdminRepository repository;
 	
-	private String signonId = "ToddisGod";
-
+	@Resource
+	private SignOn signon;
+  
 	@RequestMapping("/showAdmins")
 	public String admins(Model model) {
 		model.addAttribute("admins", repository.findAll());
-		model.addAttribute("admin", repository.findOne(signonId));
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		return "adminList";
 	}
 
 	@GetMapping("/showAdmin")
 	public String adminForm(@RequestParam(value = "id", required = false) String id, Model model) {
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		if (id == null) {
 			// create an empty Admin object
-
-			model.addAttribute("admin", new Admin("","","","","","","","","",""));
+			model.addAttribute("admin", new Admin("", "", "", "", "", "", "", "", "", ""));
 			return "adminAdd";
 		} else {
 			model.addAttribute("admin", repository.findOne(id));
@@ -44,12 +47,12 @@ public class AdminController {
 
 	@PostMapping("/showAdmin")
 	public String adminSubmit(@ModelAttribute Admin admin) {
-		admin.setChangeId(signonId);
+		Admin currentSignon = signon.getCurrentUser();
+		admin.setChangeId(currentSignon.getId());
 		Date dNow = new Date();
-	      SimpleDateFormat ft = 
-	      new SimpleDateFormat ("MM/dd/yyyy");
-	      admin.setChangeDate(ft.format(dNow));
-	      admin.setPasswordDate(ft.format(dNow));
+		SimpleDateFormat ft = new SimpleDateFormat("MM/dd/yyyy");
+		admin.setChangeDate(ft.format(dNow));
+		admin.setPasswordDate(ft.format(dNow));
 		repository.save(admin);
 		return "Administration";
 	}
@@ -58,7 +61,8 @@ public class AdminController {
 	public String adminDelete(@RequestParam(value = "id", required = true) String id, Model model) {
 		repository.delete(id);
 		model.addAttribute("admins", repository.findAll());
-		model.addAttribute("admin", repository.findOne("ToddisGod"));
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
 		return "adminList";
 	}
 }
