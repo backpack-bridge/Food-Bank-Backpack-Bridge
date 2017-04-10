@@ -42,9 +42,6 @@ public class FoodsiteController {
 		}
 	}
 
-	@Resource
-	private SignOn signon;
-
 	@RequestMapping("/showAllSites")
 	public String Sites(Model model) {
 		model.addAttribute("sites", foodSiteRepository.findAll());
