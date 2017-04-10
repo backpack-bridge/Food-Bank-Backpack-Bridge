@@ -42,34 +42,46 @@ public class FoodsiteController {
 		}
 	}
 
-	@GetMapping("/formForSiteCoordinator")
-	public String siteForm(Model model) {
+	@Resource
+	private SignOn signon;
+
+	@RequestMapping("/showAllSites")
+	public String Sites(Model model) {
 		model.addAttribute("sites", foodSiteRepository.findAll());
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
-		return "site";
+		return "SiteList";
 	}
 
-	@PostMapping("/formForSiteCoordinator")
-	public String siteFormSubmit(@ModelAttribute Foodsite foodsite,Model model) {
+	@GetMapping("/showSites")
+	public String ShowSiteForm(@RequestParam(value = "id", required = false) String id, Model model) {
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
-		return "display-site-information";
+		if (id == null) {
+			model.addAttribute("site",
+					new Foodsite("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
+		} else {
+			model.addAttribute("site", foodSiteRepository.findOne(id));
+		}
+		return "Form_for_site_coordinator";
 	}
 
-	@RequestMapping("/showOneSite")
-	public String onesite(@RequestParam(value = "id") String id, Model model) {
-		model.addAttribute("site", foodSiteRepository.findOne(id));
+	@PostMapping("/showSitesAdd")
+	public String ShowSiteForm(@ModelAttribute Foodsite site, Model model) {
+		foodSiteRepository.save(site);
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
-		return "one-site";
+		model.addAttribute("sites", foodSiteRepository.findAll());
+		return "SiteList";
 	}
 
-	@PostMapping("/showOneSites")
-	public String inputSiteInfo(@ModelAttribute Foodsite foodsite, Model model) {
+	@GetMapping("/showDeletedSite")
+	public String SiteDelete(@RequestParam(value = "id", required = true) String id, Model model) {
+		foodSiteRepository.delete(id);
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
-		return "input-site-info";
+		model.addAttribute("sites", foodSiteRepository.findAll());
+		return "siteList";
 	}
 
 }

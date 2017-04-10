@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+  <html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Student</title>
+  
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"></link>
+
+    <!-- Jquery and Javascript link for this template -->
+    <script type="text/javascript" src="js/npm.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+  <div class="container"> </div>
+  <form class="well form-horizontal" action=" " method="post"  id="student_form"></form>
+ <div class="col-lg-4 col-md-6 form-group">
+  <label class="control-label">First Name</label>  
+  <div class="inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><span class= "form-control" th:text="${student.firstName}"></span>
+  
+  </div>
+  </div>
+  </div>
+
+ <div class="col-lg-4 col-md-6 form-group">
+  <label class="control-label">Last Name</label>  
+  <div class="inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <span class= "form-control" th:text="${student.lastName}"></span>
+  </div>
+  </div>
+  </div>
+
+    <div class="col-lg-2 form-group">
+  <label class="control-label">Student Age</label>  
+    <div class="inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <span class= "form-control" th:text="${student.age}"></span>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-lg-2 form-group">
+  <label class="control-label">Grade</label>  
+    <div class="inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+  <span class= "form-control" th:text="${student.grade}"></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="col-lg-4 col-md-6  form-group">
+  <label class="control-label">First Name of Parent or Guardian </label>  
+  <div class="inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+   <span class= "form-control" th:text="${student.parentFirstName}"></span>
+    </div>
+  </div>
+</div>
+  
+  
+    </body>
+    </html>

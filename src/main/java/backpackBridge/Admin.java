@@ -2,8 +2,6 @@ package backpackBridge;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -25,7 +23,7 @@ public class Admin {
 	private String volunteerAccess;
 
 	private String adminAccess;
-	
+
 	private String referalAccess;
 
 	private String changeDate;
@@ -53,7 +51,7 @@ public class Admin {
 		this.changeDate = changeDate;
 		this.changeId = changeId;
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -281,46 +279,43 @@ public class Admin {
 	public void setReferalAccess(String referalAccess) {
 		this.referalAccess = referalAccess;
 	}
-  
+
 	public boolean isReferalHide() {
-		if (referalAccess.equals(null)|referalAccess.equals("")) {
+		if (referalAccess.equals(null) | referalAccess.equals("")) {
 			return true;
 		} else {
 			if (referalAccess.equals(" ")) {
 				return true;
-			}
-			else {
+			} else {
 				return false;
 			}
 		}
 	}
-	
+
 	public boolean isReferalReadOnly() {
-		if (referalAccess.equals(null)|referalAccess.equals("")) {
+		if (referalAccess.equals(null) | referalAccess.equals("")) {
 			return false;
 		} else {
 			if (referalAccess.equals("C") | referalAccess.equals("A")) {
 				return false;
-			}
-			else {
+			} else {
 				return true;
 			}
 		}
 	}
-	
+
 	public boolean isReferalAdd() {
-		if (referalAccess.equals(null)|referalAccess.equals("")) {
+		if (referalAccess.equals(null) | referalAccess.equals("")) {
 			return false;
 		} else {
 			if (referalAccess.equals("C") | referalAccess.equals("A")) {
 				return false;
-			}
-			else {
+			} else {
 				return true;
 			}
 		}
 	}
-	
+
 	public boolean isReferalDelete() {
 		if (referalAccess.equals("D") | referalAccess.equals("C")) {
 			return false;

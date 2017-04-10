@@ -17,15 +17,13 @@ public class StudentReferral {
 	private int age;
 	private int grade;
 	private String teacherName;
-	
-	
-	
-	
+	private String addNotes;
+
 	@ManyToOne
 	private Foodsite foodSite;
 
 	protected StudentReferral() {
-}
+	}
 
 	public long getId() {
 		return id;
@@ -89,5 +87,13 @@ public class StudentReferral {
 
 	public void setFoodSite(Foodsite foodSite) {
 		this.foodSite = foodSite;
+	}
+
+	public String getAddNotes() {
+		return addNotes;
+	}
+
+	public void setAddNotes(String addNotes) {
+		this.addNotes = addNotes;
 	}
 }

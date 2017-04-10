@@ -22,7 +22,7 @@ public class AdminController {
 	
 	@Resource
 	private SignOn signon;
-
+  
 	@RequestMapping("/showAdmins")
 	public String admins(Model model) {
 		model.addAttribute("admins", repository.findAll());
@@ -37,8 +37,7 @@ public class AdminController {
 		model.addAttribute("signon", currentSignon);
 		if (id == null) {
 			// create an empty Admin object
-
-			model.addAttribute("admin", new Admin("","","","","","","","","",""));
+			model.addAttribute("admin", new Admin("", "", "", "", "", "", "", "", "", ""));
 			return "adminAdd";
 		} else {
 			model.addAttribute("admin", repository.findOne(id));
@@ -52,10 +51,9 @@ public class AdminController {
 		model.addAttribute("signon", currentSignon);
 		admin.setChangeId(currentSignon.getId());
 		Date dNow = new Date();
-	      SimpleDateFormat ft = 
-	      new SimpleDateFormat ("MM/dd/yyyy");
-	      admin.setChangeDate(ft.format(dNow));
-	      admin.setPasswordDate(ft.format(dNow));
+		SimpleDateFormat ft = new SimpleDateFormat("MM/dd/yyyy");
+		admin.setChangeDate(ft.format(dNow));
+		admin.setPasswordDate(ft.format(dNow));
 		repository.save(admin);
 		return "Administration";
 	}

@@ -17,6 +17,7 @@ public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private long id;
 	@NotEmpty
 	private long studentId;
@@ -63,6 +64,9 @@ public class Student {
 	@ManyToOne
 	private Foodsite foodSite;
 
+	
+	
+	
 	protected Student() {
 		
 	}
@@ -77,9 +81,11 @@ public class Student {
 
 	public long getId() {
 		return id;
+		
 	}
+	String numberAsString = "" + id;
 
-	public long getStudentId() {
+	public Long getStudentId() {
 		return studentId;
 	}
 

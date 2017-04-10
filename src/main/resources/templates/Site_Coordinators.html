@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html> 
   <head>
     <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Administration Form</title>
+    <title>Site Coordinator Info</title>
   <meta name="author" content="name"/>
-  <meta name="description" content="Web Form for Sign On Administration."/>
-  <meta name="keywords" content="Mid Ohio, Foodbank, Sign On, Administration"/>
-    <!-- Bootstrap core CSS -->
+  <meta name="description" content="Web Display for Site Coordinator"/>
+  <meta name="keywords" content="Mid Ohio, Foodbank, Sign On, Site Coordinator"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
     <link rel="stylesheet" th:href="@{css/foodsitestylesheet.css}" type="text/css"/>
+
            <!-- Tab Logo Image -->
     <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
 
-    <!-- Jquery and Javascript link for this template -->
-    <script type="text/javascript" src="js/npm.js"></script>
+      <script type="text/javascript" src="js/npm.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
@@ -26,21 +25,19 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action="/showAdmin" method="post"  id="contact_form">
+    <form class="well form-horizontal" action="http://localhost:8080/showSites" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Welcome Sign On Administrator</legend>
+<legend>Welcome Site Coordinator </legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label">Sign On Id</label>  
+  <label class="col-md-4 control-label">List of Sites Partnered </label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-<!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-   <input  name="Id" placeholder="Sign On Id" class="form-control"  type="text">  -->
-   <p th:each="admin: ${admins}"><a th:text="${admin.id} + ' ' + ${admin.changeDate}"
-   th:href="@{/showAdmin(id=${admin.id})}" /></p>
+   <p th:each="sites: ${sites}"><a th:text="${sites.id} + ' ' + ${sites.program_name}"
+   th:href="@{/showSites(id=${sites.id})}" /></p>
     </div>
   </div>
 </div>
@@ -49,9 +46,11 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <span th:hidden="${signon.adminAdd}">
-    	<a th:href="@{/showAdmin}"><button type="button" class="btn btn-warning">
-    	Add <span class="glyphicon glyphicon-send"></span></button></a>
+    <span th:hidden="${site.SiteAdd}">
+    	<a th:href="@{Form_for_site_coordinator}">
+      <button type="button" class="btn btn-warning">
+    	Add <span class="glyphicon glyphicon-send"></span>
+      </button></a>
      </span>
   </div>
 </div>
