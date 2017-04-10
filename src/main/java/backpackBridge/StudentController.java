@@ -24,21 +24,17 @@ public class StudentController {
 
 	@RequestMapping("/showStudent")
 	public String student(@RequestParam("id") String id, Model model) {
-		model.addAttribute("student", allStudents.findOne(id));
+		model.addAttribute("student", allStudents.findOne(1));
 		return "student";
 	}
 
 	@GetMapping("/showStudentEntry")
 	public String studentForm(@RequestParam(value = "id", required = false) String id, Model model) {
-		if (id == null) {
-
+		
 			model.addAttribute("studentEntry", new Student());
 			return "studentEntry";
-		} else {
-			model.addAttribute("student", allStudents.findOne(id));
-			return "student";
-		}
-
+	
+			 
 	}
 
 	@PostMapping("/showStudentEntry")

@@ -33,7 +33,7 @@
 <p th:each="student: ${students}">
 <div class="col-md-6 form-group">
   <label class=" control-label">Student's Name</label>
-  <a th:href="@{http>://localhost:8080/showStudent(id=${student.id})}">  
+  <a th:href="@{/showStudent(id=${student.id})}">  
   <button type="button" th:text ="${student.firstName} + ' ' + ${student.lastName}"></button></a>
   </div>
   </p>
