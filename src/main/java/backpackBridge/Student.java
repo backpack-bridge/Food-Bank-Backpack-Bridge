@@ -65,7 +65,7 @@ public class Student {
 	private Foodsite foodSite;
 
 	protected Student() {
-		
+
 	}
 
 	public void setId(long id) {
@@ -235,6 +235,4 @@ public class Student {
 	public void setParentLastName(String parentLastName) {
 		this.parentLastName = parentLastName;
 	}
-	}
-
-	
+}
