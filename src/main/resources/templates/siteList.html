@@ -4,10 +4,10 @@
     <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Administration Form</title>
+    <title>Form</title>
   <meta name="author" content="name"/>
-  <meta name="description" content="Web Form for Sign On Administration."/>
-  <meta name="keywords" content="Mid Ohio, Foodbank, Sign On, Administration"/>
+  <meta name="description" content="Web Form for Sign On Site."/>
+  <meta name="keywords" content="Mid Ohio, Foodbank, Sign On, Site"/>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
@@ -24,21 +24,20 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action="/showSite" method="post"  id="contact_form">
+    <form class="well form-horizontal" action="http://localhost:8080/showSites" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Welcome Site Administrator</legend>
+<legend>Welcome Site Coordinator</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label">Site List</label>  
+<label class="col-md-4 control-label">Sign On Id</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
 
-   <p th:each="site: ${sites}">
-   <a th:text="${site.id}"
-   th:href="@{/showSite(id=${site.id})}" /></p>
+   <p th:each="site: ${sites}"><a th:text="${site.id}"
+   th:href="@{/showSites(id=${site.id})}" /></p>
     </div>
   </div>
 </div>
@@ -46,12 +45,15 @@
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <span th:hidden="${signon.siteAdd}">
+  <span th:hide="${site.siteAdd}">
+
+  <div class="col-md-4" >
     	<a th:href="@{/showSite}"><button type="button" class="btn btn-warning">
-    	Add <span class="glyphicon glyphicon-send"></span></button></a>
-     </span>
+    	Add <span class="glyphicon glyphicon-send"> 
+      </span></button></a>
   </div>
+       </span>
+
 </div>
 
 </fieldset>
