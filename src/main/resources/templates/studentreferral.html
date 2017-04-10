@@ -22,7 +22,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action="#" th:action="@{/studentReferral}" th:object="${student}" method="post">
+    <form class="well form-horizontal" action="#" th:action="@{/studentReferral}" th:object="${studentReferral}" method="post">
     </form>
 <fieldset>
 
@@ -61,7 +61,7 @@
   <div class=" inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  th:field="*{firstName}" placeholder="First Name" class="form-control"  type="text"></input>
+  <input  name="first_name_student" placeholder="First Name" class="form-control"  type="text"></input>
     </div>
   </div>
 </div>
