@@ -35,10 +35,10 @@ public class FoodsiteController {
 			// create an empty Foodsite object
 			model.addAttribute("site", 
 					new Foodsite("","","","","","","","","","","","","","","","","","","","",""));
-			return "adminAdd";
+			return "showSite";
 		} else {
 			model.addAttribute("site", foodSiteRepository.findOne(id));
-			return "showSites";
+			return "showSite";
 		}
 	}
 

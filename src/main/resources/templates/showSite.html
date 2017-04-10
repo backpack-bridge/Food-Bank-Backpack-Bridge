@@ -38,7 +38,8 @@
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
    <input name="Program Name" placeholder="Program Name" class="form-control" type="text"
-   th:field="${site.program_name}" th:readonly="${signon.siteReadOnly}"/>
+   th:field="${site.program_name}" />
+   <!--th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -50,7 +51,8 @@
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
    <input name="Coordinator First Name" placeholder="Coordinator First Name" class="form-control" type="text"
-   th:field="${site.site_coordinator_first_name}" th:readonly="${signon.siteReadOnly}"/>
+   th:field="${site.site_coordinator_first_name}" />
+   <!--th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -62,20 +64,22 @@
   <div class="input-group">
    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
    <input name="Coordinator Last name" placeholder="Coordinator Last Name" class="form-control" type="text"
-   th:field="${site.site_coordinator_last_name}" th:readonly="${signon.siteReadonly"/>
+   th:field="${site.site_coordinator_last_name}"/> 
+   <!--th:readonly="${signon.siteReadOnly"/>-->
     </div>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" >Phone Number/label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-     <input name="Phone Number" placeholder="Phone Number" class="form-control" type="text"
-     th:field="${site.phone_number}" th:readonly="${signon.siteReadOnly}"/>
-    </div>
+  <label class="col-md-4 control-label" >Phone Number</label> 
+   <div class="col-md-4 inputGroupContainer">
+     <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input name="phone_number" placeholder="Phone Number" class="form-control" type="text"
+      th:field="${site.phone_number}" />
+      <!--th:readonly="${signon.siteReadOnly}"/>-->
+     </div>
   </div>
 </div>
 
@@ -86,7 +90,8 @@
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
      <input name="e_mail" placeholder="Email" class="form-control" type="text"
-     th:field="${site.e_mail}" th:readonly="${signon.siteReadOnly}"/>
+     th:field="${site.e_mail}" />
+     <!--th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -99,7 +104,8 @@
     <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
      <input name="executive_director_first" placeholder="Executive Director First Namer" class="form-control" type="text"
-     th:field="${site.executive_director_first}" th:readonly="${signon.adminReadOnly}"/>
+     th:field="${site.executive_director_first}" />
+     <!--th:readonly="${signon.adminReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -110,7 +116,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="executive_director_last" placeholder="Executive Director Last Name" class="form-control" type="text"
-  th:field="${site.executive_director_last}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.executive_director_last}" />
+  <!--th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -121,7 +128,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="county_of_program" placeholder="County of Program" class="form-control" type="text"
-  th:field="${site.county_of_program}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.county_of_program}" />
+  <!--th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -133,7 +141,8 @@
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
   <input name="school_district" placeholder="School District" class="form-control" type="text"
-  th:field="${site.school_district}" th:readonly="${signon.siteReadonly"/>
+  th:field="${site.school_district}" />
+  <!--th:readonly="${signon.siteReadonly"/>-->
     </div>
   </div>
 </div>
@@ -144,7 +153,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="mid_ohio_primary_contract_first" placeholder="Mid Ohio Primary Contact First Name" class="form-control" type="text"
-  th:field="${site.mid_ohio_primary_contact_first}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.mid_ohio_primary_contact_first}" />
+  <!--th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -155,7 +165,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="mid_ohio_primary_contract_last" placeholder="Mid Ohio Primary Contact Last Name" class="form-control" type="text"
-  th:field="${site.mid_ohio_primary_contact_last}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.mid_ohio_primary_contact_last}"/>
+  <!-- th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -166,7 +177,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="address" placeholder="Site Address" class="form-control" type="text"
-  th:field="${site.address}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.address}"/>
+  <!-- th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -178,7 +190,8 @@
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
   <input name="active" placeholder="Active Indicator" class="form-control" type="text"
-  th:field="${site.active}" th:readonly="${signon.siteReadonly"/>
+  th:field="${site.active}"/>
+  <!-- th:readonly="${signon.siteReadonly"/>-->
     </div>
   </div>
 </div>
@@ -190,7 +203,8 @@
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="start_date" placeholder="Start Date" class="form-control" type="text"
-  th:field="${site.start_date}" th:readonly="${signon.siteReadonly"/>
+  th:field="${site.start_date}"/>
+  <!-- th:readonly="${signon.siteReadonly"/>-->
     </div>
   </div>
 </div>
@@ -201,8 +215,9 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input name="calendar_ID" placeholder="Calendar Id" class="form-control" type="text"
-  th:field="${site.calendar_ID}" th:readonly="${signon.siteReadonly"/>
+  <input name="calender_ID" placeholder="Calendar Id" class="form-control" type="text"
+  th:field="${site.calender_ID}"/>
+  <!-- th:readonly="${signon.siteReadonly"/>-->
     </div>
   </div>
 </div>
@@ -213,7 +228,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="number_of_kids_served" placeholder="Number of Kids Served" class="form-control" type="text"
-  th:field="${site.number_of_kids_served}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.number_of_kids_served}"/>
+  <!-- th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -224,7 +240,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="number_of_volunteers_enlisted" placeholder="Number of Volunteers Enlisted" class="form-control" type="text"
-  th:field="${site.number_of_volunteers_enlisted}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.number_of_volunteers_enlisted}"/>
+  <!-- th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -235,7 +252,8 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="site_with_allergies" placeholder="Site with Allergies" class="form-control" type="text"
-  th:field="${site.site_with_allergies}" th:readonly="${signon.siteReadOnly}"/>
+  th:field="${site.site_with_allergies}"/>
+  <!-- th:readonly="${signon.siteReadOnly}"/>-->
     </div>
   </div>
 </div>
@@ -247,7 +265,8 @@
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
   <input name="drop_off_area_description" placeholder="Drop Off Area Description" class="form-control" type="text"
-  th:field="${site.drop_off_area_description}" th:readonly="${signon.siteReadonly"/>
+  th:field="${site.drop_off_area_description}"/>
+  <!-- th:readonly="${signon.siteReadonly"/>-->
     </div>
   </div>
 </div>
@@ -259,7 +278,8 @@
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="distribution_area_description" placeholder="Distribution Area Description" class="form-control" type="text"
-  th:field="${site.distribution_area_description}" th:readonly="${signon.siteReadonly"/>
+  th:field="${site.distribution_area_description}"/>
+  <!-- th:readonly="${signon.siteReadonly"/>-->
     </div>
   </div>
 </div>
@@ -271,13 +291,15 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <span th:hidden="${signon.siteAdd}"><button type="submit" class="btn btn-warning">
-    Send <span class="glyphicon glyphicon-send"></span></button></span>
+    <!--<span th:hidden="${signon.siteAdd}">-->
+    <button type="submit" class="btn btn-warning">
+    Send <span class="glyphicon glyphicon-send"></span></button>
+    <!--</span>-->
     
-    <span th:hidden="${signon.siteDelete}">
+   <!--<span th:hidden="${signon.siteDelete}">-->
     	<a th:href="@{/deleteSite(id=${site.id})}"><button type="button" class="btn btn-warning"> 
     	Delete <span class="glyphicon glyphicon-send"></span></button></a> 
-    </span>
+    <!--</span>-->
 
   </div>
 </div>
