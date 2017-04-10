@@ -98,8 +98,11 @@
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                         <!-- Admin Info -->
+                        <br></br>
                         <span th:hidden="${admin.AdminHide}">
+                        <li>
 							<a href="/showAdmins" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Admin <i class="fa fa-fw fa-caret-down"></i></a>
+						</li>
                         <!--     <br></br>
                                     <li>
                                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Admin <i class="fa fa-fw fa-caret-down"></i></a>
@@ -115,8 +118,12 @@
 </span>
 
                         <!-- Foodsite Info -->
+                        <br></br>
                         <span th:hidden="${admin.SiteHide}">
-                                                <br></br>
+                        <li>
+                        	<a href="/showSites" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Foodsite <i class="fa fa-fw fa-caret-down"></i></a>
+                        </li>
+                         <!--     <br></br>
 
                                      <li>
                                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-database"></i> Foodsite <i class="fa fa-fw fa-caret-down"></i></a>
@@ -128,11 +135,11 @@
                                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                                     </li>
                                     </ul>
-                                    </li>
+                                    </li>-->
 </span>
 
                         <!-- Student Info -->
-                                        <span th:hidden="${admin.StudentHide}">
+                        <span th:hidden="${admin.StudentHide}">
                                                 <br></br>
                                      <li>
                                         <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-database"></i> Student <i class="fa fa-fw fa-caret-down"></i></a>
@@ -147,7 +154,7 @@
                                                                         </li>
                                         </span>
                          <!-- Volunteer Info -->
-                                                    <span th:hidden="${admin.VolunteerHide}">
+                        <span th:hidden="${admin.VolunteerHide}">
                                                  <br></br>
 
                                      <li>
