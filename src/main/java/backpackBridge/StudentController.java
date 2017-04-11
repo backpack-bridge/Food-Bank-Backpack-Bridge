@@ -23,18 +23,29 @@ public class StudentController {
 	}
 
 	@RequestMapping("/showStudent")
-	public String student(@RequestParam("id") String id, Model model) {
-		model.addAttribute("student", allStudents.findOne(1));
+
+	
+		
+	public String student(@RequestParam("id") Long id, Model model) {
+		model.addAttribute("student", allStudents.findOne(id));
+
 		return "student";
 	}
 
 	@GetMapping("/showStudentEntry")
-	public String studentForm(@RequestParam(value = "id", required = false) String id, Model model) {
+
+	public String studentForm(@RequestParam String id, Model model) {
 		
 			model.addAttribute("studentEntry", new Student());
 			return "studentEntry";
 	
 			 
+
+	public String studentForm(@RequestParam("id) Long id, Model model) {
+			model.addAttribute("studentEntry", new Student());
+			return "studentEntry";
+
+
 	}
 
 	@PostMapping("/showStudentEntry")

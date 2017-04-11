@@ -19,6 +19,7 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
 	private long id;
+
 	
 	private long studentId;
 
@@ -30,6 +31,16 @@ public class Student {
 	
 	private int grade;
 	
+
+	private long studentId;	
+	private String firstName;
+
+	private String lastName;
+	private int age;
+	
+	private int grade;
+
+
 	private String teacherName;
 	
 	private int pplInHouse;
@@ -37,6 +48,7 @@ public class Student {
 	private int ageZeroToFive;
 	
 	private int ageSixToEleven;
+
 	
 	private int ageTwelveToSeventeen;
 	
@@ -46,6 +58,16 @@ public class Student {
 
 	private String addlNotes;
 
+
+
+	private int ageTwelveToSeventeen;
+	
+	private int ageEighteenToFiftyNine;
+
+	private int ageSixtyPLus;
+	
+	private String addlNotes;
+	
 	private String allergies;
 	private String frl;
 	private String status;
