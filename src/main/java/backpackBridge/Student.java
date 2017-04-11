@@ -20,7 +20,6 @@ public class Student {
 
 	private long id;
 
-	
 	private long studentId;
 
 	private String firstName;
@@ -28,46 +27,41 @@ public class Student {
 	private String lastName;
 
 	private int age;
-	
-	private int grade;
-	
 
-	private long studentId;	
-	private String firstName;
-
-	private String lastName;
-	private int age;
-	
 	private int grade;
 
+	// private long studentId;
+	// private String firstName;
+	//
+	// private String lastName;
+	// private int age;
+	//
+	// private int grade;
 
 	private String teacherName;
-	
+
 	private int pplInHouse;
 
 	private int ageZeroToFive;
-	
+
 	private int ageSixToEleven;
 
-	
+	// private int ageTwelveToSeventeen;
+	//
+	// private int ageEighteenToFiftyNine;
+	//
+	// private int ageSixtyPLus;
+	//
+	// private String addlNotes;
+
 	private int ageTwelveToSeventeen;
-	
+
 	private int ageEighteenToFiftyNine;
-	
+
 	private int ageSixtyPLus;
 
 	private String addlNotes;
 
-
-
-	private int ageTwelveToSeventeen;
-	
-	private int ageEighteenToFiftyNine;
-
-	private int ageSixtyPLus;
-	
-	private String addlNotes;
-	
 	private String allergies;
 	private String frl;
 	private String status;
@@ -78,9 +72,6 @@ public class Student {
 	@ManyToOne
 	private Foodsite foodSite;
 
-	
-	
-	
 	protected Student() {
 
 	}
@@ -95,8 +86,9 @@ public class Student {
 
 	public long getId() {
 		return id;
-		
+
 	}
+
 	String numberAsString = "" + id;
 
 	public Long getStudentId() {
