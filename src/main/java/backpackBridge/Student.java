@@ -19,41 +19,55 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
 	private long id;
-	@NotEmpty
+
+	
 	private long studentId;
-	@NotEmpty
+
 	private String firstName;
-	@NotEmpty
+
 	private String lastName;
-	@NotEmpty
-	@Min(0)
+
 	private int age;
-	@NotEmpty
-	@Size(min = 2, max = 12)
+	
 	private int grade;
-	@NotEmpty
+	
+
+	private long studentId;	
+	private String firstName;
+
+	private String lastName;
+	private int age;
+	
+	private int grade;
+
+
 	private String teacherName;
-	@NotEmpty
-	@Min(0)
+	
 	private int pplInHouse;
-	@NotEmpty
-	@Size(min = 0)
+
 	private int ageZeroToFive;
-	@NotEmpty
-	@Size(min = 0)
+	
 	private int ageSixToEleven;
-	@NotEmpty
-	@Size(min = 0)
+
+	
 	private int ageTwelveToSeventeen;
-	@NotEmpty
-	@Size(min = 0)
+	
 	private int ageEighteenToFiftyNine;
-	@NotEmpty
-	@Size(min = 0)
+	
 	private int ageSixtyPLus;
-	@NotEmpty
+
 	private String addlNotes;
-	@NotEmpty
+
+
+
+	private int ageTwelveToSeventeen;
+	
+	private int ageEighteenToFiftyNine;
+
+	private int ageSixtyPLus;
+	
+	private String addlNotes;
+	
 	private String allergies;
 	private String frl;
 	private String status;

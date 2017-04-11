@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Site Coordinator Application</title>
-  <meta name="author" content="name">
-  <meta name="description" content="Web Form for the site Coordinator to fill out and add data to the database.">
-  <meta name="keywords" content="Mid Ohio, Foodbank, Site, Coordinator">
+  <meta name="author" content="name"/>
+  <meta name="description" content="Web Form for the site Coordinator to fill out and add data to the database."/>
+  <meta name="keywords" content="Mid Ohio, Foodbank, Site, Coordinator"/>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>    
+    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
 
 
     <!-- Jquery and Javascript link for this template -->
@@ -23,7 +23,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="site_coordinator_agreement.php" method="POST"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -36,7 +36,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input  name="program_name" placeholder="Enter Name of Program Here" class="form-control"  type="text">
+  <input  name="program_name" placeholder="Enter Name of Program Here" class="form-control"  type="text"/>
     </div>
   </div>
 </div>
@@ -48,10 +48,23 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="site_coordinator_name2" placeholder="Name of Site Coordinator Here" class="form-control"  type="text">
+  <input  name="site_coordinator_name2" placeholder="Name of Site Coordinator Here" class="form-control"  type="text"/>
     </div>
   </div>
 </div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Email</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input  name="email" placeholder="Enter Email Here" class="form-control"  type="text"/>
+    </div>
+  </div>
+</div>
+
 
 <!-- Text input-->
 
@@ -60,7 +73,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon  glyphicon-calendar"></i></span>
-  <input  name="date" placeholder="Date Here" class="form-control"  type="text">
+  <input  name="date" placeholder="Date Here" class="form-control"  type="text"/>
     </div>
   </div>
 </div>
@@ -75,8 +88,7 @@
 </div>
 
 </fieldset>
-</form>
-</div>
+<input type="submit" name="submit" value="Submit Here"/>
     </div><!-- /.container -->
 
 

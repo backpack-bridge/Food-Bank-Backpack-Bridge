@@ -15,24 +15,25 @@ public class FoodsiteController {
 
 	@Resource
 	private FoodSiteRepository foodSiteRepository;
-	
+
 	@Resource
 	private SignOn signon;
-	
+
 	@RequestMapping("/showSites")
 	public String sites(Model model) {
-	model.addAttribute("sites", foodSiteRepository.findAll());
-	Admin currentSignon = signon.getCurrentUser();
-	model.addAttribute("signon", currentSignon);
-	return "siteList";
+		model.addAttribute("sites", foodSiteRepository.findAll());
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		return "siteList";
 	}
-	
+
 	@GetMapping("/showSite")
 	public String site(@RequestParam(value = "id", required = false) String id, Model model) {
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
 		if (id == null) {
 			// create an empty Foodsite object
+
 			model.addAttribute("site", 
 					new Foodsite("","","","","","","","","","","","","","","","","","","","",""));
 			return "addSite";
