@@ -33,8 +33,13 @@
 <p th:each="student: ${students}">
 <div class="col-md-6 form-group">
   <label class=" control-label">Student's Name</label>
+
+  <a th:href="@{/showStudent(id=${student.id})}">  
+  <button type="button" th:text ="${student.firstName} + ' ' + ${student.lastName}"></button></a>
+
   <p th:each="student: ${students}">
-  <a th:href="@{http>://localhost:8080/showStudent(id=${student.id})}">  <button type="button" th:text ="${student.firstName} + ' +          ${student.lastName}"></button></a>
+  <a th:href="@{/showStudent(id=${student.id})}">  <button type="button" th:text ="${student.firstName} + ' +          ${student.lastName}"></button></a>
+>>>>>>> master
   </div>
   </p>
 
