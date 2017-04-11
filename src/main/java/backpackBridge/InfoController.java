@@ -22,4 +22,9 @@ public class InfoController {
 		return "form_directory";
 	}
 
+	@GetMapping("/e-form-site-coordinator")
+	public String site_coordinator_form() {
+		return "form_to_become_site_coordinaor";
+	}
+
 }

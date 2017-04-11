@@ -6405,16 +6405,20 @@ button.close {
   margin: 1px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #000 \9;
-  background-color: rgba(0, 0, 0, 0);
   border: 1px solid #fff;
   border-radius: 10px;
+  background-color: #FBAA19 !important;
+  color: #FBAA19 !important;
+
 }
 .carousel-indicators .active {
   width: 12px;
   height: 12px;
   margin: 0;
-  background-color: #fff;
+  background-color: #AA131C !important;
+  color: #AA131C !important;
+
+
 }
 .carousel-caption {
   position: absolute;
