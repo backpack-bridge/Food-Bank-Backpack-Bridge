@@ -1,471 +1,240 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Login Welcome Screen and Data"/>
-    <meta name="author" content="admin, welcome"/>
+    <meta name="description" content="Welcome To Back Pack Bridge"/>
+    <meta name="author" content="We Can Code It Team Back Pack"/>
+        <!-- Tab Logo Image -->
+    <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
 
-    <title>Welcome Admin Screen</title>
+
+
+    <title>Welcome Page for Back Pack Bridge</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
+
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet"/>
-
-    <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet"/>
-           <!-- Tab Logo Image -->
-    <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
+    <link href="css/modern-business.css" rel="stylesheet"/>
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
 </head>
 
 <body>
-    <div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top makeHeaderColor" role="navigation">
+        <div class="container makeHeaderColor">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <div class="navbar-header makeHeaderColor">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin</a>
+                <a class="hvr-grow navbar-brand" href="index.html"><img style="margin-top: -44px;" src="img/topLeftLogo.png"/></a>
             </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt=""/>
-                                    </span>
-
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt=""/>
-                                    </span>
-                                    
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt=""/>
-                                    </span>
-                                    
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User Name Here<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="/"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li th:hidden="${admin.AdminHide}">
+                        <a class="hvr-back-pulse " href="/showAdmins">Administration</a>
                     </li>
-                        <!-- Admin Info -->
-                        <br></br>
-                        <span th:hidden="${admin.AdminHide}">
-                        <li>
-							<a href="/showAdmins" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Admin <i class="fa fa-fw fa-caret-down"></i></a>
-						</li>
-                        <!--     <br></br>
-                                    <li>
-                                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Admin <i class="fa fa-fw fa-caret-down"></i></a>
-                                        <ul id="demo" class="collapse">
-                                    <li>
-                                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                                    </li>
-                                    </ul>
-                                    </li> -->
-</span>
+                    <li th:hidden="${admin.SiteHide}">
+                        <a class="hvr-back-pulse " href="/showAllSites">Foodsites</a>
+                    </li>
+                    <li th:hidden="${admin.StudentHide}">
+                        <a class="hvr-back-pulse " href="/showStudents">Students</a>
+                    </li>
+                    <li th:hidden="${admin.VolunteerHide}">
+                        <a class="hvr-back-pulse " href="/showVolunteers">Volunteers</a>
+                    </li>
+                    <li th:hidden="${admin.referalHide}">
+                        <a class="hvr-back-pulse " href="/showStudentReferal">Student Referral</a>
+                    </li>
+                    <li th:hidden="${admin.referalHide}">
+                        <a class="hvr-back-pulse " href="/showStudentReferal">Referral Form</a>
+                    </li>
+                    <li>
+                        <a class="hvr-back-pulse " href="#aboutus">About</a>
+                    </li>
+                    <li>
+                        <a class="hvr-back-pulse" href="/login-form">Login</a>
+                    </li>
+                    <li>
+                        <a class="hvr-back-pulse" href="/form_directory">Forms</a>
+                    </li>
 
-                        <!-- Foodsite Info -->
-                        <br></br>
-                        <span th:hidden="${admin.SiteHide}">
-
-                                                <br></br>
-                            <a href="/showAllSites">
-                                        <li>
-                                <i class="fa fa-fw"> Foodsite </i>
-                                        </li>
-                            </a>
-</span>
-
-                        <!-- Student Info -->
-                        <span th:hidden="${admin.StudentHide}">
-                                                <br></br>
-                                     <li>
-                                        <a href="/showStudents" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Student <i class="fa fa-fw fa-caret-down"></i></a>
-                                   <!--     <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-database"></i> Student <i class="fa fa-fw fa-caret-down"></i></a>
-                                        <ul id="demo2" class="collapse">
-                                    <li>
-                                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                                    </li>
-                                    </ul>-->
-                                                                        </li>
-                                        </span>
-                         <!-- Volunteer Info -->
-                        <span th:hidden="${admin.VolunteerHide}">
-                                                 <br></br>
-
-                                     <li>
-                                     <a href="/showVolunteers" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Volunteer <i class="fa fa-fw fa-caret-down"></i></a>
-                                     <!--   <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-fw fa-database"></i> Volunteer <i class="fa fa-fw fa-caret-down"></i></a>
-                                        <ul id="demo3" class="collapse">
-                                    <li>
-                                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                                    </li>        
-                                    </ul>-->
-                                 </li>
-                                </span>
-                        <!-- Student Referral Info -->
-                        <span th:hidden="${admin.referalHide}">
-                        <br></br>
-                              <li>
-                                 <a href="/showStudentReferal" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Student Referal <i class="fa fa-fw fa-caret-down"></i></a>
-                                     <!--   <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="fa fa-fw fa-database"></i> Student Referral <i class="fa fa-fw fa-caret-down"></i></a>
-                                        <ul id="demo4" class="collapse">
-                                    <li>
-                                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                                    </li>
-                                    </ul>-->
-                              </li>
-                            </span>           
-                        </ul>
- 
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
-        </nav>
-
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Dashboard <small>Statistics Overview</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i><strong> Welcome</strong> Insert Name Here
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-comments fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>New Comments!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>New Tasks!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
-                                        <div>New Orders!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-support fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>Support Tickets!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Donut Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Tasks Panel</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">just now</span>
-                                        <i class="fa fa-fw fa-calendar"></i> Calendar updated
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">4 minutes ago</span>
-                                        <i class="fa fa-fw fa-comment"></i> Commented on a post
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">23 minutes ago</span>
-                                        <i class="fa fa-fw fa-truck"></i> Order 392 shipped
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">46 minutes ago</span>
-                                        <i class="fa fa-fw fa-money"></i> Invoice 653 has been paid
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has been added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">2 hours ago</span>
-                                        <i class="fa fa-fw fa-check"></i> Completed task: "pick up dry cleaning"
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">yesterday</span>
-                                        <i class="fa fa-fw fa-globe"></i> Saved the world
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">two days ago</span>
-                                        <i class="fa fa-fw fa-check"></i> Completed task: "fix error on sales page"
-                                    </a>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Order #</th>
-                                                <th>Order Date</th>
-                                                <th>Order Time</th>
-                                                <th>Amount (USD)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container-fluid -->
-
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url(img/CarImage1.jpg);"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url(img/img1.jpg);"></div>
+                <div class="carousel-caption">
+                    <h2>Welcome to Back Pack Bridge</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url(img/img2.jpg);"></div>
+                <div class="carousel-caption">
+                    <h2>Helping Solve Hunger One Pack Back at a Time</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 style="color: white;" class="page-header well">
+                    Welcome to Back Pack Bridge
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default hvr-grow ">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-laptop"></i> Software That Delivers</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>We believe that our software allows food providers a better way to prepare, give and track food. Software that serves the people who serve others. We believe that Back Pack Bridge is a vital tool in the fight against hunger.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default hvr-grow">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-cutlery"></i> Reducing Hunger in Mid-Ohio</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>The BackPack program in assocaition with Mid-Foodbank aims to relieve hunger where it strikes the hardest...weekends. Backpack Bridge is a tool for food and educations providers to diminish food insecurity over the weekend.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default hvr-grow">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-code"></i>A Program for Providers</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>The software provided is a way to collect data from forms filled out online and a task managing and food tracking application for the Mid-Ohio Food Bank</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+        <!-- Twitter Section To Display Timeline of Twitter -->
+
+		<div class="wb-twitter">
+
+			<a class="twitter-timeline" data-width="1111" data-height="333" data-link-color="#2B7BB9" href="https://twitter.com/Mid_OHFoodbank">Tweets by Mid-Ohio Foodbank</a> 
+			<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+			<a href="https://twitter.com/Mid_OHFoodbank" class="twitter-follow-button" data-show-count="false">Follow @Mid_OHFoodbank</a>
+			<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+			<a href="https://twitter.com/intent/tweet?screen_name=Mid_OHFoodbank" class="twitter-mention-button" data-show-count="false">Tweet to @Mid_OHFoodbank</a>
+			<script src="https//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+        <!-- End of Twitter -->
+
+
+	
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header" id="aboutus">About Us</h2>
+            </div>
+            <div class="col-md-6">
+                <p>About Us Section Here</p>
+       
+            </div>
+            <div class="col-md-6">
+                <img class="hvr-grow img-responsive" src="img/apple.jpg" alt="Kid Eating an Apple"/>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr></hr>
+
+        <!-- Call to Loginsz -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-7">
+                    <h4 style="color:white;">To login to view your profile and its functions click the button to the right</h4>
+                </div>
+                <div class="col-md-5">              	
+                    <a class="btn btn-lg btn-default btn-block hvr-float-shadow" href="/login-form">Click Here to Login</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Forms -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-7">
+                    <h4 style="color:white;">To view both eletronic and paper forms click the button to the right</h4>
+                </div>
+                <div class="col-md-5">
+                    <a class="btn btn-lg btn-default btn-block hvr-float-shadow" href="form_directory.html">Click Here to View Forms</a>
+                </div>
+            </div>
+        </div>
+
+        <hr></hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="pull-left">Copyright &copy; Your Website 2017</p>
+                </div>
+                 <div class="col-lg-6">
+                    <p class="pull-right">Made by the Back Pack Bridge Team at We Can Code It</p>
+                </div>
+            </div>
+        </footer>
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /.container -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -473,10 +242,12 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000
+    })
+    </script>
 
 </body>
 
