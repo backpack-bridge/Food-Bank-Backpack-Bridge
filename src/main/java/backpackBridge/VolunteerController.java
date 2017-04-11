@@ -18,18 +18,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		public VolunteerRepository allVolunteers;
 
 		@RequestMapping("/showVolunteers")
-		public String reviews(Model model) {
+		public String volunteers(Model model) {
 			model.addAttribute("volunteers", allVolunteers.findAll());
 			return "volunteers";
 		}
+//		
+//		@GetMapping("/showVolunteers")
+//		public String volunteer(@RequestParam(value ="id", required = true) Long id, Model model) {
+//				model.addAttribute("volunteer", allVolunteers.findOne(id));
+//				return "volunteer";
+//		}
 
-		@RequestMapping("/showVolunteer")
-		public String review(@RequestParam("id") Long id, Model model) {
+		@GetMapping("/showVolunteer")
+		public String volunteer(@RequestParam(value ="id", required = true) Long id, Model model) {
 			model.addAttribute("volunteer", allVolunteers.findOne(id));
 			return "volunteer";
 		}
 		
-		
+	/*	@PostMapping("/showVolunteer")
+		public String volunteerPost(@ModelAttribute("volunteer") Volunteer volunteer1) {
+			allVolunteers.save(volunteer1);
+			return "volunteers";
+		}
+	*/	
 		@GetMapping ("/showVolunteerForm")
 	    public String volunteerSubmit(Model model) {
 	        model.addAttribute("volunteer",new Volunteer());
@@ -37,7 +48,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		}
 		@PostMapping("/showVolunteerForm")
 		public String volunteerSubmit(@ModelAttribute("volunteer") Volunteer volunteer1) {
-			return "volunteers";
+			allVolunteers.save(volunteer1);
+			return "volunteerForm";
 	}
 	}
 

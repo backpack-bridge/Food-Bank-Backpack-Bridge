@@ -23,7 +23,7 @@ INSERT INTO STUDENT(student_number, first_name, last_name, age, grade, teacher_n
 
 
 INSERT INTO VOLUNTEER (ID,FIRST_NAME,LAST_NAME,AGE,GENDER,STREET_ADDRESS,CITY,STATE,ZIP,PHONE_NUM,EMAIL,food_site_id) VALUES ('1','Tom', 'King', '21','Male','12 main st','columbus','OH','43213','614-537-0000','Tom@yahoo.com','1');
-INSERT INTO VOLUNTEER (ID,FIRST_NAME,LAST_NAME,AGE,GENDER,STREET_ADDRESS,CITY,STATE,ZIP,PHONE_NUM,EMAIL,food_site_id) VALUES ('2','Mary', 'love', '61','Male','199 main st','columbus','OH','43213','614-337-0000','Tom@yahoo.com','2');
+INSERT INTO VOLUNTEER (ID,FIRST_NAME,LAST_NAME,AGE,GENDER,STREET_ADDRESS,CITY,STATE,ZIP,PHONE_NUM,EMAIL,food_site_id) VALUES ('2','Mary', 'love', '61','Female','199 main st','columbus','OH','43213','614-337-0000','Tom@yahoo.com','2');
 
 
 //StudentReferral SQL 
