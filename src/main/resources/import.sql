@@ -16,7 +16,10 @@ INSERT INTO FOODSITE(ID, PROGRAM_NAME, SITE_COORDINATOR_FIRST_NAME, SITE_COORDIN
 
 //Student SQL
 
-INSERT INTO STUDENT(student_id, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status, parent_first_name, parent_last_name, addl_notes) VALUES(123456,'John', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled', 'john', 'doe', 'addl notes')
+INSERT INTO STUDENT(student_number, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status, parent_first_name, parent_last_name, addl_notes) VALUES(123456,'John', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled', 'john', 'doe', 'addl notes')
+INSERT INTO STUDENT(student_number, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status, parent_first_name, parent_last_name, addl_notes) VALUES(123456,'Jane', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled', 'john', 'doe', 'addl notes')
+INSERT INTO STUDENT(student_number, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status, parent_first_name, parent_last_name, addl_notes) VALUES(123456,'Jimmy', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled', 'john', 'doe', 'addl notes')
+INSERT INTO STUDENT(student_number, first_name, last_name, age, grade, teacher_name, ppl_in_house, age_zero_to_five, age_six_to_eleven, age_twelve_to_seventeen, age_eighteen_to_fifty_nine, age_sixtyplus, allergies, frl, parent_permission, status, parent_first_name, parent_last_name, addl_notes) VALUES(123456,'Joey', 'Smith', 7, 2, 'Mrs. Clark', 4, 1, 1, 0, 2, 0, 'peanut', 'yes', 'yes', 'enrolled', 'john', 'doe', 'addl notes')
 
 
 INSERT INTO VOLUNTEER (ID,FIRST_NAME,LAST_NAME,AGE,GENDER,STREET_ADDRESS,CITY,STATE,ZIP,PHONE_NUM,EMAIL,food_site_id) VALUES ('1','Tom', 'King', '21','Male','12 main st','columbus','OH','43213','614-537-0000','Tom@yahoo.com','1');
@@ -26,3 +29,5 @@ INSERT INTO VOLUNTEER (ID,FIRST_NAME,LAST_NAME,AGE,GENDER,STREET_ADDRESS,CITY,ST
 //StudentReferral SQL 
 
 INSERT INTO STUDENT_REFERRAL (age, first_name, last_name, grade, student_id, teacher_name, add_notes) VALUES ('5', 'Jim', 'Smith', '3', '12345', 'Mrs. Jones', 'add notes')
+INSERT INTO STUDENT_REFERRAL (age, first_name, last_name, grade, student_id, teacher_name, add_notes) VALUES ('5', 'Fred', 'Smith', '3', '12345', 'Mrs. Jones', 'add notes')
+INSERT INTO STUDENT_REFERRAL (age, first_name, last_name, grade, student_id, teacher_name, add_notes) VALUES ('5', 'Janis', 'Smith', '3', '12345', 'Mrs. Jones', 'add notes')
