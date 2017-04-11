@@ -21,24 +21,29 @@
 
  <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-vertical" action=" " method="post"  id="contact_form">
 <fieldset>
 
 <legend>Volunteer List</legend>
 
-
-<p th:each="volunteer: ${volunteers}">
 <div class="col-md-6 form-group">
   <label class=" control-label">Volunteer's Name</label  >
-  <a th:href="@{http>://localhost:8080/showVolunteer(id=${volunteer.id})}"/>  
-  <p th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"></p>
+  <p th:each="volunteer: ${volunteers}">
+  
+  <!--<button type="button"> <a th:href="@{/showVolunteer(id=${volunteer.id})}"/> <p th:text="${volunteer.id}"></p> 
+     </button>-->
+  <a th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"
+   th:href="@{/showVolunteer(id=${volunteer.id})}"/> 
+  
   <p th:text= "${volunteer.age}"></p>
   <p th:text="${volunteer.streetAddress}"> </p>
   <p th:text="${volunteer.City} + ' ' + ${volunteer.State} + '  ' +${volunteer.Zip}"></p>
   <p th:text="${volunteer.phoneNum}"></p>
   <p th:text="${volunteer.Email}"></p>
-  </div>
   </p>
+  </div>
+
+  
 		</fieldset>
 		</form>
 </div>
