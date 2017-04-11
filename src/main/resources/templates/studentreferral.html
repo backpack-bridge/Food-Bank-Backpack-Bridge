@@ -22,8 +22,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action="#" th:action="@{/studentReferral}" th:object="${student}" method="post">
-    </form>
+    <form class="well form-horizontal" action="student_referral.php" method="POST">
 <fieldset>
 
 <!-- Form Name -->
@@ -61,7 +60,7 @@
   <div class=" inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  th:field="*{firstName}" placeholder="First Name" class="form-control"  type="text"></input>
+  <input  th:field="*{firstName}" name="first" placeholder="First Name" class="form-control"  type="text"></input>
     </div>
   </div>
 </div>
@@ -80,6 +79,15 @@
 
 <!-- Text input-->
        
+<div class="col-md-4 form-group">
+  <label class="control-label" >E-mail</label> 
+    <div class=" inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="email" placeholder="E-mail" class="form-control"  type="text"></input>
+    </div>
+  </div>
+</div>       
 
 
 <!-- Text input-->
@@ -107,17 +115,17 @@
     </div>
   </div>
 </div>
-</fieldset>
 <div class="col-md-12 paragraph">
                         <p>The BackPack Program is for children who you believe are chronically hungry. The program provides bags of food every other week for children who might otherwise not have food over the weekend. To refer a child, please check one or more of the following behaviors that the child displays on a regular basis. At least one item on this list MUST be checked to refer the child to participate in the BackPack Program. </p>
  </div>                       
 
+</form>
  <div class="form-group">
                         <label class="col-md-4  control-label">Check any that apply</label>
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="hosting" value="1">Rushing food lines
+                                    <input type="radio" name="rushing" value="true">Rushing food lines
                                     </input>
                                 </label>
                             </div>
@@ -202,13 +210,13 @@
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="hosting1" value="yes2"> Yes
+                                    <input type="radio" name="siblings" value="No Sibilings"> Yes
                                     </input>
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="hosting1" value="no2"> No
+                                    <input type="radio" name="siblings" value="Yes Sibilings"> No
                                     </input>
                                 </label>
                             </div>
@@ -228,8 +236,10 @@
 </div>
 
  <div class="form-group">
-  <button type="submit" class="btn btn-default">Submit</button>  
+  <input type="submit" name="submit"  value="Submit Info" class="btn btn-default">
   </div>
+ </fieldset>
+ 
      
 </body>
 
