@@ -33,17 +33,16 @@ public class FoodsiteController {
 		model.addAttribute("signon", currentSignon);
 		if (id == null) {
 			// create an empty Foodsite object
-			model.addAttribute("site",
-					new Foodsite("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
-			return "adminAdd";
+
+			model.addAttribute("site", 
+					new Foodsite("","","","","","","","","","","","","","","","","","","","",""));
+			return "showSite";
 		} else {
 			model.addAttribute("site", foodSiteRepository.findOne(id));
-			return "showSites";
+			return "showSite";
 		}
 	}
 
-	@Resource
-	private SignOn signon2;
 
 	@RequestMapping("/showAllSites")
 	public String Sites(Model model) {
