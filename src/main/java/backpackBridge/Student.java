@@ -5,12 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Student {
@@ -19,49 +13,19 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
 	private long id;
-
-	private long studentId;
-
+	private long studentNumber;
 	private String firstName;
-
 	private String lastName;
-
 	private int age;
-
 	private int grade;
-
-	// private long studentId;
-	// private String firstName;
-	//
-	// private String lastName;
-	// private int age;
-	//
-	// private int grade;
-
 	private String teacherName;
-
 	private int pplInHouse;
-
 	private int ageZeroToFive;
-
 	private int ageSixToEleven;
-
-	// private int ageTwelveToSeventeen;
-	//
-	// private int ageEighteenToFiftyNine;
-	//
-	// private int ageSixtyPLus;
-	//
-	// private String addlNotes;
-
 	private int ageTwelveToSeventeen;
-
 	private int ageEighteenToFiftyNine;
-
 	private int ageSixtyPLus;
-
 	private String addlNotes;
-
 	private String allergies;
 	private String frl;
 	private String status;
@@ -80,8 +44,8 @@ public class Student {
 		this.id = id;
 	}
 
-	public void setStudentId(long studentId) {
-		this.studentId = studentId;
+	public void setStudentNumber(long studentNumber) {
+		this.studentNumber = studentNumber;
 	}
 
 	public long getId() {
@@ -89,10 +53,8 @@ public class Student {
 
 	}
 
-	String numberAsString = "" + id;
-
-	public Long getStudentId() {
-		return studentId;
+	public Long getStudentNumber() {
+		return studentNumber;
 	}
 
 	public String getFirstName() {
