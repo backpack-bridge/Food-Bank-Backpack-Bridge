@@ -23,7 +23,6 @@ public class StudentController {
 	}
 
 	@RequestMapping("/showStudent")
-
 	public String student(@RequestParam(value = "id", required = true) Long id, Model model) {
 		model.addAttribute("student", allStudents.findOne(id));
 
