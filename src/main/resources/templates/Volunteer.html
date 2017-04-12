@@ -20,13 +20,13 @@
   <body>
   <div class="container">
   <legend>Volunteer </legend>
-  <p th:text= "${volunteer.id}"></p>
-  <p th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"></p>
-  <p th:text= "${volunteer.age}"></p>
-  <p th:text="${volunteer.streetAddress}"> </p>
-  <p th:text="${volunteer.City} + ' ' + ${volunteer.State} + '  ' +${volunteer.Zip}"></p>
-  <p th:text="${volunteer.phoneNum}"></p>
-  <p th:text="${volunteer.Email}"></p>
+  <p th:text=" 'Id   ' +${volunteer.id}"></p>
+  <p th:text =" ' Name    ' +${volunteer.firstName} + '  ' + ${volunteer.lastName}"></p>
+  <p th:text= "'Age  ' +${volunteer.age}"></p>
+  <p th:text="'Street Adress  ' +${volunteer.streetAddress}"> </p>
+  <p th:text="'City  ' +   ${volunteer.City} + ' ' + ${volunteer.State} + '  ' +${volunteer.Zip}"></p>
+  <p th:text="'Phone Number  ' +${volunteer.phoneNum}"></p>
+  <p th:text="'Email  ' +${volunteer.Email}"></p>
   </div>
     </body>
     </html>
