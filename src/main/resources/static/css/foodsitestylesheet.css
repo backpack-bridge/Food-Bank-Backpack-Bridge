@@ -1,5 +1,13 @@
 body{
-	background-color: #B2C055;
+
+background: rgba(178,192,85,0.94);
+background: -moz-linear-gradient(left, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 1%, rgba(178,192,85,0.94) 3%, rgba(177,191,85,0.94) 6%, rgba(161,171,74,1) 94%, rgba(161,171,74,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(178,192,85,0.94)), color-stop(0%, rgba(178,192,85,0.94)), color-stop(1%, rgba(178,192,85,0.94)), color-stop(3%, rgba(178,192,85,0.94)), color-stop(6%, rgba(177,191,85,0.94)), color-stop(94%, rgba(161,171,74,1)), color-stop(100%, rgba(161,171,74,1)));
+background: -webkit-linear-gradient(left, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 1%, rgba(178,192,85,0.94) 3%, rgba(177,191,85,0.94) 6%, rgba(161,171,74,1) 94%, rgba(161,171,74,1) 100%);
+background: -o-linear-gradient(left, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 1%, rgba(178,192,85,0.94) 3%, rgba(177,191,85,0.94) 6%, rgba(161,171,74,1) 94%, rgba(161,171,74,1) 100%);
+background: -ms-linear-gradient(left, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 1%, rgba(178,192,85,0.94) 3%, rgba(177,191,85,0.94) 6%, rgba(161,171,74,1) 94%, rgba(161,171,74,1) 100%);
+background: linear-gradient(to right, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 0%, rgba(178,192,85,0.94) 1%, rgba(178,192,85,0.94) 3%, rgba(177,191,85,0.94) 6%, rgba(161,171,74,1) 94%, rgba(161,171,74,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2c055', endColorstr='#a1ab4a', GradientType=1 );
 }
 #success_message{
  display: none;
@@ -105,7 +113,7 @@ display: inline-block;
 .hvr-grow:hover,
 .hvr-grow:focus,
 .hvr-grow:active {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* Back Pulse */
@@ -140,9 +148,9 @@ display: inline-block;
   -webkit-animation-name: hvr-back-pulse;
   animation-name: hvr-back-pulse;
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  animation-duration: 2s;
   -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -195,4 +203,22 @@ display: inline-block;
   height: 80px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.push-the-button-up-a-little {
+  padding-bottom: 10px;
+}
+
+.well h2{
+  color: white;
+}
+
+.well h4{
+  color:white;
+}
+
+.shadow-box-class {
+-webkit-box-shadow: 12px 9px 39px -4px rgba(52,146,69,0.8);
+-moz-box-shadow: 12px 9px 39px -4px rgba(52,146,69,0.8);
+box-shadow: 12px 9px 39px -4px rgba(52,146,69,0.8);
 }
