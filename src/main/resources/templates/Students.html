@@ -19,62 +19,24 @@
   </head>
   <body>
 
-    <div class="container"> </div>
-    <form class="well form-horizontal"  id="student"></form>
-    <div class="col-lg-4 col-md-6 form-group">
-      <label class="control-label">First Name</label>  
-      <div class="inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><span class= "form-control" th:text="${student.firstNames}"></span>
-        </div>
-      </div>
-    </div>
-  
+
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form"></form>
+<fieldset>
+
+<legend>Student List</legend>
 
 
-  <div class="col-lg-4 col-md-6 form-group">
-    <label class="control-label">Last Name</label>  
-    <div class="inputGroupContainer">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <span class= "form-control" th:text="${student.lastNames}"></span>
-      </div>
-    </div>
+<p th:each="student: ${students}">
+<div class="col-md-6 form-group">
+  <label class=" control-label">Student's Name</label>
+
+  <a th:href="@{/showStudent(id=${student.id})}">  
+  <button type="button" th:text ="${student.firstName} + ' ' + ${student.lastName}"></button></a>
+
   </div>
+  </p>
 
-  <div class="col-lg-2 form-group">
-    <label class="control-label">Student Age</label>  
-    <div class="inputGroupContainer">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <span class= "form-control" th:text="${student.age}"></span>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-lg-2 form-group">
-    <label class="control-label">Grade</label>  
-    <div class="inputGroupContainer">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-        <span class= "form-control" th:text="${student.grade}"></span>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="col-lg-4 col-md-6  form-group">
-    <label class="control-label">First Name of Parent or Guardian </label>  
-    <div class="inputGroupContainer">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <span class= "form-control" th:text="${student.parentFirstName}"></span>
-      </div>
-    </div>
-  </div>
-  
-</body>
-</html>
+</fieldset>
+</div></body></html>
