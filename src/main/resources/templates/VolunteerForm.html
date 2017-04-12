@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Program Partner Application</title>
+    <title>Volunteer Application</title>
   <meta name="author" content="name"/>
   <meta name="description" content="Web Form for Becoming program partner"/>
   <meta name="keywords" content="Mid Ohio, Foodbank, Site, Coordinator"/>
@@ -32,8 +32,8 @@
                       <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                          <input  name="firstName" placeholder="First Name" class="form-control"  type="text"
-                          th:field="${volunteer.firstName}" th:readonly="${volunteer.firstName}"/>
+                          <input  name="firstName" placeholder="First Name" class="form-control"  type="text"/>
+                       
                         </div>
                       </div>
                     </div>
@@ -56,7 +56,8 @@
                       <div class="col-md-4 inputGroupContainer">
                        <div class="input-group">
                          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                         <input  name="Age" placeholder="Age" class="form-control"  type="text"/>
+                         <input  name="Age" placeholder="DD/MM/YYYY" class="form-control"  type="text"
+                         th:field="${volunteer.Age}" th:readonly="${volunteer.Age}"/>
                        </div>
                      </div>
                    </div>
@@ -77,6 +78,7 @@
                     </div>
                   </div>
 
+                 
                   <div class="form-group">
                     <label class="col-md-4 control-label">Steet Address</label>  
                     <div class="col-md-4 inputGroupContainer">

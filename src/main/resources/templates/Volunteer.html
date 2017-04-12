@@ -1,31 +1,32 @@
-<!DOCTYPE html>
-
-  <html xmlns:th="http://www.thymeleaf.org">
-
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Student</title>
-  
-    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
-    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"></link>
+    <title>Volunteer</title>
+  <meta name="author" content="name"/>
+  <meta name="description" content="Web Form for Becoming program partner"/>
+  <meta name="keywords" content="Mid Ohio, Foodbank, Site, Coordinator"/>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
 
-    <!-- Jquery and Javascript link for this template -->
+
     <script type="text/javascript" src="js/npm.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
   </head>
   <body>
-
-  <p th:text="${volunteer.firstName}"/>
-   <p th:text="${volunteer.lastName}"/>
-    <p th:text="${volunteer.id}"/> 
-    <p th:text="${volunteer.age}"/>
-    </p>
-    </p>
-    </p>
-    </p>
+  <div class="container">
+  <legend>Volunteer </legend>
+  <p th:text= "${volunteer.id}"></p>
+  <p th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"></p>
+  <p th:text= "${volunteer.age}"></p>
+  <p th:text="${volunteer.streetAddress}"> </p>
+  <p th:text="${volunteer.City} + ' ' + ${volunteer.State} + '  ' +${volunteer.Zip}"></p>
+  <p th:text="${volunteer.phoneNum}"></p>
+  <p th:text="${volunteer.Email}"></p>
+  </div>
     </body>
     </html>
