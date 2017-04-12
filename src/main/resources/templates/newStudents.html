@@ -19,16 +19,24 @@
   </head>
   <body>
 
-  <div class="col-lg-8 container ">
-  <div class="jumbotron">
-  <legend>Student Information </legend>
-  <p th:text=" 'Id   ' +${student.studentNumber}"></p>
-  <p th:text =" ' Name    ' +${student.firstName} + '  ' + ${student.lastName}"></p>
-  <p th:text= "'Age  ' +${student.age}"></p>
-  <p th:text="'Grade  ' +${student.grade}"></p>
-  <p th:text="'Allergies '+${student.allergies}"></p>
-  <p th:text="'Qualifies for Free or Reduced Lunches ' +${student.frl}"></p>
-     </div>
-    </div>
-  </body>
-</html>
+
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form"></form>
+<fieldset>
+
+<legend>Student Referral List</legend>
+
+
+<p th:each="newStudent: ${newStudents}">
+<div class="col-md-6 form-group">
+  <label class=" control-label">Student's Name</label>
+
+  <a th:href="@{/showNewStudent(id=${newStudent.id})}">  
+  <button type="button" th:text ="${newStudent.firstName} + ' ' + ${newStudent.lastName}"></button></a>
+
+  </div>
+  </p>
+
+</fieldset>
+</div></body></html>

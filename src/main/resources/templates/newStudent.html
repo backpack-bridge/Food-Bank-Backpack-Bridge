@@ -21,13 +21,11 @@
 
   <div class="col-lg-8 container ">
   <div class="jumbotron">
-  <legend>Student Information </legend>
-  <p th:text=" 'Id   ' +${student.studentNumber}"></p>
-  <p th:text =" ' Name    ' +${student.firstName} + '  ' + ${student.lastName}"></p>
-  <p th:text= "'Age  ' +${student.age}"></p>
-  <p th:text="'Grade  ' +${student.grade}"></p>
-  <p th:text="'Allergies '+${student.allergies}"></p>
-  <p th:text="'Qualifies for Free or Reduced Lunches ' +${student.frl}"></p>
+  <legend>Student Referral Information </legend>
+  <p th:text =" ' Name    ' +${newStudent.firstName} + '  ' + ${newStudent.lastName}"></p>
+  <p th:text= "'Age  ' +${newStudent.age}"></p>
+  <p th:text="'Grade  ' +${newStudent.grade}"></p>
+ 
      </div>
     </div>
   </body>
