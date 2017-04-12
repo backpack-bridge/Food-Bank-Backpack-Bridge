@@ -19,6 +19,38 @@ public class FoodsiteController {
 	@Resource
 	private SignOn signon;
 
+	@RequestMapping("/showSites")
+	public String sites(Model model) {
+		model.addAttribute("sites", foodSiteRepository.findAll());
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		return "siteList";
+	}
+
+	@GetMapping("/showSite")
+	public String site(@RequestParam(value = "id", required = false) String id, Model model) {
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		if (id == null) {
+			// create an empty Foodsite object
+
+			model.addAttribute("site", 
+					new Foodsite("","","","","","","","","","","","","","","","","","","","",""));
+			return "addSite";
+		} else {
+			model.addAttribute("site", foodSiteRepository.findOne(id));
+			return "showSite";
+		}
+	}
+
+	@PostMapping("/showSite")
+	public String sitePost(@ModelAttribute Foodsite foodsite, Model model) {
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		foodSiteRepository.save(foodsite);
+		return "SiteList";
+	}
+	
 	@RequestMapping("/showAllSites")
 	public String Sites(Model model) {
 		model.addAttribute("sites", foodSiteRepository.findAll());
@@ -26,36 +58,36 @@ public class FoodsiteController {
 		model.addAttribute("signon", currentSignon);
 		return "SiteList";
 	}
-
-	@GetMapping("/showSites")
-	public String ShowSiteForm(@RequestParam(value = "id", required = false) String id, Model model) {
-		Admin currentSignon = signon.getCurrentUser();
-		model.addAttribute("signon", currentSignon);
-		if (id == null) {
-			model.addAttribute("site",
-					new Foodsite("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
-		} else {
-			model.addAttribute("site", foodSiteRepository.findOne(id));
-		}
-		return "Form_for_site_coordinator";
-	}
-
-	@PostMapping("/showSitesAdd")
-	public String ShowSiteForm(@ModelAttribute Foodsite site, Model model) {
-		foodSiteRepository.save(site);
-		Admin currentSignon = signon.getCurrentUser();
-		model.addAttribute("signon", currentSignon);
-		model.addAttribute("sites", foodSiteRepository.findAll());
-		return "SiteList";
-	}
-
-	@GetMapping("/showDeletedSite")
-	public String SiteDelete(@RequestParam(value = "id", required = true) String id, Model model) {
-		foodSiteRepository.delete(id);
-		Admin currentSignon = signon.getCurrentUser();
-		model.addAttribute("signon", currentSignon);
-		model.addAttribute("sites", foodSiteRepository.findAll());
-		return "siteList";
-	}
-
+//
+//	@GetMapping("/showSites")
+//	public String ShowSiteForm(@RequestParam(value = "id", required = false) String id, Model model) {
+//		Admin currentSignon = signon.getCurrentUser();
+//		model.addAttribute("signon", currentSignon);
+//		if (id == null) {
+//			model.addAttribute("site",
+//					new Foodsite("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""));
+//		} else {
+//			model.addAttribute("site", foodSiteRepository.findOne(id));
+//		}
+//		return "Form_for_site_coordinator";
+//	}
+//
+//	@PostMapping("/showSitesAdd")
+//	public String ShowSiteForm(@ModelAttribute Foodsite site, Model model) {
+//		foodSiteRepository.save(site);
+//		Admin currentSignon = signon.getCurrentUser();
+//		model.addAttribute("signon", currentSignon);
+//		model.addAttribute("sites", foodSiteRepository.findAll());
+//		return "SiteList";
+//	}
+//
+//	@GetMapping("/showDeletedSite")
+//	public String SiteDelete(@RequestParam(value = "id", required = true) String id, Model model) {
+//		foodSiteRepository.delete(id);
+//		Admin currentSignon = signon.getCurrentUser();
+//		model.addAttribute("signon", currentSignon);
+//		model.addAttribute("sites", foodSiteRepository.findAll());
+//		return "siteList";
+//	}
+//
 }

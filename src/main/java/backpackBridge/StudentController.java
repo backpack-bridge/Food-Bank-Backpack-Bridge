@@ -23,21 +23,23 @@ public class StudentController {
 	}
 
 	@RequestMapping("/showStudent")
-	public String student(@RequestParam("id") String id, Model model) {
+
+	public String student(@RequestParam("id") Long id, Model model) {
 		model.addAttribute("student", allStudents.findOne(id));
+
 		return "student";
 	}
 
 	@GetMapping("/showStudentEntry")
-	public String studentForm(@RequestParam(value = "id", required = false) String id, Model model) {
-		if (id == null) {
 
-			model.addAttribute("studentEntry", new Student());
-			return "studentEntry";
-		} else {
-			model.addAttribute("student", allStudents.findOne(id));
-			return "student";
-		}
+	public String studentForm(@RequestParam String id, Model model) {
+
+		model.addAttribute("studentEntry", new Student());
+		return "studentEntry";
+
+		// public String studentForm(@RequestParam("id) Long id, Model model) {
+		// model.addAttribute("studentEntry", new Student());
+		// return "studentEntry";
 
 	}
 

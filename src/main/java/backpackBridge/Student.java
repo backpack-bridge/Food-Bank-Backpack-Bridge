@@ -5,12 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Student {
@@ -19,41 +13,19 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
 	private long id;
-	@NotEmpty
-	private long studentId;
-	@NotEmpty
+	private long studentNumber;
 	private String firstName;
-	@NotEmpty
 	private String lastName;
-	@NotEmpty
-	@Min(0)
 	private int age;
-	@NotEmpty
-	@Size(min = 2, max = 12)
 	private int grade;
-	@NotEmpty
 	private String teacherName;
-	@NotEmpty
-	@Min(0)
 	private int pplInHouse;
-	@NotEmpty
-	@Size(min = 0)
 	private int ageZeroToFive;
-	@NotEmpty
-	@Size(min = 0)
 	private int ageSixToEleven;
-	@NotEmpty
-	@Size(min = 0)
 	private int ageTwelveToSeventeen;
-	@NotEmpty
-	@Size(min = 0)
 	private int ageEighteenToFiftyNine;
-	@NotEmpty
-	@Size(min = 0)
 	private int ageSixtyPLus;
-	@NotEmpty
 	private String addlNotes;
-	@NotEmpty
 	private String allergies;
 	private String frl;
 	private String status;
@@ -64,29 +36,25 @@ public class Student {
 	@ManyToOne
 	private Foodsite foodSite;
 
-	
-	
-	
 	protected Student() {
-		
+
 	}
 
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	public void setStudentId(long studentId) {
-		this.studentId = studentId;
+	public void setStudentNumber(long studentNumber) {
+		this.studentNumber = studentNumber;
 	}
 
 	public long getId() {
 		return id;
-		
-	}
-	String numberAsString = "" + id;
 
-	public Long getStudentId() {
-		return studentId;
+	}
+
+	public Long getStudentNumber() {
+		return studentNumber;
 	}
 
 	public String getFirstName() {
@@ -240,6 +208,4 @@ public class Student {
 	public void setParentLastName(String parentLastName) {
 		this.parentLastName = parentLastName;
 	}
-	}
-
-	
+}
