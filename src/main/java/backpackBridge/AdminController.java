@@ -55,7 +55,8 @@ public class AdminController {
 		admin.setChangeDate(ft.format(dNow));
 		admin.setPasswordDate(ft.format(dNow));
 		repository.save(admin);
-		return "Administration";
+		model.addAttribute("admins", repository.findAll());
+		return "adminList";
 	}
 
 	@GetMapping("/deleteAdmin")
