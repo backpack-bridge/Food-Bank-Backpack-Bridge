@@ -19,6 +19,56 @@
   </head>
   <body>
 
-  <p th:text="${student.firstName}"></p>
+  <div class="col-lg-8 container ">
+  <div class="jumbotron">
+  <legend>Student Information </legend>
+  <div class="divTable" style="border: 2px solid #B2C055;" >
+  <div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h2>Student Id</h2>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${student.studentNumber}"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Student Name</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${student.firstName} + '  ' + ${student.lastName}"></p>
+</div>
+</div>
+</div>
+
+ <div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Age</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${student.age}"></p>
+</div>
+</div>
+</div>
+
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Grade</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${student.grade}"></p>
+</div>
+</div>
+</div>
+
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Allergies</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${student.allergies}"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+ 
+ 
+  <p th:text="'Qualifies for Free or Reduced Lunches ' +${student.frl}"></p>
+     
   </body>
-  </html>
+</html>
