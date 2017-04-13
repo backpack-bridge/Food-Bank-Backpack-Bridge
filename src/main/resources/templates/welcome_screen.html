@@ -12,7 +12,7 @@
 
 
 
-    <title>Welcome Page for Back Pack Bridge</title>
+    <title>Welcome Page for Site Coordinator</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
@@ -45,30 +45,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li th:hidden="${admin.AdminHide}">
-                        <a class="hvr-back-pulse " href="/showAdmins">Administration</a>
+                   <li>
+                        <a class="hvr-back-pulse " href="/showStudentEntry">Add New Student</a>
                     </li>
-                    <li th:hidden="${admin.SiteHide}">
-                        <a class="hvr-back-pulse " href="/showAllSites">Foodsites</a>
-                    </li>
-                    <li th:hidden="${admin.StudentHide}">
+                    <li>
                         <a class="hvr-back-pulse " href="/showStudents">Students</a>
                     </li>
-                    <li th:hidden="${admin.VolunteerHide}">
+                    <li>
                         <a class="hvr-back-pulse " href="/showVolunteers">Volunteers</a>
                     </li>
-                    <li th:hidden="${admin.referalHide}">
-                        <a class="hvr-back-pulse " href="/showNewStudents">Student Referral</a>
-                    </li>
-                    <li th:hidden="${admin.referalHide}">
-                        <a class="hvr-back-pulse " href="/showStudentReferal">Referral Form</a>
-                    </li>
                     <li>
-                        <a class="hvr-back-pulse " href="#aboutus">About</a>
+                        <a class="hvr-back-pulse " href="/showNewStudents">Student Referrals</a>
                     </li>
-                    <li>
-                        <a class="hvr-back-pulse" href="/login-form">Login</a>
-                    </li>
+                    
                     <li>
                         <a class="hvr-back-pulse" href="/form_directory">Forms</a>
                     </li>
@@ -124,36 +113,36 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 style="color: white;" class="page-header well">
-                    Welcome to Back Pack Bridge
+                    Welcome Site Coordinator!
                 </h1>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default hvr-grow ">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-laptop"></i> Software That Delivers</h4>
+                        <h4><a href="/showStudents">Students</a></h4>
                     </div>
                     <div class="panel-body">
-                        <p>We believe that our software allows food providers a better way to prepare, give and track food. Software that serves the people who serve others. We believe that Back Pack Bridge is a vital tool in the fight against hunger.</p>
+                        <p>View all participating students</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default hvr-grow">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-cutlery"></i> Reducing Hunger in Mid-Ohio</h4>
+                        <h4><a href="/showNewStudents">Referrals</a></h4>
                     </div>
                     <div class="panel-body">
-                        <p>The BackPack program in assocaition with Mid-Foodbank aims to relieve hunger where it strikes the hardest...weekends. Backpack Bridge is a tool for food and educations providers to diminish food insecurity over the weekend.</p>
+                        <p>View all student referrals</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default hvr-grow">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-code"></i>A Program for Providers</h4>
+                        <h4><a href="/showVolunteers">Volunteers</a></h4>
                     </div>
                     <div class="panel-body">
-                        <p>The software provided is a way to collect data from forms filled out online and a task managing and food tracking application for the Mid-Ohio Food Bank</p>
+                        <p>View a list of all Volunteers</p>
                     </div>
                 </div>
             </div>
@@ -211,7 +200,7 @@
         <div class="well">
             <div class="row">
                 <div class="col-md-7">
-                    <h4 style="color:white;">To view both eletronic and paper forms click the button to the right</h4>
+                    <h4 style="color:white;">To view both electronic and paper forms click the button to the right</h4>
                 </div>
                 <div class="col-md-5">
                     <a class="btn btn-lg btn-default btn-block hvr-float-shadow" href="form_directory.html">Click Here to View Forms</a>

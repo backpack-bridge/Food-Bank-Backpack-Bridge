@@ -30,9 +30,7 @@ public class StudentController {
 	}
 
 	@GetMapping("/showStudentEntry")
-
-	public String studentForm(@RequestParam String id, Model model) {
-
+	public String studentForm(Model model) {
 		model.addAttribute("studentEntry", new Student());
 		return "studentEntry";
 
