@@ -46,16 +46,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li th:hidden="${admin.AdminHide}">
-                        <a class="hvr-back-pulse " href="/showAdmins">Administration</a>
+                        <a th:hidden="${admin.AdminHide}" class="hvr-back-pulse " href="/showAdmins">Administration</a>
                     </li>
                     <li th:hidden="${admin.SiteHide}">
-                        <a class="hvr-back-pulse " href="/showAllSites">Foodsites</a>
+                        <a th:hidden="${admin.AdminHide}" class="hvr-back-pulse " href="/showAllSites">Foodsites</a>
                     </li>
                     <li th:hidden="${admin.StudentHide}">
                         <a class="hvr-back-pulse " href="/showStudents">Students</a>
                     </li>
                     <li th:hidden="${admin.VolunteerHide}">
-                        <a class="hvr-back-pulse " href="/showVolunteers">Volunteers</a>
+                        <a th:hidden="${admin.StudentHide}" class="hvr-back-pulse " href="/showVolunteers">Volunteers</a>
                     </li>
                     <li th:hidden="${admin.referalHide}">
                         <a class="hvr-back-pulse " href="/showNewStudents">Student Referral</a>
