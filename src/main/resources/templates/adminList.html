@@ -9,8 +9,8 @@
   <meta name="description" content="Web Form for Sign On Administration."/>
   <meta name="keywords" content="Mid Ohio, Foodbank, Sign On, Administration"/>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
     <link rel="stylesheet" th:href="@{css/foodsitestylesheet.css}" type="text/css"/>
            <!-- Tab Logo Image -->
@@ -69,13 +69,11 @@
         <!-- /.container -->
     </nav>
   </div>
-<br></br>
-<h1></h1>
-<h2></h2>
-<p></p>
+
 <div class="container">
 	
-<form class="well form-horizontal" action="/showAdmin" method="post"  id="contact_form">
+<form class="well form-horizontal" action="/showAdmin"
+ method="post"  id="contact_form" style="background-color:lightgrey;margin-top: 60px">
 <fieldset>
 
 <!-- Form Name -->
