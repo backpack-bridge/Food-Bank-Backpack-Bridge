@@ -45,23 +45,25 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li th:hidden="${admin.AdminHide}">
+                    <li th:hidden="${signon.adminHide}">
+                    
                         <a class="hvr-back-pulse " href="/showAdmins">Administration</a>
                     </li>
-                    <li th:hidden="${admin.SiteHide}">
+                    <li th:hidden="${signon.SiteHide}">
+                        
                         <a class="hvr-back-pulse " href="/showAllSites">Foodsites</a>
                     </li>
-                    <li th:hidden="${admin.StudentHide}">
+                    <li th:hidden="${signon.StudentHide}">
+                    
                         <a class="hvr-back-pulse " href="/showStudents">Students</a>
                     </li>
-                    <li th:hidden="${admin.VolunteerHide}">
+                    <li th:hidden="${signon.VolunteerHide}">
+                        
                         <a class="hvr-back-pulse " href="/showVolunteers">Volunteers</a>
                     </li>
-                    <li th:hidden="${admin.referalHide}">
+                    <li th:hidden="${signon.referalHide}">
+                        
                         <a class="hvr-back-pulse " href="/showNewStudents">Student Referral</a>
-                    </li>
-                    <li th:hidden="${admin.referalHide}">
-                        <a class="hvr-back-pulse " href="/showStudentReferal">Referral Form</a>
                     </li>
                     <li>
                         <a class="hvr-back-pulse " href="#aboutus">About</a>
