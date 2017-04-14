@@ -72,15 +72,15 @@
 <legend>Student Referral List</legend>
 
 
-<p th:each="newStudent: ${newStudents}">
+
 <div class="col-md-6 form-group">
   <label class=" control-label">Student's Name</label>
-
-  <a th:href="@{/showNewStudent(id=${newStudent.id})}">  
-  <button type="button" th:text ="${newStudent.firstName} + ' ' + ${newStudent.lastName}"></button></a>
-
+<p th:each="newStudent: ${newStudents}">
+  <a th:href="@{/showNewStudent(id=${newStudent.id})}" 
+  class="button btnPush btnBlueGreen" data-jkit="[show:delay=600;speed=500;animation=fade]" th:text ="${newStudent.firstName} + ' ' + ${newStudent.lastName}"></a>
+</p>
   </div>
-  </p>
+  
 
 </fieldset>
 </div></body></html>
