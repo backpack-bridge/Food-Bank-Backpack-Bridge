@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 
   <html xmlns:th="http://www.thymeleaf.org">
 
@@ -25,15 +25,15 @@
     <form class="well form-horizontal" action=" " method="post"  id="contact_form"></form>
 <fieldset>
 
-<legend>Student List</legend>
+<legend>Student Referral List</legend>
 
 
-<p th:each="student: ${students}">
+<p th:each="newStudent: ${newStudents}">
 <div class="col-md-6 form-group">
   <label class=" control-label">Student's Name</label>
 
-  <a th:href="@{/showStudent(id=${student.id})}">  
-  <button type="button" th:text ="${student.firstName} + ' ' + ${student.lastName}"></button></a>
+  <a th:href="@{/showNewStudent(id=${newStudent.id})}">  
+  <button type="button" th:text ="${newStudent.firstName} + ' ' + ${newStudent.lastName}"></button></a>
 
   </div>
   </p>

@@ -16,8 +16,13 @@ public class StudentReferralController {
 	public StudentReferralRepository newStudents;
 
 	@RequestMapping("/showNewStudents")
-	public String student(@RequestParam("id") Long id, Model model) {
+	public String newStudents(Model model) {
 		model.addAttribute("newStudents", newStudents.findAll());
+		return "newStudents";
+	}
+
+	@RequestMapping("/showNewStudent")
+	public String newStudent(@RequestParam(value = "id", required = true) Long id, Model model) {
 		model.addAttribute("newStudent", newStudents.findOne(id));
 		return "newStudent";
 	}

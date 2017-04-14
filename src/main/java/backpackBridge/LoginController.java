@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -40,9 +41,19 @@ public class LoginController {
 		
 		if (password.equals(adminValue.getPassword())) {
 			signOn.setCurrentUser(adminValue);
+			Admin currentSignon = signOn.getCurrentUser();
+			model.addAttribute("signon", currentSignon);
 			return "welcome_screen";
 		} 
 		
 		return "error-login";
 	}
+	
+	@RequestMapping("/welcome_screen")
+	public String home(Model model) {
+		Admin currentSignon = signOn.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		return "welcome_screen";
+	}
+	
 }
