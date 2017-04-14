@@ -69,18 +69,15 @@
     <form  style="margin-top: 60px;" class="well form-vertical" action=" " method="post"  id="contact_form">
 <fieldset>
 
-<legend>Volunteer List</legend>
 
-<div class="col-md-6 form-group">
+
+<div class="col-lg-6 form-group">
   
+  
+  <label style="font-size: 20px; color: #349245;" class=" control-label">Volunteer's Name</label>
   <p th:each="volunteer: ${volunteers}">
-  <label style="font-size: 20px; color: #349245;" class=" control-label">Volunteer's Name</label> <br></br>
-  <!--<button type="button"> <a th:href="@{/showVolunteer(id=${volunteer.id})}"/> <p th:text="${volunteer.id}"></p> 
-     </button>-->
-  <a th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"
-   th:href="@{/showVolunteer(id=${volunteer.id})}"/> 
-  
-  </p>
+  <a th:href="@{/showVolunteer(id=${volunteer.id})}" class="button btnPush btnBlueGreen" data-jkit="[show:delay=600;speed=500;animation=fade]"  th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"
+   ></a></p>
   </div>
 
   
