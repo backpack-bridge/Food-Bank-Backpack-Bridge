@@ -270,3 +270,38 @@ div.parallax-container div.parallax {
 h4{
    font-size: 21px;
 }
+
+
+
+
+.btnBlueGreen.btnPush {
+ box-shadow: 0px 5px 2px 3px #007144;
+}
+
+
+
+.btnPush:hover {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.btnBlueGreen.btnPush:hover {
+  box-shadow: 0px 0px 0px 0px #007144;
+}
+
+a.button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 55px;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+  background-color: #349245;
+  font-size: 30px;
+}
+
