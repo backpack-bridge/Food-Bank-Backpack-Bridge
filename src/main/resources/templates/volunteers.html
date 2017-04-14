@@ -1,27 +1,27 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+ <!DOCTYPE html>
+
+  <html xmlns:th="http://www.thymeleaf.org">
+
   <head>
     <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Program Partner Application</title>
-  <meta name="author" content="name"/>
-  <meta name="description" content="Web Form for Becoming program partner"/>
-  <meta name="keywords" content="Mid Ohio, Foodbank, Site, Coordinator"/>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Student</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"></link>
     <link href="css/bootstrap.css" rel="stylesheet"/>
-
+    <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
       <!-- Tab Logo Image -->
   <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
 
+    <!-- Jquery and Javascript link for this template -->
     <script type="text/javascript" src="js/npm.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
   </head>
   <body>
-
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top makeHeaderColor" role="navigation">
@@ -39,6 +39,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+
                     <li>
                         <a class="hvr-back-pulse" href="/welcome_screen">Welcome</a>
                     </li>
@@ -63,30 +64,21 @@
 
     <!-- Header-->
 
+<div class="container">
 
- <div class="container">
-
-    <form  style="margin-top: 60px;" class="well form-vertical" action=" " method="post"  id="contact_form">
-<fieldset>
+    <form class="well form-verical" action=" " method="post"  id="contact_form"></form>
 
 
 
-<div class="col-lg-6 form-group">
-  
-  
-  <label style="font-size: 20px; color: #349245;" class=" control-label">Volunteer's Name</label>
-  <p th:each="volunteer: ${volunteers}">
-  <a th:href="@{/showVolunteer(id=${volunteer.id})}" class="button btnPush btnBlueGreen" data-jkit="[show:delay=600;speed=500;animation=fade]"  th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"
-   ></a></p>
+
+<div class="col-md-6 form-group">
+<label style="font-size: 20px; color: #349245;" class=" control-label">Volunteers</label>
+
+<p th:each="volunteer: ${volunteers}">
+ <a th:href="@{/showVolunteer(id=${volunteer.id})}"  class="button btnPush btnBlueGreen" data-jkit="[show:delay=600;speed=500;animation=fade]" th:text ="${volunteer.firstName} + ' ' + ${volunteer.lastName}"></a>
+ </p>
   </div>
 
-  
-		</fieldset>
-		</form>
-</div>
-</body>
-</html>
 
 
-
-
+</div></body></html>
