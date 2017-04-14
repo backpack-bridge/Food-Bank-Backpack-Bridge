@@ -67,20 +67,20 @@
 <div class="container">
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form"></form>
-<fieldset>
+
 
 <legend>Student List</legend>
 
+<div class="col-md-6 form-group">
+  <label class=" control-label">Students </label>
+
+
 
 <p th:each="student: ${students}">
-<div class="col-md-6 form-group">
-  <label class=" control-label">Student's Name</label>
-
-  <a th:href="@{/showStudent(id=${student.id})}">  
-  <button type="button" th:text ="${student.firstName} + ' ' + ${student.lastName}"></button></a>
-
+ <a th:href="@{/showStudent(id=${student.id})}"  class="button btnPush btnBlueGreen" data-jkit="[show:delay=600;speed=500;animation=fade]" th:text ="${student.firstName} + ' ' + ${student.lastName}"></a>
+ </p>
   </div>
-  </p>
 
-</fieldset>
+
+
 </div></body></html>
