@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
-	
+
 	@Resource
 	private AdminRepository adminRepository;
 
@@ -27,33 +27,33 @@ public class LoginController {
 
 	@PostMapping("/login-form")
 	public String checkPersonInfo(@RequestParam(value = "id") String id,
-			@RequestParam(value = "password") String password,  Model model) {
+			@RequestParam(value = "password") String password, Model model) {
 
 		if (id == null || password == null) {
 			return "error-login";
 		}
-		
+
 		Admin adminValue = adminRepository.findOne(id);
 		if (adminValue == null) {
 			return "error-login";
 		}
 		model.addAttribute("admin", adminValue);
-		
+
 		if (password.equals(adminValue.getPassword())) {
 			signOn.setCurrentUser(adminValue);
 			Admin currentSignon = signOn.getCurrentUser();
 			model.addAttribute("signon", currentSignon);
 			return "welcome_screen";
-		} 
-		
+		}
+
 		return "error-login";
 	}
-	
+
 	@RequestMapping("/welcome_screen")
 	public String home(Model model) {
 		Admin currentSignon = signOn.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
 		return "welcome_screen";
 	}
-	
+
 }
