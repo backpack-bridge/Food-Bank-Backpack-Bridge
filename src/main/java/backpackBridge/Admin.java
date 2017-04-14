@@ -50,6 +50,7 @@ public class Admin {
 		this.referalAccess = referalAccess;
 		this.changeDate = changeDate;
 		this.changeId = changeId;
+
 	}
 
 	public String getId() {

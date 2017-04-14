@@ -24,19 +24,19 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action="/showSites" method="post"  id="contact_form">
+    <form class="well form-horizontal" action="http://localhost:8080/showSites" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Welcome Site Coordinator</legend>
+<legend>Welcome Sign On Site Coordinator</legend>
 
 <!-- Text input-->
 <div class="form-group">
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
 
-   <p th:each="site: ${sites}"><a th:text="${site.id} + ' ' + ${site.program_name} + ' ' + ${site.address}"
-   th:href="@{/showSite(id=${site.id})}" /></p>
+   <p th:each="site: ${sites}"><a th:text="${site.id} + ' ' + ${site.program_name}"
+   th:href="@{/showSites(id=${site.id})}" /></p>
     </div>
   </div>
 </div>
@@ -47,7 +47,7 @@
   <span th:hide="${site.SiteHide}">
 
   <div class="col-md-4" >
-    	<a th:href="@{/showSite}"><button type="button" class="btn btn-warning">
+    	<a th:href="@{/showSites}"><button type="button" class="btn btn-warning">
     	Add <span class="glyphicon glyphicon-send"> 
       </span></button></a>
   </div>
