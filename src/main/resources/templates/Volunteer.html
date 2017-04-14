@@ -21,7 +21,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   </head>
 <body>
-
+<div style="margin-top: 65px;" class="col-lg-12 container ">
+<div class="jumbotron">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top makeHeaderColor" role="navigation">
@@ -66,15 +67,64 @@
     <!-- Header-->
 
 
-  <div class="container">
-  <legend>Volunteer </legend>
-  <p th:text=" 'Id   ' +${volunteer.id}"></p>
-  <p th:text =" ' Name    ' +${volunteer.firstName} + '  ' + ${volunteer.lastName}"></p>
-  <p th:text= "'Age  ' +${volunteer.age}"></p>
-  <p th:text="'Street Adress  ' +${volunteer.streetAddress}"> </p>
-  <p th:text="'City  ' +   ${volunteer.City} + ' ' + ${volunteer.State} + '  ' +${volunteer.Zip}"></p>
-  <p th:text="'Phone Number  ' +${volunteer.phoneNum}"></p>
-  <p th:text="'Email  ' +${volunteer.Email}"></p>
-  </div>
-    </body>
-    </html>
+ 
+    <div class="divTable" style="border: 2px solid #B2C055;" >
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h2>Volunteer Id</h2>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${volunteer.id}"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>First Name</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${volunteer.firstName}"></p>
+</div>
+</div>
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Last Name</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${volunteer.lastName}"></p>
+</div>
+
+ <div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Age</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${volunteer.age}"></p>
+</div>
+</div>
+</div>
+
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Street Address</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${volunteer.streetAddress}"></p>
+</div>
+</div>
+</div>
+
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>City, State, Zip Code</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text=" ${volunteer.City} + ' ' + ${volunteer.State} + '  ' +${volunteer.Zip}"></p>
+</div>
+</div>
+</div>
+
+
+
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Phone Number</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${volunteer.phoneNum}"></p>
+</div>
+</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell" style="border:2px solid #B2C055;"><h3>Phone Number</h3>
+<div class="divTableCell" style="border:2px solid #B2C055;"><p th:text="${volunteer.Email}"></p>
+</div>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+</div>
+ 
+     
+  </body>
+</html>
