@@ -10,9 +10,13 @@
   <meta name="author" content="name"></meta>
   <meta name="description" content="Web Form for the site Coordinator to fill out and add data to the database."></meta>
   <meta name="keywords" content="Mid Ohio, Foodbank, Site, Coordinator"/>
+
+        <!-- Tab Logo Image -->
+  <link rel="icon" type="image/png" href="img/Tab-Icon.png"/>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/foodsitestylesheet.css" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
 
     <!-- Jquery and Javascript link for this template -->
     <script type="text/javascript" src="js/npm.js"></script>
@@ -20,6 +24,48 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
   </head>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top makeHeaderColor" role="navigation">
+        <div class="container makeHeaderColor">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header makeHeaderColor">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="hvr-grow navbar-brand" href="index.html"><img style="margin-top: -44px;" src="img/topLeftLogo.png"/></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="hvr-back-pulse" href="/welcome_screen">Welcome</a>
+                    </li>
+                   <li>
+                        <a class="hvr-back-pulse " href="/showStudentEntry">Add New Student</a>
+                    </li>
+                    <li>
+                        <a class="hvr-back-pulse " href="/showStudents">Students</a>
+                    </li>
+                    <li>
+                        <a class="hvr-back-pulse " href="/showVolunteers">Volunteers</a>
+                    </li>
+                    <li>
+                        <a class="hvr-back-pulse " href="/showNewStudents">Student Referrals</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header-->
+
   <body>
 
 <div class="container">

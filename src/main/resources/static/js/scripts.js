@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
                  , "img/backgrounds/2.jpg"
                  , "img/backgrounds/3.jpg"
                  , "img/backgrounds/4.jpg"
-                ], {duration: 4000, fade: 1250});
+                ], {duration: 3300, fade: 1250});
     
     $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
     	$(this).removeClass('input-error');
