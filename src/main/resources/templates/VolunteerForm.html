@@ -109,43 +109,32 @@
                       <div class="col-md-4 inputGroupContainer">
                        <div class="input-group">
                          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                         <input  name="Age" placeholder="DD/MM/YYYY" class="form-control"  type="text"
+                         <input  name="Age" placeholder="Age" class="form-control"  type="text"
                          th:field="${volunteer.Age} "/>
                        </div>
                      </div>
                    </div>
-
-                   <div class="form-group">
+<div class="form-group">
                     <label class="col-md-4 control-label">Gender</label>
                     <div class="col-md-4">
                       <div class="radio">
-                      <ul>
-                       <li th:each="yes :${allVolunteer}">
-                          <input type="radio" th:field="${Male}" th:value="${yes1}" /> 
-                          <label th:for="${#ids.prev('Male')}" th:text="#{${'volenteer.Male. ' yes}}">Male</label>
-                      </li>
-                      </ul>
+                        <label>
+                          <input type="radio" name="Male" value="yes1" /> Male
+                        </label>
                       </div>
                       <div class="radio">
-                      <ul>
-                       <li th:each="no :${allVolunteer}">
-                          <input type="radio" th:field="${Female}" th:value="${no1}" /> 
-                          <label th:for="${#ids.prev('Female')}" th:text="#{${'volenteer.Female. ' no}}">Female</label>
-                      </li>
-                      </ul>
-                        
-                        
+                        <label>
+                          <input type="radio" name="Female" value="no1" /> Female
+                        </label>
                       </div>
                     </div>
                   </div>
-
-                 
                   <div class="form-group">
                     <label class="col-md-4 control-label">Steet Address</label>  
                     <div class="col-md-4 inputGroupContainer">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input  name="steetAddress" placeholder="Steet Address" class="form-control"  type="text"
+                        <input  name="steetAddress" placeholder="Street Address" class="form-control"  type="text"
                         th:field="${volunteer.streetAddress}" />
                       </div>
                     </div>
