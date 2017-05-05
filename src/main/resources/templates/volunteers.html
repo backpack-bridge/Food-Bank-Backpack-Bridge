@@ -34,26 +34,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="hvr-grow navbar-brand" href="index.html"><img style="margin-top: -44px;" src="img/topLeftLogo.png"/></a>
+                <a class="hvr-grow navbar-brand" href="index.html">
+                <img style="margin-top: -44px;margin-left: -70px" src="img/topLeftLogo.png"/></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-
-                    <li>
-                        <a class="hvr-back-pulse" href="/welcome_screen">Welcome</a>
+                	<li th:hidden="${signon.adminHide}">
+                        <a class="hvr-back-pulse " href="/showAdmins">ID Admin</a>
                     </li>
-                   <li>
-                        <a class="hvr-back-pulse " href="/showStudentEntry">Add New Student</a>
+                    <li th:hidden="${signon.siteHide}">
+                        <a class="hvr-back-pulse " href="/showAllSites">Sites</a>
                     </li>
-                    <li>
+                    <li th:hidden="${signon.studentHide}">
                         <a class="hvr-back-pulse " href="/showStudents">Students</a>
                     </li>
-                    <li>
+                    <li th:hidden="${signon.volunteerHide}">
                         <a class="hvr-back-pulse " href="/showVolunteers">Volunteers</a>
                     </li>
+                    <li th:hidden="${signon.referalHide}">
+                        <a class="hvr-back-pulse " href="/showNewStudents">Referral</a>
+                    </li>
                     <li>
-                        <a class="hvr-back-pulse " href="/showNewStudents">Student Referrals</a>
+                        <a class="hvr-back-pulse" href="/login-form">Login</a>
+                    </li>
+                    <li>
+                        <a class="hvr-back-pulse" href="/welcome_screen">Home</a>
                     </li>
                 </ul>
             </div>
