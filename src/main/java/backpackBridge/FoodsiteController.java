@@ -48,7 +48,7 @@ public class FoodsiteController {
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
 		foodSiteRepository.save(foodsite);
-		return "SiteList";
+		return "siteList";
 	}
 	
 	@RequestMapping("/showAllSites")
@@ -56,7 +56,7 @@ public class FoodsiteController {
 		model.addAttribute("sites", foodSiteRepository.findAll());
 		Admin currentSignon = signon.getCurrentUser();
 		model.addAttribute("signon", currentSignon);
-		return "SiteList";
+		return "siteList";
 	}
 //
 //	@GetMapping("/showSites")
@@ -81,13 +81,13 @@ public class FoodsiteController {
 //		return "SiteList";
 //	}
 //
-//	@GetMapping("/showDeletedSite")
-//	public String SiteDelete(@RequestParam(value = "id", required = true) String id, Model model) {
-//		foodSiteRepository.delete(id);
-//		Admin currentSignon = signon.getCurrentUser();
-//		model.addAttribute("signon", currentSignon);
-//		model.addAttribute("sites", foodSiteRepository.findAll());
-//		return "siteList";
-//	}
+	@GetMapping("/deleteSite")
+	public String SiteDelete(@RequestParam(value = "id", required = true) String id, Model model) {
+		foodSiteRepository.delete(id);
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		model.addAttribute("sites", foodSiteRepository.findAll());
+		return "siteList";
+	}
 //
 }
