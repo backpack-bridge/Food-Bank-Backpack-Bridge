@@ -48,6 +48,15 @@ public class StudentController {
 //		Admin currentSignon = signon.getCurrentUser();
 //		model.addAttribute("signon", currentSignon);
 		allStudents.save(student);
-		return "studentEntry";
+		return "students";
+	}
+	
+	@GetMapping("/deleteStudent")
+	public String studentDelete(@RequestParam(value = "id", required = true) Long id, Model model) {
+		allStudents.delete(id);
+		model.addAttribute("students", allStudents.findAll());
+		Admin currentSignon = signon.getCurrentUser();
+		model.addAttribute("signon", currentSignon);
+		return "students";
 	}
 }

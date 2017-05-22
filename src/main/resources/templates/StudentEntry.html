@@ -76,7 +76,7 @@
 
 <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form"></form>
+    <form class="well form-horizontal" action="#" th:action="@{/showStudentEntry}" method="post"  id="contact_form"></form>
 <fieldset></fieldset>
 
 <!-- Form Name -->
@@ -93,202 +93,208 @@
 <!-- Text input-->
 <div class="col-lg-12 form-group">
   <label class="control-label">Start Date</label>  
-  <div class="inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input  name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text"></input>
+    <div class="inputGroupContainer">
+  		<div class="input-group">
+  			<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  			<input  name="start_date" placeholder="e.g. 11/22/2011" class="form-control"  type="text"></input>
+    	</div>
     </div>
-  </div>
 </div>
 
 <!-- Text input-->
 <div class="col-lg-12 form-group">
   <label class="control-label">First Name</label>  
-  <div class="inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="Student First Name" class="form-control"  type="text"></input>
-    </div>
-  </div>
+  	<div class="inputGroupContainer">
+  		<div class="input-group">
+  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ 			 <input  name="first_name" placeholder="Student First Name" class="form-control"  type="text"></input>
+    	</div>
+  	</div>
 </div>
 
 <!-- Text input-->
 <div class="col-lg-12 form-group">
   <label class="control-label" >Last Name</label> 
     <div class="inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Student Last Name" class="form-control"  type="text"></input>
+	    <div class="input-group">
+  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  			<input name="last_name" placeholder="Student Last Name" class="form-control"  type="text"></input>
+	    </div>
     </div>
-  </div>
 </div>
 
 <div class="col-lg-12 form-group">
   <label class="control-label">First Name of Parent or Guardian </label>  
-  <div class="inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="parent_first_name" placeholder="Parent First Name" class="form-control"  type="text"></input>
+    <div class="inputGroupContainer">
+  		<div class="input-group">
+  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  			<input  name="parent_first_name" placeholder="Parent First Name" class="form-control"  type="text"></input>
+    	</div>
     </div>
-  </div>
 </div>
 
 <!-- Text input-->
 <div class="col-lg-12 form-group">
   <label class="control-label" >Last Name of Parent or Guardian</label> 
     <div class="inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="parent_last_name" placeholder="Last Name of parent" class="form-control"  type="text"></input>
-  </div>
+    	<div class="input-group">
+  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  			<input name="parent_last_name" placeholder="Last Name of parent" class="form-control"  type="text"></input>
+  		</div>
+	</div>
 </div>
 
 <!-- Text input-->
-       <div class="col-lg-12 form-group">
+<div class="col-lg-12 form-group">
   <label class="control-label">Student Age</label>  
     <div class="inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="age" placeholder=" Student Age" class="form-control"  type="text"></input>
+    	<div class="input-group">
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  			<input name="age" placeholder=" Student Age" class="form-control"  type="text"></input>
+    	</div>
     </div>
-  </div>
 </div>
 
 <!-- Text input-->      
 <div class="col-lg-12 form-group">
   <label class="control-label">Grade</label>  
     <div class="inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-  <input name="grade" placeholder="Grade" class="form-control" type="text"></input>
+    	<div class="input-group">
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+  			<input name="grade" placeholder="Grade" class="form-control" type="text"></input>
+    	</div>
     </div>
-  </div>
 </div>
 
 <div class="col-lg-12 form-group">
   <label class="control-label">Teacher's Name</label>  
-  <div class="inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-apple"></i></span>
-  <input  name="teacher_name" placeholder="Teacher's Name" class="form-control"  type="text"></input>
-    </div>
-  </div>
+   <div class="inputGroupContainer">
+  		<div class="input-group">
+  			<span class="input-group-addon"><i class="glyphicon glyphicon-apple"></i></span>
+  			<input  name="teacher_name" placeholder="Teacher's Name" class="form-control"  type="text"></input>
+    	</div>
+   </div>
 </div>
 
 <!-- Text input-->
 <div class="col-lg-12 form-group">
   <label class=" control-label" >Number of people in the home</label> 
     <div class=" inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="ppl_in_house" placeholder="# of people in the home" class="form-control"  type="text"></input>
-    </div>
-  </div>
+    	<div class="input-group">
+  			<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  			<input name="ppl_in_house" placeholder="# of people in the home" class="form-control"  type="text"></input>
+    	</div>
+   </div>
 </div>
 
 <!-- Text input-->
-       <div class="col-lg-12 form-group">
+<div class="col-lg-12 form-group">
   <label class="control-label">Number of Children ages 0-5</label>  
     <div class="inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="age_zero_to_five" placeholder="# of people ages 0-5" class="form-control"  type="text"></input>
-    </div>
-  </div>
+    	<div class="input-group">
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  			<input name="age_zero_to_five" placeholder="# of people ages 0-5" class="form-control"  type="text"></input>
+    	</div>
+   </div>
 </div>
 
 <!-- Text input-->      
 <div class="col-lg-12 form-group">
   <label class=" control-label">Number of children in the house ages 6-11</label>  
     <div class=" inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="age_six_to_eleven" placeholder="# of people ages 6 to 11 class=" class="form-control" type="text"></input>
-    </div>
-  </div>
+    	<div class="input-group">
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  			<input name="age_six_to_eleven" placeholder="# of people ages 6 to 11 class=" class="form-control" type="text"></input>
+    	</div>
+   </div>
 </div>
 
 <!-- Text input-->    
 <div class="col-lg-12 form-group">
   <label class=" control-label">Number of children in the house ages 12-17</label>  
     <div class=" inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="age_twelve_to_seventeen" placeholder="# of people ages 12-17" class="form-control" type="text">
-   </input>
+    	<div class="input-group">
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  			<input name="age_twelve_to_seventeen" placeholder="# of people ages 12-17" class="form-control" type="text">
+   			</input>
+    	</div>
     </div>
-  </div>
 </div>
 
 <!-- Text input-->
 <div class="col-lg-12 form-group">
   <label class=" control-label">Number of people in the house ages 18-59</label>  
     <div class="inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="age_eighteen_to_fifty_nine" placeholder="# of people ages 18-59" class="form-control" type="text"></input>
-    </div>
-  </div>
+    	<div class="input-group">
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  			<input name="age_eighteen_to_fifty_nine" placeholder="# of people ages 18-59" class="form-control" type="text"></input>
+    	</div>
+   </div>
 </div>
 
 <div class="col-lg-12 form-group">
   <label class=" control-label">Number of people in the house ages 60+</label>  
     <div class=" inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="# of people ages 18-59" placeholder="# of people ages 18-59" class="form-control" type="text"></input>
-    </div>
-  </div>
+    	<div class="input-group">
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  			<input name="# of people ages 18-59" placeholder="# of people ages 18-59" class="form-control" type="text"></input>
+    	</div>
+   </div>
 </div>
 
 <div class="col-lg-12 form-group">
   <label class="control-label">List any Allergies</label>  
   <div class=" inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="Allergies" placeholder="Allergies" class="form-control"  type="text"></input>
+  	<div class="input-group">
+  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  		<input  name="Allergies" placeholder="Allergies" class="form-control"  type="text"></input>
     </div>
   </div>
 </div>
 
-<div class="col-lg-12 form-group">
-                        <label class=" control-label">Does this child receive Free or Reduced Lunches </label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting1" value="yes2"> Yes
-                                    </input>
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting1" value="no2"> No
-                                    </input>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+		<div class="col-lg-12 form-group">
+             <label class="control-label">Does this child receive Free or Reduced Lunches </label>
+             <div class="col-md-4">
+                   <div class="radio">
+                         <label>
+                             <input type="radio" name="hosting1" value="yes1"> Yes </input>
+                         </label>
+                   </div>
+                   <div class="radio">
+                         <label>
+                             <input type="radio" name="hosting1" value="no1"> No </input>
+                        </label>
+                   </div>
+              </div>
+          </div>
 
- <div class="col-lg-12 form-group">
-                        <label class="control-label">Does child have parent's permission to participate </label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting1" value="yes2"> Yes
-                                    </input>
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting1" value="no2"> No
-                                    </input>
-                                </label>
-                            </div>
-                        </div>
-                        </div>              
+ 	<div class="col-lg-12 form-group">
+          <label class="control-label">Does child have parent's permission to participate </label>
+              <div class="col-md-4">
+                  <div class="radio">
+                      <label>
+                          <input type="radio" name="hosting2" value="yes2"> Yes </input>
+                      </label>
+                  </div>
+                  <div class="radio">
+                      <label>
+                          <input type="radio" name="hosting2" value="no2"> No </input>
+                      </label>
+                  </div>
+              </div>
+	 </div>              
 
   </div>                  
-                  
+  
+  <!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <span th:hidden="${signon.studentAdd}"><button type="submit" class="btn btn-warning">
+    Send <span class="glyphicon glyphicon-send"></span></button></span>
+
+  </div>
 </div>
+                  
 </body>
 </html>
